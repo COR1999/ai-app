@@ -1,4 +1,4 @@
- "use client" 
+"use client";
 import Image from "next/image"
 import { ReactNode } from 'react'
 import Footer from "@/components/Footer"
@@ -58,7 +58,7 @@ export default function HomePage() {
               className="text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
               style={{
                 background: 'linear-gradient(135deg, #2e6171, #556f7a)',
-                ':hover': {
+                'hover': {
                   background: 'linear-gradient(135deg, #1f4a56, #445862)'
                 }
               }}
