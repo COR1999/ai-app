@@ -1,7 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
 
-
 interface FooterProps {
   linkedinUrl?: string;
   githubUrl?: string;
@@ -9,9 +8,9 @@ interface FooterProps {
 }
 
 const Footer: React.FC<FooterProps> = ({
-  linkedinUrl = "https://linkedin.com/in/cian-o-rourke-8ba03a14a",
-  githubUrl = "https://github.com/cor1999",
-  email = "cian.orourke@gmail.com"
+  linkedinUrl = "https://linkedin.com/in/yourprofile",
+  githubUrl = "https://github.com/yourusername",
+  email = "your.email@example.com"
 }) => {
   const currentYear = new Date().getFullYear();
 
