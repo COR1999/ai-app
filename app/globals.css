@@ -1,0 +1,12 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* Test class to make sure Tailwind is working */
+.test-visible {
+  background-color: red;
+  color: white;
+  padding: 20px;
+}
