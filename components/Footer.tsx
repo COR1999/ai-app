@@ -23,10 +23,10 @@ interface FooterProps {
 }
 
 const Footer: React.FC<FooterProps> = ({
-  // Default URLs - should be replaced with actual profile links
-  linkedinUrl = "https://linkedin.com/in/yourprofile",
-  githubUrl = "https://github.com/yourusername",
-  email = "your.email@example.com"
+  // Default URLs - updated with actual profile links
+  linkedinUrl = "https://www.linkedin.com/in/cian-o-rourke-8ba03a14a/",
+  githubUrl = "https://github.com/COR1999",
+  email = "cian.orourke@gmail.com"
 }) => {
   // Dynamic copyright year
   const currentYear = new Date().getFullYear();
