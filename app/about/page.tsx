@@ -1,364 +1,357 @@
+/**
+ * ABOUT PAGE COMPONENT
+ * 
+ * Comprehensive about page featuring:
+ * - Hero section with personal introduction and visual elements
+ * - Timeline showcasing journey from culinary arts to software development
+ * - Skills intersection section comparing kitchen vs coding skills
+ * - Personal interests and current projects
+ * - Call-to-action section for collaboration
+ */
+
+"use client";
+
 import React from 'react';
+import Image from 'next/image';
 
 export default function AboutPage() {
   return (
-    <div className="min-h-screen bg-gray-50">
-      {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-50 to-indigo-100 py-20">
-        <div className="container mx-auto px-4 max-w-4xl">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div>
-              <h1 className="text-5xl font-bold text-gray-800 mb-6">
-                Hi, I'm <span className="text-blue-600">Cian O'Rourke</span>
-              </h1>
-              <p className="text-xl text-gray-600 mb-6 leading-relaxed">
-                Full Stack Developer with a passion for creating exceptional digital experiences. 
-                When I'm not coding, you'll find me in the kitchen crafting culinary masterpieces.
-              </p>
-              <div className="flex gap-4 text-sm text-blue-600 font-medium">
-                <span className="bg-blue-100 px-3 py-1 rounded-full">💻 Developer</span>
-                <span className="bg-blue-100 px-3 py-1 rounded-full">👨‍🍳 Chef</span>
-                <span className="bg-blue-100 px-3 py-1 rounded-full">🌍 World Traveler</span>
+    // Main page container with light background
+    <div className="min-h-screen bg-background-secondary">
+      {/* HERO SECTION - Split layout with text content and visual elements */}
+      <section className="py-20 relative overflow-hidden">
+        
+        {/* Subtle gradient background overlay */}
+        <div className="absolute inset-0 bg-gradient-to-br from-background-secondary via-white to-accent-light opacity-60"></div>
+        
+        {/* Main content container */}
+        <div className="container mx-auto px-4 max-w-7xl relative z-10">
+          
+          {/* Two-column grid layout for desktop, stacked on mobile */}
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            
+            {/* LEFT COLUMN - Text Content */}
+            <div className="space-y-8">
+              
+              {/* Introduction section with greeting badge */}
+              <div className="space-y-4">
+                
+                {/* Greeting badge with emoji and friendly message */}
+                <div className="inline-block">
+                  <span className="bg-secondary/10 text-secondary px-4 py-2 rounded-full text-sm font-medium">
+                    👋 Nice to meet you
+                  </span>
+                </div>
+                
+                {/* Main heading with gradient name effect */}
+                <h1 className="text-5xl lg:text-6xl font-bold text-primary leading-tight">
+                  I'm <span className="text-transparent bg-clip-text bg-gradient-to-r from-secondary to-accent">Cian O'Rourke</span>
+                </h1>
+                
+                {/* Personal introduction paragraph */}
+                <p className="text-xl text-text-primary leading-relaxed">
+                  Full Stack Developer who brings the precision of professional kitchens 
+                  to the world of code. I craft digital experiences with the same passion 
+                  I once brought to culinary arts.
+                </p>
+              </div>
+              
+              {/* QUICK STATS - Three-column achievement highlights */}
+              <div className="grid grid-cols-3 gap-6 py-8">
+                
+                {/* Stat 1: Years of coding experience */}
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-secondary mb-2">5+</div>
+                  <div className="text-text-secondary text-sm">Years Coding</div>
+                </div>
+                
+                {/* Stat 2: International experience */}
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-secondary mb-2">3+</div>
+                  <div className="text-text-secondary text-sm">Countries</div>
+                </div>
+                
+                {/* Stat 3: Passion indicator */}
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-secondary mb-2">∞</div>
+                  <div className="text-text-secondary text-sm">Passion</div>
+                </div>
+              </div>
+              
+              {/* CALL-TO-ACTION BUTTONS - Primary and secondary actions */}
+              <div className="flex flex-col sm:flex-row gap-4">
+                
+                {/* Primary button - View work (filled gradient button) */}
+                <button className="bg-gradient-to-r from-primary to-primary-light text-white px-8 py-4 rounded-xl font-semibold hover:shadow-lg transition-all duration-300 transform hover:scale-105">
+                  View My Work
+                </button>
+                
+                {/* Secondary button - Contact (outlined button) */}
+                <button className="border-2 border-secondary text-secondary px-8 py-4 rounded-xl font-semibold hover:bg-secondary hover:text-white transition-all duration-300">
+                  Get In Touch
+                </button>
               </div>
             </div>
+            
+            {/* RIGHT COLUMN - Visual Elements */}
             <div className="relative">
-              <div className="w-80 h-80 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full mx-auto relative overflow-hidden shadow-2xl">
-                {/* Placeholder for your photo */}
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-400 to-purple-500 opacity-90"></div>
-                <div className="absolute inset-0 flex items-center justify-center text-white text-lg font-medium">
-                  Your Photo Here
+              <div className="relative w-full max-w-md mx-auto">
+                
+                {/* MAIN PROFILE CIRCLE - Large circular element with gradient background */}
+                <div className="w-80 h-80 rounded-full bg-gradient-to-br from-secondary via-accent to-neutral relative overflow-hidden shadow-2xl mx-auto">
+                  
+                  {/* Profile photo with overlay */}
+                  <div className="absolute inset-4 rounded-full overflow-hidden">
+                    <Image
+                      src="/images/about/cianheadshot.jpg"
+                      alt="Cian O'Rourke - Full Stack Developer and Chef"
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                    />
+                    
+                    {/* Overlay with title and subtitle */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent flex items-end justify-center pb-6">
+                      <div className="text-center text-white">
+                        <div className="text-lg font-semibold">Developer</div>
+                        <div className="text-sm opacity-90">& Chef</div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-              </div>
-              {/* Floating elements */}
-              <div className="absolute -top-4 -right-4 bg-white p-3 rounded-lg shadow-lg">
-                <span className="text-2xl">💻</span>
-              </div>
-              <div className="absolute -bottom-4 -left-4 bg-white p-3 rounded-lg shadow-lg">
-                <span className="text-2xl">👨‍🍳</span>
+                
+                {/* FLOATING SKILL CARDS - Small cards positioned around the main circle */}
+                
+                {/* React skill card (top-right) */}
+                <div className="absolute -top-6 -right-6 bg-white p-4 rounded-xl shadow-lg border border-neutral/20">
+                  <div className="text-2xl">⚛️</div>
+                  <div className="text-xs text-text-secondary mt-1">React</div>
+                </div>
+                
+                {/* Chef skill card (bottom-left) */}
+                <div className="absolute -bottom-6 -left-6 bg-white p-4 rounded-xl shadow-lg border border-neutral/20">
+                  <div className="text-2xl">👨‍🍳</div>
+                  <div className="text-xs text-text-secondary mt-1">Chef</div>
+                </div>
+                
+                {/* Rocket icon (middle-right) */}
+                <div className="absolute top-1/2 -right-8 bg-white p-3 rounded-xl shadow-lg border border-neutral/20">
+                  <div className="text-xl">🚀</div>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* My Journey Section */}
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-4 max-w-4xl">
-          <h2 className="text-3xl font-bold text-center mb-12 text-gray-800">My Journey</h2>
-          
-          <div className="grid md:grid-cols-2 gap-8">
-            {/* Tech Journey */}
-            <div className="bg-gradient-to-br from-blue-50 to-indigo-50 p-8 rounded-xl">
-              <div className="flex items-center mb-4">
-                <div className="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center mr-4">
-                  <span className="text-white text-xl">💻</span>
-                </div>
-                <h3 className="text-2xl font-bold text-gray-800">Tech Passion</h3>
-              </div>
-              <p className="text-gray-600 leading-relaxed">
-                My love for technology started early, but it was the precision and creativity 
-                required in professional kitchens that taught me the discipline and attention 
-                to detail I bring to coding. Every line of code is crafted with the same care 
-                I put into plating a dish.
-              </p>
-            </div>
-
-            {/* Culinary Journey */}
-            <div className="bg-gradient-to-br from-orange-50 to-red-50 p-8 rounded-xl">
-              <div className="flex items-center mb-4">
-                <div className="w-12 h-12 bg-orange-600 rounded-lg flex items-center justify-center mr-4">
-                  <span className="text-white text-xl">👨‍🍳</span>
-                </div>
-                <h3 className="text-2xl font-bold text-gray-800">Culinary Arts</h3>
-              </div>
-              <p className="text-gray-600 leading-relaxed">
-                Trained in award-winning kitchens across Dublin, I've honed my skills in 
-                high-pressure environments where precision, creativity, and teamwork are 
-                essential. These experiences shaped my approach to problem-solving and 
-                collaboration in tech.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Culinary Adventures */}
-      <section className="py-16 bg-gray-50">
+      {/* JOURNEY TIMELINE SECTION - Visual timeline showing career progression */}
+      <section className="py-20 bg-white">
         <div className="container mx-auto px-4 max-w-6xl">
-          <h2 className="text-3xl font-bold text-center mb-12 text-gray-800">Culinary Adventures</h2>
           
-          <div className="grid md:grid-cols-3 gap-8">
-            {/* Dublin */}
-            <div className="bg-white rounded-xl shadow-lg overflow-hidden transform hover:scale-105 transition-all duration-300">
-              <div className="h-48 bg-gradient-to-br from-green-500 to-emerald-600 relative">
-                <div className="absolute inset-0 bg-black bg-opacity-20"></div>
-                <div className="absolute bottom-4 left-4 text-white">
-                  <span className="text-3xl mb-2 block">🇮🇪</span>
-                  <h3 className="text-xl font-bold">Dublin</h3>
-                </div>
-              </div>
-              <div className="p-6">
-                <h4 className="font-bold text-gray-800 mb-2">Award-Winning Kitchens</h4>
-                <p className="text-gray-600 text-sm leading-relaxed">
-                  Trained in some of Dublin's most prestigious restaurants, learning the fundamentals 
-                  of professional cooking and kitchen management from renowned chefs.
-                </p>
-              </div>
-            </div>
-
-            {/* Greece */}
-            <div className="bg-white rounded-xl shadow-lg overflow-hidden transform hover:scale-105 transition-all duration-300">
-              <div className="h-48 bg-gradient-to-br from-blue-500 to-cyan-600 relative">
-                <div className="absolute inset-0 bg-black bg-opacity-20"></div>
-                <div className="absolute bottom-4 left-4 text-white">
-                  <span className="text-3xl mb-2 block">🇬🇷</span>
-                  <h3 className="text-xl font-bold">Greece</h3>
-                </div>
-              </div>
-              <div className="p-6">
-                <h4 className="font-bold text-gray-800 mb-2">Mediterranean Events</h4>
-                <p className="text-gray-600 text-sm leading-relaxed">
-                  Worked alongside international chefs creating memorable dining experiences 
-                  in the stunning Greek islands, mastering Mediterranean flavors and techniques.
-                </p>
-              </div>
-            </div>
-
-            {/* London */}
-            <div className="bg-white rounded-xl shadow-lg overflow-hidden transform hover:scale-105 transition-all duration-300">
-              <div className="h-48 bg-gradient-to-br from-purple-500 to-pink-600 relative">
-                <div className="absolute inset-0 bg-black bg-opacity-20"></div>
-                <div className="absolute bottom-4 left-4 text-white">
-                  <span className="text-3xl mb-2 block">🇬🇧</span>
-                  <h3 className="text-xl font-bold">London</h3>
-                </div>
-              </div>
-              <div className="p-6">
-                <h4 className="font-bold text-gray-800 mb-2">Culinary Events</h4>
-                <p className="text-gray-600 text-sm leading-relaxed">
-                  Collaborated with top chefs on exclusive events and pop-ups across London, 
-                  bringing innovative concepts to life in the heart of the culinary world.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Interests & Skills */}
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-4 max-w-4xl">
-          <h2 className="text-3xl font-bold text-center mb-12 text-gray-800">What Drives Me</h2>
-          
-          <div className="grid md:grid-cols-2 gap-12">
-            {/* Left Column */}
-            <div>
-              <h3 className="text-xl font-bold text-gray-800 mb-6">Culinary Interests</h3>
-              <div className="space-y-4">
-                <div className="flex items-start">
-                  <span className="text-2xl mr-3">🍳</span>
-                  <div>
-                    <h4 className="font-semibold text-gray-800">Experimental Cooking</h4>
-                    <p className="text-gray-600 text-sm">Always pushing boundaries with new flavor combinations and techniques</p>
-                  </div>
-                </div>
-                <div className="flex items-start">
-                  <span className="text-2xl mr-3">🌿</span>
-                  <div>
-                    <h4 className="font-semibold text-gray-800">Farm-to-Table</h4>
-                    <p className="text-gray-600 text-sm">Passionate about sustainable, locally-sourced ingredients</p>
-                  </div>
-                </div>
-                <div className="flex items-start">
-                  <span className="text-2xl mr-3">🍷</span>
-                  <div>
-                    <h4 className="font-semibold text-gray-800">Food & Wine Pairing</h4>
-                    <p className="text-gray-600 text-sm">Creating perfect harmony between flavors and complementary wines</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Right Column */}
-            <div>
-              <h3 className="text-xl font-bold text-gray-800 mb-6">Beyond the Kitchen</h3>
-              <div className="space-y-4">
-                <div className="flex items-start">
-                  <span className="text-2xl mr-3">✈️</span>
-                  <div>
-                    <h4 className="font-semibold text-gray-800">Travel & Culture</h4>
-                    <p className="text-gray-600 text-sm">Exploring new cultures through their food traditions and techniques</p>
-                  </div>
-                </div>
-                <div className="flex items-start">
-                  <span className="text-2xl mr-3">📚</span>
-                  <div>
-                    <h4 className="font-semibold text-gray-800">Continuous Learning</h4>
-                    <p className="text-gray-600 text-sm">Always studying new technologies and culinary trends</p>
-                  </div>
-                </div>
-                <div className="flex items-start">
-                  <span className="text-2xl mr-3">🤝</span>
-                  <div>
-                    <h4 className="font-semibold text-gray-800">Mentoring</h4>
-                    <p className="text-gray-600 text-sm">Sharing knowledge with aspiring chefs and developers</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Intellectual Curiosity Section */}
-      <section className="py-16" style={{ backgroundColor: '#f8f5f7' }}>
-        <div className="container mx-auto px-4 max-w-6xl">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4" style={{ color: '#2e6171' }}>
-              A Mind That Never Stops Learning
-            </h2>
-            <p className="text-lg max-w-2xl mx-auto" style={{ color: '#556f7a' }}>
-              I believe curiosity is the fuel of innovation. Here are some of the subjects that fascinate me
+          {/* Section header with title and description */}
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-primary mb-4">My Journey</h2>
+            <p className="text-xl text-text-primary max-w-2xl mx-auto">
+              From professional kitchens to coding bootcamps, every experience has shaped my approach to development
             </p>
           </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {/* Geography */}
-            <div className="bg-white rounded-xl p-6 shadow-lg transform hover:scale-105 transition-all duration-300">
-              <div className="text-center">
-                <div className="text-4xl mb-4">🌍</div>
-                <h3 className="font-bold text-lg mb-3" style={{ color: '#2e6171' }}>Geography</h3>
-                <p className="text-sm leading-relaxed" style={{ color: '#798086' }}>
-                  Fascinated by how physical landscapes shape cultures, economies, and human migration patterns across the globe.
-                </p>
-              </div>
-            </div>
-
-            {/* Economics */}
-            <div className="bg-white rounded-xl p-6 shadow-lg transform hover:scale-105 transition-all duration-300">
-              <div className="text-center">
-                <div className="text-4xl mb-4">📈</div>
-                <h3 className="font-bold text-lg mb-3" style={{ color: '#2e6171' }}>Economics</h3>
-                <p className="text-sm leading-relaxed" style={{ color: '#798086' }}>
-                  Understanding market dynamics, behavioral economics, and how financial systems impact everyday life.
-                </p>
-              </div>
-            </div>
-
-            {/* History */}
-            <div className="bg-white rounded-xl p-6 shadow-lg transform hover:scale-105 transition-all duration-300">
-              <div className="text-center">
-                <div className="text-4xl mb-4">📜</div>
-                <h3 className="font-bold text-lg mb-3" style={{ color: '#2e6171' }}>History</h3>
-                <p className="text-sm leading-relaxed" style={{ color: '#798086' }}>
-                  Learning from the past to understand the present - from ancient civilizations to modern technological evolution.
-                </p>
-              </div>
-            </div>
-
-            {/* Psychology */}
-            <div className="bg-white rounded-xl p-6 shadow-lg transform hover:scale-105 transition-all duration-300">
-              <div className="text-center">
-                <div className="text-4xl mb-4">🧠</div>
-                <h3 className="font-bold text-lg mb-3" style={{ color: '#2e6171' }}>Psychology</h3>
-                <p className="text-sm leading-relaxed" style={{ color: '#798086' }}>
-                  How people think, make decisions, and interact - essential for creating user-centered design and experiences.
-                </p>
-              </div>
-            </div>
-
-            {/* Science & Technology */}
-            <div className="bg-white rounded-xl p-6 shadow-lg transform hover:scale-105 transition-all duration-300">
-              <div className="text-center">
-                <div className="text-4xl mb-4">🔬</div>
-                <h3 className="font-bold text-lg mb-3" style={{ color: '#2e6171' }}>Science & Tech</h3>
-                <p className="text-sm leading-relaxed" style={{ color: '#798086' }}>
-                  From quantum computing to biotechnology - staying curious about the cutting edge of human innovation.
-                </p>
-              </div>
-            </div>
-
-            {/* Philosophy */}
-            <div className="bg-white rounded-xl p-6 shadow-lg transform hover:scale-105 transition-all duration-300">
-              <div className="text-center">
-                <div className="text-4xl mb-4">💭</div>
-                <h3 className="font-bold text-lg mb-3" style={{ color: '#2e6171' }}>Philosophy</h3>
-                <p className="text-sm leading-relaxed" style={{ color: '#798086' }}>
-                  Exploring ethics, logic, and the fundamental questions about existence, knowledge, and human nature.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          {/* Learning Quote */}
-          <div className="text-center mt-12">
-            <div className="max-w-2xl mx-auto p-6 rounded-xl" style={{ backgroundColor: 'rgba(183, 159, 173, 0.1)' }}>
-              <blockquote className="text-lg font-medium italic mb-4" style={{ color: '#2e6171' }}>
-                "The more I learn, the more I realize how much I don't know. And that's exactly what keeps me excited about tomorrow."
-              </blockquote>
-              <p className="text-sm font-semibold" style={{ color: '#b79fad' }}>— My approach to life and learning</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Fun Facts */}
-      <section className="py-16 bg-gradient-to-br from-blue-50 to-indigo-100">
-        <div className="container mx-auto px-4 max-w-4xl">
-          <h2 className="text-3xl font-bold text-center mb-12 text-gray-800">Fun Facts About Me</h2>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div className="bg-white p-6 rounded-xl text-center shadow-lg">
-              <span className="text-3xl mb-3 block">🌍</span>
-              <h4 className="font-bold text-gray-800 mb-2">Countries Cooked In</h4>
-              <p className="text-2xl font-bold text-blue-600">3+</p>
-            </div>
+          {/* Timeline container */}
+          <div className="relative">
             
-            <div className="bg-white p-6 rounded-xl text-center shadow-lg">
-              <span className="text-3xl mb-3 block">⭐</span>
-              <h4 className="font-bold text-gray-800 mb-2">Award-Winning Kitchens</h4>
-              <p className="text-2xl font-bold text-blue-600">Multiple</p>
-            </div>
+            {/* VERTICAL TIMELINE LINE - Centered gradient line connecting all timeline items */}
+            <div className="absolute left-1/2 transform -translate-x-px h-full w-0.5 bg-gradient-to-b from-secondary via-accent to-neutral"></div>
             
-            <div className="bg-white p-6 rounded-xl text-center shadow-lg">
-              <span className="text-3xl mb-3 block">🍽️</span>
-              <h4 className="font-bold text-gray-800 mb-2">Signature Dish</h4>
-              <p className="text-sm font-medium text-gray-600">Modern Irish Cuisine</p>
-            </div>
-            
-            <div className="bg-white p-6 rounded-xl text-center shadow-lg">
-              <span className="text-3xl mb-3 block">💡</span>
-              <h4 className="font-bold text-gray-800 mb-2">Favorite Combo</h4>
-              <p className="text-sm font-medium text-gray-600">Code & Cook</p>
+            {/* TIMELINE ITEMS - Three major career milestones in alternating layout */}
+            <div className="space-y-16">
+              
+              {/* TIMELINE ITEM 1 - Culinary Training (right-aligned) */}
+              <div className="relative flex items-center">
+                
+                {/* Content card on the left side */}
+                <div className="w-1/2 pr-8 text-right">
+                  <div className="bg-secondary/10 p-8 rounded-xl border border-secondary/20">
+                    
+                    {/* Title with icon */}
+                    <div className="flex justify-end items-center mb-4">
+                      <h3 className="text-2xl font-bold text-primary mr-4">Culinary Training</h3>
+                      <div className="w-12 h-12 bg-secondary rounded-full flex items-center justify-center">
+                        <span className="text-xl">👨‍🍳</span>
+                      </div>
+                    </div>
+                    
+                    {/* Description */}
+                    <p className="text-text-primary">
+                      Trained in award-winning restaurants across Dublin, learning precision, 
+                      creativity, and working under pressure.
+                    </p>
+                  </div>
+                </div>
+                
+                {/* Timeline dot - centered on the timeline line */}
+                <div className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-secondary rounded-full border-4 border-white shadow-lg"></div>
+                
+                {/* Empty space on the right */}
+                <div className="w-1/2 pl-8"></div>
+              </div>
+              
+              {/* Item 2 */}
+              <div className="relative flex items-center">
+                <div className="w-1/2 pr-8"></div>
+                <div className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-accent rounded-full border-4 border-white shadow-lg"></div>
+                <div className="w-1/2 pl-8">
+                  <div className="bg-accent/10 p-8 rounded-xl border border-accent/20">
+                    <div className="flex items-center mb-4">
+                      <div className="w-12 h-12 bg-accent rounded-full flex items-center justify-center mr-4">
+                        <span className="text-xl">🌍</span>
+                      </div>
+                      <h3 className="text-2xl font-bold text-primary">International Experience</h3>
+                    </div>
+                    <p className="text-text-primary">
+                      Worked across multiple countries, gaining diverse perspectives and 
+                      adaptability that I bring to every project.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Item 3 */}
+              <div className="relative flex items-center">
+                <div className="w-1/2 pr-8 text-right">
+                  <div className="bg-neutral/10 p-8 rounded-xl border border-neutral/20">
+                    <div className="flex justify-end items-center mb-4">
+                      <h3 className="text-2xl font-bold text-primary mr-4">Tech Transition</h3>
+                      <div className="w-12 h-12 bg-neutral rounded-full flex items-center justify-center">
+                        <span className="text-xl">💻</span>
+                      </div>
+                    </div>
+                    <p className="text-text-primary">
+                      Made the leap into software development, bringing culinary precision 
+                      to code craftsmanship.
+                    </p>
+                  </div>
+                </div>
+                <div className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-neutral rounded-full border-4 border-white shadow-lg"></div>
+                <div className="w-1/2 pl-8"></div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Call to Action */}
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-4 max-w-2xl text-center">
-          <h2 className="text-3xl font-bold text-gray-800 mb-6">Let's Create Something Amazing</h2>
-          <p className="text-xl text-gray-600 mb-8">
-            Whether it's building your next web application or discussing the perfect flavor profile, 
-            I'd love to connect and explore new possibilities together.
-          </p>
-          <div className="flex gap-4 justify-center">
-            <a 
-              href="/contact" 
-              className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-3 rounded-lg font-medium hover:from-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-lg"
-            >
-              Get In Touch
-            </a>
-            <a 
-              href="/projects" 
-              className="border border-blue-600 text-blue-600 px-8 py-3 rounded-lg font-medium hover:bg-blue-50 transition-all duration-300"
-            >
-              View My Work
-            </a>
+      {/* SKILLS INTERSECTION SECTION - Comparing culinary skills to coding skills */}
+      <section className="py-20 bg-gradient-to-br from-background-secondary to-accent/20">
+        <div className="container mx-auto px-4 max-w-6xl">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-primary mb-4">Where Culinary Meets Code</h2>
+            <p className="text-xl text-text-primary max-w-3xl mx-auto">
+              The skills I learned in professional kitchens translate perfectly to software development
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-2 gap-12">
+            <div className="space-y-8">
+              <h3 className="text-2xl font-bold text-secondary">From the Kitchen</h3>
+              <div className="space-y-6">
+                <div className="flex items-start space-x-4">
+                  <div className="w-12 h-12 bg-secondary/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <span className="text-xl">⚡</span>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-primary mb-2">Working Under Pressure</h4>
+                    <p className="text-text-secondary">Managing multiple orders during dinner rush taught me to handle tight deadlines and complex requirements.</p>
+                  </div>
+                </div>
+                <div className="flex items-start space-x-4">
+                  <div className="w-12 h-12 bg-secondary/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <span className="text-xl">🎯</span>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-primary mb-2">Attention to Detail</h4>
+                    <p className="text-text-secondary">Every garnish matters in plating, just like every semicolon matters in code.</p>
+                  </div>
+                </div>
+                <div className="flex items-start space-x-4">
+                  <div className="w-12 h-12 bg-secondary/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <span className="text-xl">🤝</span>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-primary mb-2">Team Collaboration</h4>
+                    <p className="text-text-secondary">Kitchen brigades require seamless teamwork, communication, and mutual support.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div className="space-y-8">
+              <h3 className="text-2xl font-bold text-accent">To the Code</h3>
+              <div className="space-y-6">
+                <div className="flex items-start space-x-4">
+                  <div className="w-12 h-12 bg-accent/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <span className="text-xl">🚀</span>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-primary mb-2">Agile Development</h4>
+                    <p className="text-text-secondary">Quick iterations, rapid problem-solving, and delivering quality under tight timelines.</p>
+                  </div>
+                </div>
+                <div className="flex items-start space-x-4">
+                  <div className="w-12 h-12 bg-accent/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <span className="text-xl">🔍</span>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-primary mb-2">Clean Code</h4>
+                    <p className="text-text-secondary">Writing maintainable, readable code with the same precision I brought to food presentation.</p>
+                  </div>
+                </div>
+                <div className="flex items-start space-x-4">
+                  <div className="w-12 h-12 bg-accent/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <span className="text-xl">👥</span>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-primary mb-2">Cross-functional Teams</h4>
+                    <p className="text-text-secondary">Working effectively with designers, product managers, and stakeholders.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
+
+      {/* PERSONAL INTERESTS SECTION - Beyond professional work */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <div className="text-center">
+            <h2 className="text-4xl font-bold text-primary mb-8">Beyond the Screen</h2>
+            <div className="grid md:grid-cols-2 gap-12 items-center">
+              <div className="space-y-6">
+                <p className="text-lg text-text-primary leading-relaxed">
+                  When I'm not crafting code, you'll find me experimenting with new recipes, 
+                  exploring local food markets, or planning my next culinary adventure. 
+                  I believe the best developers are well-rounded individuals who bring 
+                  diverse experiences to their work.
+                </p>
+                <p className="text-lg text-text-primary leading-relaxed">
+                  Whether I'm debugging a complex algorithm or perfecting a new dish, 
+                  I approach every challenge with curiosity, creativity, and persistence.
+                </p>
+              </div>
+              <div className="bg-gradient-to-br from-secondary/10 to-accent/10 p-8 rounded-2xl">
+                <div className="text-center space-y-4">
+                  <div className="text-4xl">🍳</div>
+                  <h3 className="text-xl font-bold text-primary">Current Obsession</h3>
+                  <p className="text-text-secondary">
+                    Perfecting my sourdough starter and exploring the intersection 
+                    of fermentation science and software algorithms.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
     </div>
   );
 }

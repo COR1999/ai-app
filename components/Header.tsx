@@ -1,11 +1,27 @@
+/**
+ * HEADER COMPONENT
+ * 
+ * Responsive navigation header featuring:
+ * - Logo/brand name with personal branding
+ * - Desktop navigation menu with hover effects
+ * - Mobile hamburger menu with smooth animations
+ * - Sticky positioning for persistent navigation
+ * - Custom color scheme integration
+ */
+
 "use client";
 
 import React, { useState } from 'react';
 import Link from 'next/link';
 
 const Header: React.FC = () => {
+  // State to control mobile menu visibility
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+  /**
+   * MOBILE MENU TOGGLE
+   * Handles opening/closing of mobile navigation menu
+   */
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };

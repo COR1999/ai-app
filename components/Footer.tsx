@@ -1,17 +1,34 @@
+/**
+ * FOOTER COMPONENT
+ * 
+ * Site footer featuring:
+ * - Social media links (LinkedIn, GitHub, Email)
+ * - Hover animations and color transitions
+ * - Copyright information with current year
+ * - Responsive design with centered layout
+ * - Custom brand color integration
+ */
+
 import React from 'react';
 import Link from 'next/link';
 
+/**
+ * FOOTER PROPS INTERFACE
+ * Defines optional social media URLs for customization
+ */
 interface FooterProps {
-  linkedinUrl?: string;
-  githubUrl?: string;
-  email?: string;
+  linkedinUrl?: string;    // Optional LinkedIn profile URL
+  githubUrl?: string;      // Optional GitHub profile URL  
+  email?: string;          // Optional contact email address
 }
 
 const Footer: React.FC<FooterProps> = ({
+  // Default URLs - should be replaced with actual profile links
   linkedinUrl = "https://linkedin.com/in/yourprofile",
   githubUrl = "https://github.com/yourusername",
   email = "your.email@example.com"
 }) => {
+  // Dynamic copyright year
   const currentYear = new Date().getFullYear();
 
   return (
