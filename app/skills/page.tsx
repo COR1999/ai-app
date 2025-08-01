@@ -1,129 +1,110 @@
-/**
- * SKILLS PAGE COMPONENT
- * 
- * Interactive showcase of technical skills featuring:
- * - Animated sliding skill bars displaying technologies
- * - Detailed proficiency levels organized by category
- * - Progress bars with percentage indicators
- * - Additional soft skills section highlighting culinary background
- */
-
 "use client";
 
 export default function SkillsPage() {
-  
-  /**
-   * SLIDING SKILLS DATA
-   * Array of technologies displayed in the animated sliding section
-   * Each skill has an icon and color for visual appeal
-   */
-  const skills = [
-    { name: "React", icon: "⚛️", color: "#61DAFB" },
-    { name: "Next.js", icon: "▲", color: "#000000" },
-    { name: "TypeScript", icon: "TS", color: "#3178C6" },
-    { name: "JavaScript", icon: "JS", color: "#F7DF1E" },
-    { name: "jQuery", icon: "🔧", color: "#0769AD" },
-    { name: "Node.js", icon: "🟢", color: "#339933" },
-    { name: "Python", icon: "🐍", color: "#3776AB" },
-    { name: "Django", icon: "🎯", color: "#092E20" },
-    { name: "Flask", icon: "🌶️", color: "#000000" },
-    { name: "PostgreSQL", icon: "🐘", color: "#336791" },
-    { name: "MongoDB", icon: "🍃", color: "#47A248" },
-    { name: "Git", icon: "📦", color: "#F05032" },
-    { name: "Docker", icon: "🐳", color: "#2496ED" },
-    { name: "AWS", icon: "☁️", color: "#FF9900" },
-    { name: "Heroku", icon: "💜", color: "#430098" },
-    { name: "Stripe", icon: "💳", color: "#008CDD" },
-    { name: "Bootstrap", icon: "🅱️", color: "#7952B3" },
-    { name: "Font Awesome", icon: "🔤", color: "#339AF0" },
-    { name: "DataTables", icon: "📋", color: "#1F7B7B" },
-    { name: "Highcharts", icon: "📊", color: "#8085E9" },
-    { name: "Tailwind", icon: "🎨", color: "#06B6D4" },
-    { name: "Express", icon: "🚀", color: "#000000" },
-    { name: "GraphQL", icon: "◆", color: "#E10098" },
-    { name: "Redis", icon: "📊", color: "#DC382D" },
-    { name: "Figma", icon: "🎯", color: "#F24E1E" }
+  const allSkills = [
+    // Frontend
+    { name: "React", icon: "⚛️" },
+    { name: "Next.js", icon: "▲" },
+    { name: "TypeScript", icon: "TS" },
+    { name: "JavaScript", icon: "JS" },
+    { name: "HTML5", icon: "🌐" },
+    { name: "CSS3", icon: "🎨" },
+    { name: "Tailwind CSS", icon: "💨" },
+    { name: "Bootstrap", icon: "🅱️" },
+    { name: "jQuery", icon: "🔧" },
+    { name: "Sass", icon: "💎" },
+    { name: "Vue.js", icon: "💚" },
+    
+    // Backend
+    { name: "Node.js", icon: "🟢" },
+    { name: "Python", icon: "🐍" },
+    { name: "Django", icon: "🎯" },
+    { name: "Flask", icon: "🌶️" },
+    { name: "Express.js", icon: "🚀" },
+    { name: "FastAPI", icon: "⚡" },
+    { name: "REST APIs", icon: "🔗" },
+    { name: "GraphQL", icon: "◆" },
+    
+    // Database
+    { name: "PostgreSQL", icon: "🐘" },
+    { name: "MongoDB", icon: "🍃" },
+    { name: "MySQL", icon: "🗄️" },
+    { name: "Redis", icon: "📊" },
+    { name: "SQLite", icon: "💽" },
+    
+    // Tools & DevOps
+    { name: "Git", icon: "📦" },
+    { name: "GitHub", icon: "🐙" },
+    { name: "Docker", icon: "🐳" },
+    { name: "Webpack", icon: "📦" },
+    { name: "Vite", icon: "⚡" },
+    { name: "npm", icon: "📋" },
+    { name: "Yarn", icon: "🧶" },
+    
+    // Cloud & Deployment
+    { name: "AWS", icon: "☁️" },
+    { name: "Heroku", icon: "💜" },
+    { name: "Vercel", icon: "▲" },
+    { name: "Netlify", icon: "🌐" },
+    { name: "Digital Ocean", icon: "🌊" },
+    
+    // Design & Other
+    { name: "Figma", icon: "🎨" },
+    { name: "Photoshop", icon: "🖼️" },
+    { name: "Stripe", icon: "💳" },
+    { name: "Chart.js", icon: "📈" },
+    { name: "D3.js", icon: "📊" },
+    { name: "Jest", icon: "🧪" },
+    { name: "Cypress", icon: "🔬" }
   ];
 
-  /**
-   * SKILL CATEGORIES WITH PROFICIENCY LEVELS
-   * Organized by development area with percentage-based skill levels
-   * Uses custom color scheme for visual consistency
-   */
-  const skillCategories = {
-    "Frontend Development": [
-      { name: "React", level: 90, color: "primary" },
-      { name: "Next.js", level: 85, color: "secondary" },
-      { name: "TypeScript", level: 80, color: "accent" },
-      { name: "Tailwind CSS", level: 85, color: "neutral" },
-      { name: "JavaScript", level: 90, color: "primary" },
-      { name: "jQuery", level: 80, color: "accent" },
-      { name: "Bootstrap", level: 80, color: "secondary" },
-      { name: "Font Awesome", level: 85, color: "neutral" },
-      { name: "HTML5/CSS3", level: 95, color: "accent" }
-    ],
-    "Backend Development": [
-      { name: "Node.js", level: 85, color: "secondary" },
-      { name: "Python", level: 85, color: "accent" },
-      { name: "Django", level: 80, color: "primary" },
-      { name: "Flask", level: 75, color: "neutral" },
-      { name: "Express.js", level: 80, color: "neutral" },
-      { name: "GraphQL", level: 70, color: "primary" },
-      { name: "REST APIs", level: 85, color: "secondary" }
-    ],
-    "Database & Cloud": [
-      { name: "PostgreSQL", level: 80, color: "accent" },
-      { name: "MongoDB", level: 75, color: "neutral" },
-      { name: "AWS S3", level: 70, color: "primary" },
-      { name: "Heroku", level: 75, color: "secondary" },
-      { name: "Git", level: 90, color: "accent" },
-      { name: "Docker", level: 70, color: "neutral" }
-    ]
-  };
+  const skills = [
+    { name: "React", icon: "⚛️", category: "Frontend" },
+    { name: "Next.js", icon: "▲", category: "Frontend" },
+    { name: "TypeScript", icon: "TS", category: "Frontend" },
+    { name: "JavaScript", icon: "JS", category: "Frontend" },
+    { name: "Tailwind CSS", icon: "🎨", category: "Frontend" },
+    { name: "Bootstrap", icon: "🅱️", category: "Frontend" },
+    { name: "Node.js", icon: "🟢", category: "Backend" },
+    { name: "Python", icon: "🐍", category: "Backend" },
+    { name: "Django", icon: "🎯", category: "Backend" },
+    { name: "Flask", icon: "🌶️", category: "Backend" },
+    { name: "Express.js", icon: "🚀", category: "Backend" },
+    { name: "PostgreSQL", icon: "🐘", category: "Database" },
+    { name: "MongoDB", icon: "🍃", category: "Database" },
+    { name: "Git", icon: "📦", category: "Tools" },
+    { name: "Docker", icon: "🐳", category: "Tools" },
+    { name: "AWS", icon: "☁️", category: "Cloud" },
+    { name: "Heroku", icon: "💜", category: "Cloud" }
+  ];
+
+  const categories = ["Frontend", "Backend", "Database", "Tools", "Cloud"];
 
   return (
-    // Main page container with light background
-    <div className="min-h-screen bg-background-secondary">
+    <div className="min-h-screen bg-gray-50">
       
-      {/* HERO SECTION - Page title and introduction */}
-      <section className="py-16 text-center">
-        <div className="container mx-auto px-4">
-          <h1 className="text-4xl sm:text-5xl font-bold mb-6 text-primary">
-            My Technical Skills
-          </h1>
-          <p className="text-lg sm:text-xl max-w-2xl mx-auto text-text-primary">
-            A showcase of the technologies and tools I use to bring ideas to life
+      {/* HERO SECTION */}
+      <section className="bg-white border-b py-12">
+        <div className="container mx-auto px-6 text-center max-w-4xl">
+          <h1 className="text-3xl md:text-4xl font-bold text-primary mb-3">Technical Skills</h1>
+          <p className="text-text-secondary">
+            Technologies and tools I use to build modern applications
           </p>
         </div>
       </section>
 
-      {/* ANIMATED SKILLS SHOWCASE - Horizontal sliding bars with technology icons */}
-      <section className="py-8 overflow-hidden">
+      {/* ANIMATED SKILLS SHOWCASE */}
+      <section className="py-8 overflow-hidden bg-gradient-to-r from-background-secondary to-white">
         <div className="relative">
-          {/* First sliding row */}
-          <div className="flex animate-slide-right space-x-8 mb-6">
-            {[...skills, ...skills].map((skill, index) => (
+          {/* Moving skills row */}
+          <div className="flex animate-scroll space-x-6">
+            {[...allSkills, ...allSkills].map((skill, index) => (
               <div
-                key={`slide1-${index}`}
-                className="flex-shrink-0 bg-white rounded-xl p-4 shadow-lg border-2 border-neutral/30 min-w-[120px] text-center transform hover:scale-110 transition-all duration-300"
+                key={`skill-${index}`}
+                className="flex-shrink-0 bg-white rounded-lg px-4 py-2 shadow-sm border border-gray-200 min-w-[100px] text-center hover:shadow-md transition-shadow group"
               >
-                <div className="text-3xl mb-2">{skill.icon}</div>
-                <div className="font-semibold text-sm text-primary">
-                  {skill.name}
-                </div>
-              </div>
-            ))}
-          </div>
-
-          {/* Second sliding row (reverse direction) */}
-          <div className="flex animate-slide-left space-x-8">
-            {[...skills.slice().reverse(), ...skills.slice().reverse()].map((skill, index) => (
-              <div
-                key={`slide2-${index}`}
-                className="flex-shrink-0 bg-white rounded-xl p-4 shadow-lg border-2 border-secondary/30 min-w-[120px] text-center transform hover:scale-110 transition-all duration-300"
-              >
-                <div className="text-3xl mb-2">{skill.icon}</div>
-                <div className="font-semibold text-sm text-text-primary">
+                <div className="text-lg mb-1 group-hover:scale-110 transition-transform">{skill.icon}</div>
+                <div className="font-medium text-xs text-primary whitespace-nowrap">
                   {skill.name}
                 </div>
               </div>
@@ -132,120 +113,84 @@ export default function SkillsPage() {
         </div>
       </section>
 
-      {/* PROFICIENCY LEVELS SECTION - Detailed skill breakdown with progress bars */}
-      <section className="py-16">
-        <div className="container mx-auto px-4 max-w-6xl">
-          <h2 className="text-3xl font-bold text-center mb-12 text-primary">
-            Proficiency Levels
-          </h2>
+      {/* SKILLS GRID */}
+      <section className="py-12">
+        <div className="container mx-auto px-6 max-w-6xl">
           
-          <div className="grid md:grid-cols-3 gap-8">
-            {Object.entries(skillCategories).map(([category, categorySkills]) => (
-              <div key={category} className="bg-white rounded-xl shadow-lg p-6">
-                <h3 className="text-xl font-bold mb-6 text-center text-primary">
-                  {category}
-                </h3>
-                <div className="space-y-4">
-                  {categorySkills.map((skill) => (
-                    <div key={skill.name}>
-                      <div className="flex justify-between mb-2">
-                        <span className="font-medium text-text-primary">
+          {/* Category Sections */}
+          <div className="space-y-8">
+            {categories.map((category) => {
+              const categorySkills = skills.filter(skill => skill.category === category);
+              return (
+                <div key={category} className="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
+                  <h2 className="text-lg font-semibold text-primary mb-4 border-b border-gray-100 pb-2">
+                    {category}
+                  </h2>
+                  <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+                    {categorySkills.map((skill) => (
+                      <div
+                        key={skill.name}
+                        className="flex flex-col items-center p-3 rounded-lg hover:bg-gray-50 transition-colors group"
+                      >
+                        <div className="text-2xl mb-2 group-hover:scale-110 transition-transform">
+                          {skill.icon}
+                        </div>
+                        <span className="text-sm font-medium text-primary text-center">
                           {skill.name}
                         </span>
-                        <span className="text-sm font-semibold text-text-secondary">
-                          {skill.level}%
-                        </span>
                       </div>
-                      <div className="w-full bg-gray-200 rounded-full h-2">
-                        <div 
-                          className={`h-2 rounded-full transition-all duration-1000 ease-out animate-fill-bar bg-${skill.color}`}
-                          style={{ width: `${skill.level}%` }}
-                        ></div>
-                      </div>
-                    </div>
-                  ))}
+                    ))}
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+
+          {/* ADDITIONAL SKILLS */}
+          <div className="mt-8 bg-white rounded-lg shadow-sm border border-gray-200 p-6">
+            <h2 className="text-lg font-semibold text-primary mb-4 border-b border-gray-100 pb-2">
+              Additional Experience
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="flex items-start space-x-3">
+                <div className="text-2xl">👨‍🍳</div>
+                <div>
+                  <h3 className="font-semibold text-primary mb-1">Award-Winning Kitchen Experience</h3>
+                  <p className="text-sm text-text-secondary">
+                    Trained as chef in Dublin's award-winning restaurants Crudo and Achara (2021-2025). Managed kitchen teams, supply orders, and delivered high-quality results under tight deadlines in high-pressure environments.
+                  </p>
                 </div>
               </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* SOFT SKILLS SECTION - Culinary background and international experience */}
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-4 max-w-4xl text-center">
-          <h2 className="text-3xl font-bold mb-8 text-primary">
-            Beyond Technical Skills
-          </h2>
-          
-          <div className="grid md:grid-cols-2 gap-8">
-            <div className="p-6 rounded-xl bg-neutral/10">
-              <div className="text-4xl mb-4">👨‍🍳</div>
-              <h3 className="text-xl font-bold mb-3 text-primary">
-                Culinary Expertise
-              </h3>
-              <p className="text-text-primary">
-                Professional chef training brings precision, creativity, and ability to work under pressure
-              </p>
-            </div>
-            
-            <div className="p-6 rounded-xl bg-secondary/10">
-              <div className="text-4xl mb-4">🌍</div>
-              <h3 className="text-xl font-bold mb-3 text-primary">
-                International Experience
-              </h3>
-              <p className="text-text-primary">
-                Worked across multiple countries, bringing adaptability and cultural awareness
-              </p>
+              <div className="flex items-start space-x-3">
+                <div className="text-2xl">🎓</div>
+                <div>
+                  <h3 className="font-semibold text-primary mb-1">Software Development Diploma</h3>
+                  <p className="text-sm text-text-secondary">
+                    Code Institute Diploma (2019-2020) with expertise in object-oriented programming, web development, and version control. Quick learner and problem solver passionate about software development.
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Custom CSS for animations */}
+      {/* Custom animations */}
       <style jsx>{`
-        @keyframes slide-right {
+        @keyframes scroll {
           0% {
-            transform: translateX(-100%);
+            transform: translateX(0);
           }
           100% {
-            transform: translateX(0%);
+            transform: translateX(-50%);
           }
         }
 
-        @keyframes slide-left {
-          0% {
-            transform: translateX(0%);
-          }
-          100% {
-            transform: translateX(-100%);
-          }
+        .animate-scroll {
+          animation: scroll 30s linear infinite;
         }
 
-        @keyframes fill-bar {
-          0% {
-            width: 0%;
-          }
-          100% {
-            width: var(--target-width);
-          }
-        }
-
-        .animate-slide-right {
-          animation: slide-right 20s linear infinite;
-        }
-
-        .animate-slide-left {
-          animation: slide-left 25s linear infinite;
-        }
-
-        .animate-fill-bar {
-          animation: fill-bar 2s ease-out 0.5s both;
-        }
-
-        /* Pause animation on hover */
-        .animate-slide-right:hover,
-        .animate-slide-left:hover {
+        .animate-scroll:hover {
           animation-play-state: paused;
         }
       `}</style>

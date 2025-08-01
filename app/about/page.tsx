@@ -50,9 +50,10 @@ export default function AboutPage() {
                 
                 {/* Personal introduction paragraph */}
                 <p className="text-xl text-text-primary leading-relaxed">
-                  Full Stack Developer who brings the precision of professional kitchens 
-                  to the world of code. I craft digital experiences with the same passion 
-                  I once brought to culinary arts.
+                  A qualified Full Stack Developer with a Diploma in Software Development from Code Institute. 
+                  I'm a versatile, task-oriented individual who enjoys working within a team to achieve challenging objectives. 
+                  Having trained as a chef and barman in award-winning Dublin restaurants, I bring unique skills in stress management, 
+                  team organization, and working under tight deadlines to the world of software development.
                 </p>
               </div>
               
@@ -174,16 +175,18 @@ export default function AboutPage() {
                     
                     {/* Title with icon */}
                     <div className="flex justify-end items-center mb-4">
-                      <h3 className="text-2xl font-bold text-primary mr-4">Culinary Training</h3>
+                      <h3 className="text-2xl font-bold text-primary mr-4">Professional Kitchen Experience</h3>
                       <div className="w-12 h-12 bg-secondary rounded-full flex items-center justify-center">
                         <span className="text-xl">👨‍🍳</span>
                       </div>
                     </div>
                     
+                    {/* Date label */}
+                    <div className="text-sm font-semibold text-secondary mb-2">2021-2025</div>
                     {/* Description */}
                     <p className="text-text-primary">
-                      Trained in award-winning restaurants across Dublin, learning precision, 
-                      creativity, and working under pressure.
+                      Trained as chef and barman in award-winning Dublin restaurants Crudo and Achara. 
+                      Managed kitchen teams, supply orders, and delivered high-quality results under tight deadlines.
                     </p>
                   </div>
                 </div>
@@ -203,13 +206,15 @@ export default function AboutPage() {
                   <div className="bg-accent/10 p-8 rounded-xl border border-accent/20">
                     <div className="flex items-center mb-4">
                       <div className="w-12 h-12 bg-accent rounded-full flex items-center justify-center mr-4">
-                        <span className="text-xl">🌍</span>
+                        <span className="text-xl">🎓</span>
                       </div>
-                      <h3 className="text-2xl font-bold text-primary">International Experience</h3>
+                      <h3 className="text-2xl font-bold text-primary">Software Development Diploma</h3>
                     </div>
+                    {/* Date label */}
+                    <div className="text-sm font-semibold text-accent mb-2">2019-2020</div>
                     <p className="text-text-primary">
-                      Worked across multiple countries, gaining diverse perspectives and 
-                      adaptability that I bring to every project.
+                      Completed Diploma in Software Development at Code Institute during Covid. 
+                      Gained broad skills in technical, problem-solving and communications domains through four focused projects.
                     </p>
                   </div>
                 </div>
@@ -220,14 +225,16 @@ export default function AboutPage() {
                 <div className="w-1/2 pr-8 text-right">
                   <div className="bg-neutral/10 p-8 rounded-xl border border-neutral/20">
                     <div className="flex justify-end items-center mb-4">
-                      <h3 className="text-2xl font-bold text-primary mr-4">Tech Transition</h3>
+                      <h3 className="text-2xl font-bold text-primary mr-4">Culinary to Code</h3>
                       <div className="w-12 h-12 bg-neutral rounded-full flex items-center justify-center">
                         <span className="text-xl">💻</span>
                       </div>
                     </div>
+                    {/* Date label */}
+                    <div className="text-sm font-semibold text-neutral mb-2">2021-2025</div>
                     <p className="text-text-primary">
-                      Made the leap into software development, bringing culinary precision 
-                      to code craftsmanship.
+                      After completing my diploma during Covid when few organisations were hiring junior developers, 
+                      I gained invaluable experience in award-winning restaurants while staying passionate about my software career.
                     </p>
                   </div>
                 </div>
@@ -258,8 +265,8 @@ export default function AboutPage() {
                     <span className="text-xl">⚡</span>
                   </div>
                   <div>
-                    <h4 className="font-semibold text-primary mb-2">Working Under Pressure</h4>
-                    <p className="text-text-secondary">Managing multiple orders during dinner rush taught me to handle tight deadlines and complex requirements.</p>
+                    <h4 className="font-semibold text-primary mb-2">Stress Management</h4>
+                    <p className="text-text-secondary">Managing kitchen teams and multiple orders during dinner rush in award-winning restaurants taught me to handle tight deadlines and complex requirements effectively.</p>
                   </div>
                 </div>
                 <div className="flex items-start space-x-4">
@@ -276,8 +283,8 @@ export default function AboutPage() {
                     <span className="text-xl">🤝</span>
                   </div>
                   <div>
-                    <h4 className="font-semibold text-primary mb-2">Team Collaboration</h4>
-                    <p className="text-text-secondary">Kitchen brigades require seamless teamwork, communication, and mutual support.</p>
+                    <h4 className="font-semibold text-primary mb-2">Team Organization</h4>
+                    <p className="text-text-secondary">Running kitchen teams in professional environments taught me to organize teams effectively, delegate tasks, and ensure seamless collaboration under pressure.</p>
                   </div>
                 </div>
               </div>
