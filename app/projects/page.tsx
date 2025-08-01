@@ -64,7 +64,6 @@ export default function ProjectsPage() {
       ],
       image: "/images/projects/covidcases.png",
       imageAlt: "COVID Cases Platform Dashboard",
-      demoLink: "https://covid-cases-platform.herokuapp.com",
       githubLink: "https://github.com/COR1999/covid_case",
       status: "completed",
       featured: true
