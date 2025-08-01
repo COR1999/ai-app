@@ -334,23 +334,24 @@ export default function AboutPage() {
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <div className="space-y-6">
                 <p className="text-lg text-text-primary leading-relaxed">
-                  When I'm not crafting code, you'll find me experimenting with new recipes, 
-                  exploring local food markets, or planning my next culinary adventure. 
-                  I believe the best developers are well-rounded individuals who bring 
-                  diverse experiences to their work.
+                  After completing my software development diploma, I continued to work on small private projects 
+                  while working full-time as a chef. This dual approach allowed me to maintain and grow my 
+                  technical skills while gaining invaluable experience in high-pressure professional environments.
                 </p>
                 <p className="text-lg text-text-primary leading-relaxed">
+                  When I'm not crafting code, you'll find me experimenting with new recipes, 
+                  exploring local food markets, or planning my next culinary adventure. 
                   Whether I'm debugging a complex algorithm or perfecting a new dish, 
                   I approach every challenge with curiosity, creativity, and persistence.
                 </p>
               </div>
               <div className="bg-gradient-to-br from-secondary/10 to-accent/10 p-8 rounded-2xl">
                 <div className="text-center space-y-4">
-                  <div className="text-4xl">🍳</div>
+                  <div className="text-4xl">🐟</div>
                   <h3 className="text-xl font-bold text-primary">Current Obsession</h3>
                   <p className="text-text-secondary">
-                    Perfecting my sourdough starter and exploring the intersection 
-                    of fermentation science and software algorithms.
+                    I love working with fish and learning about all the different ways 
+                    you can use fish and fish butchery techniques.
                   </p>
                 </div>
               </div>
