@@ -1,14 +1,3 @@
-/**
- * PROJECTS PAGE COMPONENT
- * 
- * Modern asymmetric design featuring:
- * - Staggered card layout with varying heights
- * - Featured project showcase
- * - Horizontal scrolling technology tags
- * - Side-by-side project details
- * - Minimalist design with better visual hierarchy
- */
-
 "use client";
 
 import React, { useState } from 'react';
@@ -118,7 +107,7 @@ export default function ProjectsPage() {
         "Straightforward user experience"
       ],
       image: "/images/projects/onebyte.png",
-      imageAlt: "One Byte of a Baker's Dozen Recipe App Screenshot",
+      imageAlt: "One Byte of a Baker's Dozen Recipe App Development Screenshot",
       githubLink: "https://github.com/COR1999/one-byte-of-a-bakers-dozen",
       status: "completed"
     }
@@ -142,147 +131,46 @@ export default function ProjectsPage() {
     }
   };
 
-  const featuredProject = projects.find(p => p.featured);
-  const regularProjects = projects.filter(p => !p.featured);
 
   return (
-    <div className="min-h-screen bg-background-secondary">
+    <div className="min-h-screen bg-gray-50">
       
-      {/* HERO SECTION - Clean and minimal */}
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-4 max-w-6xl">
-          <div className="text-center mb-16">
-            <h1 className="text-5xl font-bold text-primary mb-6">Featured Work</h1>
-            <p className="text-xl text-text-primary max-w-3xl mx-auto">
-              A collection of projects that showcase my technical skills, creativity, 
-              and passion for building exceptional digital experiences.
+      {/* HERO SECTION */}
+      <section className="bg-white border-b">
+        <div className="container mx-auto px-6 py-16 max-w-6xl">
+          <div className="text-center">
+            <h1 className="text-4xl md:text-5xl font-bold text-primary mb-4">My Projects</h1>
+            <p className="text-lg text-text-secondary max-w-2xl mx-auto">
+              A showcase of my technical work and creative solutions
             </p>
           </div>
         </div>
       </section>
 
-      {/* FEATURED PROJECT SECTION - Large showcase */}
-      {featuredProject && (
-        <section className="py-20 bg-gradient-to-br from-background-secondary to-accent/10">
-          <div className="container mx-auto px-4 max-w-7xl">
-            <div className="grid lg:grid-cols-2 gap-16 items-center">
-              
-              {/* Project Image */}
-              <div className="relative">
-                <div className="aspect-video rounded-2xl overflow-hidden shadow-2xl border border-neutral/20">
-                  <Image
-                    src={featuredProject.image}
-                    alt={featuredProject.imageAlt}
-                    fill
-                    className="object-cover hover:scale-105 transition-transform duration-500"
-                    sizes="(max-width: 1024px) 100vw, 50vw"
-                  />
-                </div>
-                
-                {/* Floating status badge */}
-                <div className="absolute -top-4 -right-4">
-                  <span className={`px-4 py-2 rounded-full text-sm font-medium ${getStatusColor(featuredProject.status)}`}>
-                    ⭐ Featured • {getStatusText(featuredProject.status)}
-                  </span>
-                </div>
-              </div>
-
-              {/* Project Details */}
-              <div className="space-y-8">
-                <div>
-                  <h2 className="text-4xl font-bold text-primary mb-4">{featuredProject.title}</h2>
-                  <p className="text-xl text-text-primary leading-relaxed mb-6">
-                    {featuredProject.fullDescription}
-                  </p>
-                </div>
-
-                {/* Technology Stack */}
-                <div>
-                  <h3 className="text-lg font-semibold text-primary mb-4">Technology Stack</h3>
-                  <div className="flex flex-wrap gap-2">
-                    {featuredProject.technologies.map((tech) => (
-                      <span key={tech} className="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm font-medium">
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-
-                {/* Key Features */}
-                <div>
-                  <h3 className="text-lg font-semibold text-primary mb-4">Key Features</h3>
-                  <ul className="space-y-2">
-                    {featuredProject.features.slice(0, 4).map((feature, index) => (
-                      <li key={index} className="flex items-start">
-                        <span className="text-secondary mr-3 mt-1">•</span>
-                        <span className="text-text-secondary">{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                {/* Action Buttons */}
-                <div className="flex gap-4">
-                  {featuredProject.demoLink && (
-                    <a
-                      href={featuredProject.demoLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="bg-gradient-to-r from-primary to-primary-light text-white px-8 py-3 rounded-xl font-semibold hover:shadow-lg transition-all duration-300"
-                    >
-                      View Live Demo
-                    </a>
-                  )}
-                  {featuredProject.githubLink && (
-                    <a
-                      href={featuredProject.githubLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="border-2 border-primary text-primary px-8 py-3 rounded-xl font-semibold hover:bg-primary hover:text-white transition-all duration-300"
-                    >
-                      View Code
-                    </a>
-                  )}
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-      )}
-
-      {/* OTHER PROJECTS SECTION - Masonry-style layout */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-4 max-w-7xl">
-          <h2 className="text-4xl font-bold text-center text-primary mb-16">Other Projects</h2>
-          
-          {/* Masonry Grid */}
-          <div className="columns-1 md:columns-2 xl:columns-3 gap-8 space-y-8">
-            {regularProjects.map((project, index) => (
+      {/* PROJECTS GRID */}
+      <section className="py-16">
+        <div className="container mx-auto px-6 max-w-7xl">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {projects.map((project) => (
               <div
                 key={project.id}
-                className={`break-inside-avoid bg-white rounded-2xl shadow-lg border border-neutral/10 overflow-hidden hover:shadow-xl transition-all duration-300 cursor-pointer ${
-                  index % 3 === 0 ? 'h-96' : index % 3 === 1 ? 'h-80' : 'h-88'
-                }`}
+                className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden hover:shadow-lg hover:border-gray-300 transition-all duration-300 cursor-pointer group"
                 onClick={() => setSelectedProject(project)}
               >
                 {/* Project Image */}
-                <div className="relative h-48 overflow-hidden bg-gray-50 flex items-center justify-center">
+                <div className="relative h-48 bg-gray-100 overflow-hidden">
                   <Image
                     src={project.image}
                     alt={project.imageAlt}
                     fill
-                    className={`hover:scale-105 transition-transform duration-500 ${
-                      project.id === 5 ? 'object-contain' : 'object-contain'
-                    }`}
-                    sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
-                    priority={project.id === 5}
-                    quality={90}
-                    unoptimized={project.id === 5}
+                    className="object-contain group-hover:scale-105 transition-transform duration-300"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   />
                   
                   {/* Status Badge */}
-                  <div className="absolute top-4 left-4">
-                    <span className={`px-3 py-1 rounded-full text-xs font-medium ${getStatusColor(project.status)}`}>
+                  <div className="absolute top-3 left-3">
+                    <span className={`px-2 py-1 rounded-md text-xs font-medium ${getStatusColor(project.status)}`}>
+                      {project.featured && '⭐ '}
                       {getStatusText(project.status)}
                     </span>
                   </div>
@@ -290,29 +178,63 @@ export default function ProjectsPage() {
 
                 {/* Project Content */}
                 <div className="p-6">
-                  <h3 className="text-xl font-bold text-primary mb-3">{project.title}</h3>
-                  <p className="text-text-secondary text-sm mb-4 line-clamp-3">
+                  <h3 className="text-xl font-semibold text-primary mb-2 group-hover:text-secondary transition-colors">
+                    {project.title}
+                  </h3>
+                  <p className="text-text-secondary text-sm mb-4 line-clamp-2">
                     {project.shortDescription}
                   </p>
                   
                   {/* Technology Tags */}
                   <div className="flex flex-wrap gap-1 mb-4">
-                    {project.technologies.slice(0, 3).map((tech) => (
-                      <span key={tech} className="px-2 py-1 bg-neutral/10 text-neutral text-xs rounded">
+                    {project.technologies.slice(0, 4).map((tech) => (
+                      <span key={tech} className="px-2 py-1 bg-neutral/20 text-primary text-xs rounded-md">
                         {tech}
                       </span>
                     ))}
-                    {project.technologies.length > 3 && (
-                      <span className="px-2 py-1 bg-neutral/10 text-neutral text-xs rounded">
-                        +{project.technologies.length - 3}
+                    {project.technologies.length > 4 && (
+                      <span className="px-2 py-1 bg-neutral/20 text-primary text-xs rounded-md">
+                        +{project.technologies.length - 4}
                       </span>
                     )}
                   </div>
 
-                  {/* View More Link */}
-                  <button className="text-secondary font-medium text-sm hover:text-secondary-dark transition-colors">
-                    View Details →
-                  </button>
+                  {/* Action Links */}
+                  <div className="flex items-center justify-between">
+                    <button className="text-secondary font-medium text-sm hover:text-secondary-dark transition-colors">
+                      View Details →
+                    </button>
+                    <div className="flex gap-2">
+                      {project.demoLink && (
+                        <a
+                          href={project.demoLink}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          onClick={(e) => e.stopPropagation()}
+                          className="text-neutral hover:text-secondary transition-colors"
+                          title="View Demo"
+                        >
+                          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                          </svg>
+                        </a>
+                      )}
+                      {project.githubLink && (
+                        <a
+                          href={project.githubLink}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          onClick={(e) => e.stopPropagation()}
+                          className="text-neutral hover:text-secondary transition-colors"
+                          title="View Code"
+                        >
+                          <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                          </svg>
+                        </a>
+                      )}
+                    </div>
+                  </div>
                 </div>
               </div>
             ))}
@@ -327,28 +249,29 @@ export default function ProjectsPage() {
           onClick={() => setSelectedProject(null)}
         >
           <div 
-            className="bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto"
+            className="bg-white rounded-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto"
             onClick={(e) => e.stopPropagation()}
           >
-            <div className="p-8">
+            <div className="p-6 md:p-8">
               {/* Modal Header */}
               <div className="flex justify-between items-start mb-6">
                 <div>
-                  <h3 className="text-3xl font-bold text-primary mb-2">{selectedProject.title}</h3>
-                  <span className={`px-3 py-1 rounded-full text-sm font-medium ${getStatusColor(selectedProject.status)}`}>
+                  <h3 className="text-2xl md:text-3xl font-bold text-primary mb-2">{selectedProject.title}</h3>
+                  <span className={`px-3 py-1 rounded-md text-sm font-medium ${getStatusColor(selectedProject.status)}`}>
+                    {selectedProject.featured && '⭐ '}
                     {getStatusText(selectedProject.status)}
                   </span>
                 </div>
                 <button
                   onClick={() => setSelectedProject(null)}
-                  className="text-text-secondary hover:text-primary transition-colors text-2xl"
+                  className="text-neutral hover:text-primary transition-colors text-2xl p-1"
                 >
                   ×
                 </button>
               </div>
 
               {/* Project Image */}
-              <div className="aspect-video rounded-xl overflow-hidden mb-6 bg-gray-50">
+              <div className="aspect-video rounded-lg overflow-hidden mb-6 bg-gray-100">
                 <Image
                   src={selectedProject.image}
                   alt={selectedProject.imageAlt}
@@ -361,7 +284,7 @@ export default function ProjectsPage() {
               </div>
 
               {/* Project Description */}
-              <p className="text-lg text-text-primary mb-6">{selectedProject.fullDescription}</p>
+              <p className="text-lg text-text-primary mb-6 leading-relaxed">{selectedProject.fullDescription}</p>
 
               {/* Technologies and Features */}
               <div className="grid md:grid-cols-2 gap-8">
@@ -369,7 +292,7 @@ export default function ProjectsPage() {
                   <h4 className="text-lg font-semibold text-primary mb-4">Technologies Used</h4>
                   <div className="flex flex-wrap gap-2">
                     {selectedProject.technologies.map((tech) => (
-                      <span key={tech} className="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm">
+                      <span key={tech} className="px-3 py-1 bg-accent/20 text-primary rounded-md text-sm font-medium">
                         {tech}
                       </span>
                     ))}
@@ -381,7 +304,7 @@ export default function ProjectsPage() {
                   <ul className="space-y-2">
                     {selectedProject.features.map((feature, index) => (
                       <li key={index} className="flex items-start">
-                        <span className="text-secondary mr-2">•</span>
+                        <span className="text-secondary mr-3 mt-1 text-sm">•</span>
                         <span className="text-text-secondary text-sm">{feature}</span>
                       </li>
                     ))}
@@ -390,13 +313,13 @@ export default function ProjectsPage() {
               </div>
 
               {/* Action Buttons */}
-              <div className="flex gap-4 mt-8">
+              <div className="flex flex-wrap gap-4 mt-8">
                 {selectedProject.demoLink && (
                   <a
                     href={selectedProject.demoLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="bg-gradient-to-r from-primary to-primary-light text-white px-6 py-3 rounded-xl font-semibold hover:shadow-lg transition-all duration-300"
+                    className="bg-secondary text-white px-6 py-3 rounded-lg font-semibold hover:bg-secondary-dark transition-colors"
                   >
                     Live Demo
                   </a>
@@ -406,7 +329,7 @@ export default function ProjectsPage() {
                     href={selectedProject.githubLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="border-2 border-primary text-primary px-6 py-3 rounded-xl font-semibold hover:bg-primary hover:text-white transition-all duration-300"
+                    className="border-2 border-secondary text-secondary px-6 py-3 rounded-lg font-semibold hover:bg-secondary hover:text-white transition-all"
                   >
                     View Code
                   </a>
