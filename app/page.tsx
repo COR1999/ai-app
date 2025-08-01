@@ -38,7 +38,7 @@ export default function HomePage() {
             {/* Professional description */}
             <p className="text-lg leading-relaxed text-text-secondary">
               Full Stack Developer passionate about creating exceptional web experiences. 
-              Currently building innovative solutions with modern technologies.
+              Currently building innovative solutions with modern technologies and frameworks.
             </p>
           </div>
 
