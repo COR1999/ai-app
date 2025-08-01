@@ -33,7 +33,7 @@ export default function HomePage() {
           <div className="max-w-2xl mx-auto mb-8">
             {/* Name introduction with highlighted name */}
             <p className="text-2xl mb-4 text-text-primary">
-              Hi, I'm <span className="font-semibold text-primary">Cian O'Rourke</span>
+              Hi, I&apos;m <span className="font-semibold text-primary">Cian O&apos;Rourke</span>
             </p>
             {/* Professional description */}
             <p className="text-lg leading-relaxed text-text-secondary">

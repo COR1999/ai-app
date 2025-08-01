@@ -92,7 +92,7 @@ const Footer: React.FC<FooterProps> = ({
 
           {/* Copyright */}
           <div className="text-center text-neutral text-sm">
-            <p>&copy; {currentYear} Cian O'Rourke. All rights reserved.</p>
+            <p>&copy; {currentYear} Cian O&apos;Rourke. All rights reserved.</p>
           </div>
         </div>
       </div>

@@ -157,7 +157,7 @@ export default function SkillsPage() {
                 <div>
                   <h3 className="font-semibold text-primary mb-1">Award-Winning Kitchen Experience</h3>
                   <p className="text-sm text-text-secondary">
-                    Trained as chef in Dublin's award-winning restaurants Crudo and Achara (2021-2025). Managed kitchen teams, supply orders, and delivered high-quality results under tight deadlines in high-pressure environments.
+                    Trained as chef in Dublin&apos;s award-winning restaurants Crudo and Achara (2021-2025). Managed kitchen teams, supply orders, and delivered high-quality results under tight deadlines in high-pressure environments.
                   </p>
                 </div>
               </div>

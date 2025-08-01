@@ -34,7 +34,7 @@ const Header: React.FC = () => {
           <Link href="/" className="flex items-center group">
             <div className="text-left">
               <h1 className="text-2xl sm:text-3xl font-bold transition-all duration-300 group-hover:scale-105 text-primary">
-                Cian O'Rourke
+                Cian O&apos;Rourke
               </h1>
               <p className="text-sm sm:text-base font-medium text-text-secondary">
                 Full Stack Developer

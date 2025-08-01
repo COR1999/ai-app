@@ -14,14 +14,38 @@ interface Project {
   imageAlt: string;
   demoLink?: string;
   githubLink?: string;
-  status: 'completed' | 'in-progress' | 'planning';
+  status: 'completed' | 'in-progress' | 'planning' | 'production';
   featured?: boolean;
+  isCurrentProject?: boolean;
 }
 
 export default function ProjectsPage() {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
   const projects: Project[] = [
+    {
+      id: 1,
+      title: "Portfolio Website",
+      shortDescription: "Modern Next.js portfolio website showcasing my development skills and culinary background",
+      fullDescription: "A responsive portfolio website built with Next.js and TypeScript, featuring a custom color scheme and modern design. The site showcases my unique journey from professional kitchens to software development, highlighting my projects, skills, and experience.",
+      technologies: ["Next.js", "TypeScript", "Tailwind CSS", "React", "Vercel"],
+      features: [
+        "Responsive design with mobile-first approach",
+        "Custom color scheme and modern UI",
+        "Interactive skills showcase with animations",
+        "Project portfolio with detailed modal views",
+        "Professional timeline and about section",
+        "Contact form with social media integration",
+        "Optimized performance and SEO",
+        "Deployed on Vercel with CI/CD"
+      ],
+      image: "/images/projects/aiapp.png",
+      imageAlt: "Portfolio Website Screenshot",
+      githubLink: "https://github.com/COR1999/ai-app",
+      status: "in-progress",
+      featured: false,
+      isCurrentProject: true
+    },
     {
       id: 2,
       title: "COVID Cases Platform",
@@ -118,6 +142,7 @@ export default function ProjectsPage() {
       case 'completed': return 'bg-green-100 text-green-800';
       case 'in-progress': return 'bg-yellow-100 text-yellow-800';
       case 'planning': return 'bg-blue-100 text-blue-800';
+      case 'production': return 'bg-secondary/20 text-secondary';
       default: return 'bg-gray-100 text-gray-800';
     }
   };
@@ -127,6 +152,7 @@ export default function ProjectsPage() {
       case 'completed': return 'Completed';
       case 'in-progress': return 'In Progress';
       case 'planning': return 'Planning';
+      case 'production': return 'Production';
       default: return 'Unknown';
     }
   };
@@ -154,8 +180,10 @@ export default function ProjectsPage() {
             {projects.map((project) => (
               <div
                 key={project.id}
-                className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden hover:shadow-lg hover:border-gray-300 transition-all duration-300 cursor-pointer group"
-                onClick={() => setSelectedProject(project)}
+                className={`bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden hover:shadow-lg hover:border-gray-300 transition-all duration-300 cursor-pointer group relative ${
+                  project.isCurrentProject ? 'opacity-60' : ''
+                }`}
+                onClick={() => !project.isCurrentProject && setSelectedProject(project)}
               >
                 {/* Project Image */}
                 <div className="relative h-48 bg-gray-100 overflow-hidden">
@@ -174,6 +202,15 @@ export default function ProjectsPage() {
                       {getStatusText(project.status)}
                     </span>
                   </div>
+
+                  {/* Viewing Overlay for Current Project */}
+                  {project.isCurrentProject && (
+                    <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+                      <div className="bg-white px-4 py-2 rounded-lg shadow-lg">
+                        <span className="text-primary font-semibold text-lg">Viewing</span>
+                      </div>
+                    </div>
+                  )}
                 </div>
 
                 {/* Project Content */}

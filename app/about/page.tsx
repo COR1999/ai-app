@@ -45,13 +45,13 @@ export default function AboutPage() {
                 
                 {/* Main heading with gradient name effect */}
                 <h1 className="text-5xl lg:text-6xl font-bold text-primary leading-tight">
-                  I'm <span className="text-transparent bg-clip-text bg-gradient-to-r from-secondary to-accent">Cian O'Rourke</span>
+                  I&apos;m <span className="text-transparent bg-clip-text bg-gradient-to-r from-secondary to-accent">Cian O&apos;Rourke</span>
                 </h1>
                 
                 {/* Personal introduction paragraph */}
                 <p className="text-xl text-text-primary leading-relaxed">
                   A qualified Full Stack Developer with a Diploma in Software Development from Code Institute. 
-                  I'm a versatile, task-oriented individual who enjoys working within a team to achieve challenging objectives. 
+                  I&apos;m a versatile, task-oriented individual who enjoys working within a team to achieve challenging objectives. 
                   Having trained as a chef and barman in award-winning Dublin restaurants, I bring unique skills in stress management, 
                   team organization, and working under tight deadlines to the world of software development.
                 </p>
@@ -339,9 +339,9 @@ export default function AboutPage() {
                   technical skills while gaining invaluable experience in high-pressure professional environments.
                 </p>
                 <p className="text-lg text-text-primary leading-relaxed">
-                  When I'm not crafting code, you'll find me experimenting with new recipes, 
+                  When I&apos;m not crafting code, you&apos;ll find me experimenting with new recipes, 
                   exploring local food markets, or planning my next culinary adventure. 
-                  Whether I'm debugging a complex algorithm or perfecting a new dish, 
+                  Whether I&apos;m debugging a complex algorithm or perfecting a new dish, 
                   I approach every challenge with curiosity, creativity, and persistence.
                 </p>
               </div>
