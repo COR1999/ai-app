@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "gh": "^2.8.9",
     "git": "^0.1.5",
     "next": "15.4.5",
     "react": "19.1.0",

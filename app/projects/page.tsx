@@ -66,7 +66,7 @@ const ProjectCard: React.FC<{
             ? 'scale-95 opacity-40 blur-sm bg-gray-100' 
             : 'hover:scale-102 hover:shadow-xl'
       }`}>
-        <div className={`h-32 sm:h-40 md:h-48 overflow-hidden bg-gray-200 relative ${
+        <div className={`h-24 sm:h-28 md:h-32 overflow-hidden bg-gray-200 relative ${
           isOtherCardHovered ? 'grayscale brightness-75' : ''
         }`}>
           {project.image.startsWith('http') ? (
@@ -91,9 +91,9 @@ const ProjectCard: React.FC<{
             />
           )}
         </div>
-        <div className="p-3 sm:p-4 md:p-6">
-          <div className="flex justify-between items-start mb-2">
-            <h3 className={`text-lg sm:text-xl font-bold transition-colors duration-500 ${
+        <div className="p-2 sm:p-3 md:p-4">
+          <div className="flex justify-between items-start mb-1.5">
+            <h3 className={`text-base sm:text-lg font-bold transition-colors duration-500 ${
               isOtherCardHovered ? 'text-gray-400' : ''
             }`} style={{ color: isOtherCardHovered ? '#798086' : '#2e6171' }}>
               {project.title}
@@ -109,14 +109,14 @@ const ProjectCard: React.FC<{
               {getStatusText(project.status)}
             </span>
           </div>
-          <p className={`mb-3 sm:mb-4 text-sm sm:text-base transition-colors duration-500 ${
+          <p className={`mb-2 sm:mb-3 text-xs sm:text-sm transition-colors duration-500 ${
             isOtherCardHovered ? 'text-gray-400' : ''
           }`} style={{ color: isOtherCardHovered ? '#798086' : '#556f7a' }}>
             {project.shortDescription}
           </p>
-          <div className="flex flex-wrap gap-1 sm:gap-2">
+          <div className="flex flex-wrap gap-1">
             {project.technologies.slice(0, 3).map((tech) => (
-              <span key={tech} className={`px-2 py-1 rounded text-xs sm:text-sm transition-all duration-500`}
+              <span key={tech} className={`px-1.5 py-0.5 rounded text-xs transition-all duration-500`}
                 style={isOtherCardHovered 
                   ? { backgroundColor: '#f3f4f6', color: '#6b7280' }
                   : { backgroundColor: 'rgba(183, 159, 173, 0.2)', color: '#2e6171' }
@@ -125,7 +125,7 @@ const ProjectCard: React.FC<{
               </span>
             ))}
             {project.technologies.length > 3 && (
-              <span className={`px-2 py-1 rounded text-xs sm:text-sm transition-all duration-500`}
+              <span className={`px-1.5 py-0.5 rounded text-xs transition-all duration-500`}
                 style={isOtherCardHovered 
                   ? { backgroundColor: '#f3f4f6', color: '#6b7280' }
                   : { backgroundColor: 'rgba(121, 128, 134, 0.2)', color: '#798086' }
@@ -141,20 +141,20 @@ const ProjectCard: React.FC<{
       <div className={`absolute top-full left-0 right-0 z-50 mt-2 transform transition-all duration-500 ${
         isHovered ? 'opacity-100 translate-y-0 visible' : 'opacity-0 -translate-y-4 invisible'
       }`}>
-        <div className="bg-white rounded-lg shadow-2xl border border-gray-200 p-3 sm:p-4 mx-2 max-w-sm sm:max-w-md mx-auto">
+        <div className="bg-white rounded-lg shadow-2xl border border-gray-200 p-2 sm:p-3 mx-2 max-w-xs sm:max-w-sm mx-auto">
           {/* Arrow pointing up */}
           <div className="absolute -top-2 left-6 w-4 h-4 bg-white transform rotate-45 border-l border-t border-gray-200"></div>
           
-          <h4 className="text-sm sm:text-base font-bold mb-2" style={{ color: '#2e6171' }}>Quick Overview</h4>
+          <h4 className="text-xs sm:text-sm font-bold mb-1.5" style={{ color: '#2e6171' }}>Quick Overview</h4>
           
           {/* Compact description */}
-          <p className="text-xs sm:text-sm leading-relaxed mb-3" style={{ color: '#556f7a' }}>
+          <p className="text-xs leading-relaxed mb-2" style={{ color: '#556f7a' }}>
             {project.fullDescription.slice(0, 120)}...
           </p>
           
           {/* Top 3 Features */}
-          <div className="mb-3">
-            <h5 className="font-semibold mb-1 text-xs sm:text-sm" style={{ color: '#2e6171' }}>Key Features:</h5>
+          <div className="mb-2">
+            <h5 className="font-semibold mb-1 text-xs" style={{ color: '#2e6171' }}>Key Features:</h5>
             <ul className="text-xs space-y-0.5" style={{ color: '#798086' }}>
               {project.features.slice(0, 3).map((feature, index) => (
                 <li key={index} className="flex items-start">
@@ -166,10 +166,10 @@ const ProjectCard: React.FC<{
           </div>
           
           {/* Top Technologies */}
-          <div className="mb-3">
+          <div className="mb-2">
             <div className="flex flex-wrap gap-1">
               {project.technologies.slice(0, 4).map((tech) => (
-                <span key={tech} className="px-2 py-0.5 rounded text-xs"
+                <span key={tech} className="px-1.5 py-0.5 rounded text-xs"
                   style={{ 
                     backgroundColor: 'rgba(183, 159, 173, 0.15)', 
                     color: '#2e6171'
@@ -192,7 +192,7 @@ const ProjectCard: React.FC<{
                 href={project.demoLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex-1 text-white px-3 py-1.5 rounded text-center font-medium transition-all duration-300 text-xs sm:text-sm"
+                className="flex-1 text-white px-2 py-1 rounded text-center font-medium transition-all duration-300 text-xs"
                 style={{
                   background: 'linear-gradient(135deg, #2e6171, #556f7a)'
                 }}
@@ -211,7 +211,7 @@ const ProjectCard: React.FC<{
                 href={project.githubLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex-1 px-3 py-1.5 rounded text-center font-medium transition-all duration-300 border text-xs sm:text-sm"
+                className="flex-1 px-2 py-1 rounded text-center font-medium transition-all duration-300 border text-xs"
                 style={{ 
                   borderColor: '#d4afcd', 
                   color: '#556f7a' 
@@ -375,7 +375,7 @@ export default function ProjectsPage() {
           </p>
         </div>
         
-        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-3 sm:gap-4 lg:gap-6 max-w-5xl mx-auto">
           {projects.map((project) => (
             <ProjectCard 
               key={project.id} 
