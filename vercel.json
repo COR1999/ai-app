@@ -1,0 +1,5 @@
+{
+  "buildCommand": "cd ai-app && npm ci && npm run build",
+  "outputDirectory": "ai-app/.next",
+  "installCommand": "cd ai-app && npm ci"
+}
