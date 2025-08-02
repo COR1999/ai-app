@@ -1,7 +1,12 @@
 import "./globals.css";
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
-import './globals.css'
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Cian O\'Rourke - Full Stack Developer',
+  description: 'Portfolio of Cian O\'Rourke, Full Stack Developer with culinary background',
+}
 
 export default function RootLayout({
   children,

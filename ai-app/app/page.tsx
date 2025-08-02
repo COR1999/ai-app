@@ -1,122 +1,120 @@
+/**
+ * HOMEPAGE COMPONENT
+ * 
+ * This is the main landing page that introduces visitors to the portfolio.
+ * Features a centered hero layout with gradient background, personal introduction,
+ * current role highlight, call-to-action buttons, stats, and scroll indicator.
+ */
+
 "use client";
-import Image from "next/image"
-import { ReactNode } from 'react'
-import Footer from "@/components/Footer"
 import Link from 'next/link';
 
 export default function HomePage() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-pink-50 via-white to-rose-50 flex items-center justify-center" style={{
-      background: 'linear-gradient(135deg, #f8f5f7 0%, #ffffff 50%, #f5f0f3 100%)'
-    }}>
+    // Main container with full screen height and gradient background
+    <div className="min-h-screen bg-gradient-to-br from-background-secondary via-white to-accent-light flex items-center justify-center">
+      
+      {/* Content wrapper with responsive container and centered text */}
       <div className="container mx-auto px-4 max-w-4xl text-center">
         
-        {/* Welcome Section */}
+        {/* WELCOME SECTION - Main hero content */}
         <div className="mb-8">
-          <h1 className="text-6xl md:text-7xl font-bold mb-6" style={{ color: '#2e6171' }}>
+          
+          {/* Main headline with large text and gradient accent */}
+          <h1 className="text-6xl md:text-7xl font-bold mb-6 text-primary">
             Welcome to My 
-            <span className="block text-transparent bg-clip-text" style={{
-              background: 'linear-gradient(135deg, #2e6171, #b79fad)',
-              WebkitBackgroundClip: 'text',
-              backgroundClip: 'text'
-            }}>
+            {/* Portfolio text with gradient effect using text-transparent and bg-clip-text */}
+            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">
               Portfolio
             </span>
           </h1>
           
+          {/* Personal introduction section */}
           <div className="max-w-2xl mx-auto mb-8">
-            <p className="text-2xl mb-4" style={{ color: '#556f7a' }}>
-              Hi, I'm <span className="font-semibold" style={{ color: '#2e6171' }}>Cian O'Rourke</span>
+            {/* Name introduction with highlighted name */}
+            <p className="text-2xl mb-4 text-text-primary">
+              Hi, I&apos;m <span className="font-semibold text-primary">Cian O&apos;Rourke</span>
             </p>
-            <p className="text-lg leading-relaxed" style={{ color: '#798086' }}>
+            {/* Professional description */}
+            <p className="text-lg leading-relaxed text-text-secondary">
               Full Stack Developer passionate about creating exceptional web experiences. 
-              Currently building innovative solutions with modern technologies.
+              Currently building innovative solutions with modern technologies and frameworks.
             </p>
           </div>
 
-          {/* Current Role */}
-          <div className="backdrop-blur-sm rounded-xl p-6 shadow-lg border mb-8 max-w-lg mx-auto" style={{
-            backgroundColor: 'rgba(255, 255, 255, 0.8)',
-            borderColor: 'rgba(183, 159, 173, 0.3)'
-          }}>
+          {/* CURRENT ROLE CARD - Highlighted information card */}
+          <div className="backdrop-blur-sm rounded-xl p-6 shadow-lg border mb-8 max-w-lg mx-auto bg-background-card border-neutral/30">
+            
+            {/* Status indicator with animated pulse dot */}
             <div className="flex items-center justify-center mb-3">
-              <div className="w-3 h-3 rounded-full mr-3 animate-pulse" style={{ backgroundColor: '#b79fad' }}></div>
-              <span className="text-sm font-medium uppercase tracking-wide" style={{ color: '#798086' }}>Current Role</span>
+              <div className="w-3 h-3 rounded-full mr-3 animate-pulse bg-secondary"></div>
+              <span className="text-sm font-medium uppercase tracking-wide text-text-light">Current Role</span>
             </div>
-            <h2 className="text-xl font-bold" style={{ color: '#2e6171' }}>
+            
+            {/* Job title */}
+            <h2 className="text-xl font-bold text-primary">
               Full Stack Developer
             </h2>
-            <p className="mt-2" style={{ color: '#556f7a' }}>
+            
+            {/* Job description */}
+            <p className="mt-2 text-text-secondary">
               Specializing in React, Next.js, and modern web technologies
             </p>
           </div>
 
-          {/* CTA Button */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          {/* CALL-TO-ACTION BUTTONS - Primary navigation buttons */}
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
+            
+            {/* Primary CTA - View Projects (filled button with gradient) */}
             <Link
               href="/projects"
-              className="text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
-              style={{
-                background: 'linear-gradient(135deg, #2e6171, #556f7a)',
-                'hover': {
-                  background: 'linear-gradient(135deg, #1f4a56, #445862)'
-                }
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.background = 'linear-gradient(135deg, #1f4a56, #445862)';
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.background = 'linear-gradient(135deg, #2e6171, #556f7a)';
-              }}
+              className="text-white px-4 sm:px-6 lg:px-8 py-3 sm:py-4 rounded-xl font-semibold text-sm sm:text-base lg:text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl bg-gradient-to-r from-primary to-primary-light hover:from-primary-dark hover:to-gunmetal text-center"
             >
               View My Projects
             </Link>
             
+            {/* Secondary CTA - About Page (outlined button) */}
             <Link
               href="/about"
-              className="px-8 py-4 rounded-xl font-semibold text-lg border-2 transition-all duration-300"
-              style={{
-                borderColor: '#2e6171',
-                color: '#2e6171'
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.backgroundColor = '#2e6171';
-                e.currentTarget.style.color = 'white';
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.backgroundColor = 'transparent';
-                e.currentTarget.style.color = '#2e6171';
-              }}
+              className="px-4 sm:px-6 lg:px-8 py-3 sm:py-4 rounded-xl font-semibold text-sm sm:text-base lg:text-lg border-2 border-secondary text-secondary hover:bg-secondary hover:text-white transition-all duration-300 text-center"
             >
               Learn More About Me
             </Link>
           </div>
         </div>
 
-        {/* Optional: Quick Stats */}
+        {/* QUICK STATS SECTION - Achievement highlights in grid layout */}
         <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8 max-w-2xl mx-auto">
+          
+          {/* Stat 1: Technologies */}
           <div className="text-center">
-            <div className="text-3xl font-bold mb-2" style={{ color: '#b79fad' }}>5+</div>
-            <div style={{ color: '#798086' }}>Technologies Mastered</div>
+            <div className="text-3xl font-bold mb-2 text-secondary">5+</div>
+            <div className="text-text-light">Technologies Mastered</div>
           </div>
           
+          {/* Stat 2: Countries */}
           <div className="text-center">
-            <div className="text-3xl font-bold mb-2" style={{ color: '#b79fad' }}>3+</div>
-            <div style={{ color: '#798086' }}>Countries Worked In</div>
+            <div className="text-3xl font-bold mb-2 text-secondary">3+</div>
+            <div className="text-text-light">Countries Worked In</div>
           </div>
           
+          {/* Stat 3: Passion (infinity symbol) */}
           <div className="text-center">
-            <div className="text-3xl font-bold mb-2" style={{ color: '#b79fad' }}>∞</div>
-            <div style={{ color: '#798086' }}>Passion for Learning</div>
+            <div className="text-3xl font-bold mb-2 text-secondary">∞</div>
+            <div className="text-text-light">Passion for Learning</div>
           </div>
         </div>
 
-        {/* Scroll Indicator */}
+        {/* SCROLL INDICATOR - Animated indicator encouraging exploration */}
         <div className="mt-16">
           <div className="flex flex-col items-center">
-            <span className="text-sm mb-2" style={{ color: '#798086' }}>Explore More</span>
-            <div className="w-6 h-10 border-2 rounded-full flex justify-center" style={{ borderColor: '#b79fad' }}>
-              <div className="w-1 h-3 rounded-full mt-2 animate-bounce" style={{ backgroundColor: '#b79fad' }}></div>
+            
+            {/* "Explore More" text */}
+            <span className="text-sm mb-2 text-text-light">Explore More</span>
+            
+            {/* Mouse scroll indicator with animated dot */}
+            <div className="w-6 h-10 border-2 border-accent rounded-full flex justify-center">
+              <div className="w-1 h-3 rounded-full mt-2 animate-bounce bg-accent"></div>
             </div>
           </div>
         </div>

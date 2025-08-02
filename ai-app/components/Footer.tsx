@@ -1,21 +1,38 @@
+/**
+ * FOOTER COMPONENT
+ * 
+ * Site footer featuring:
+ * - Social media links (LinkedIn, GitHub, Email)
+ * - Hover animations and color transitions
+ * - Copyright information with current year
+ * - Responsive design with centered layout
+ * - Custom brand color integration
+ */
+
 import React from 'react';
 import Link from 'next/link';
 
+/**
+ * FOOTER PROPS INTERFACE
+ * Defines optional social media URLs for customization
+ */
 interface FooterProps {
-  linkedinUrl?: string;
-  githubUrl?: string;
-  email?: string;
+  linkedinUrl?: string;    // Optional LinkedIn profile URL
+  githubUrl?: string;      // Optional GitHub profile URL  
+  email?: string;          // Optional contact email address
 }
 
 const Footer: React.FC<FooterProps> = ({
-  linkedinUrl = "https://linkedin.com/in/yourprofile",
-  githubUrl = "https://github.com/yourusername",
-  email = "your.email@example.com"
+  // Default URLs - updated with actual profile links
+  linkedinUrl = "https://www.linkedin.com/in/cian-o-rourke-8ba03a14a/",
+  githubUrl = "https://github.com/COR1999",
+  email = "cian.orourke@gmail.com"
 }) => {
+  // Dynamic copyright year
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-gray-900 text-white py-8 mt-auto">
+    <footer className="bg-primary text-white py-8 mt-auto">
       <div className="container mx-auto px-4">
         <div className="flex flex-col items-center space-y-4">
           {/* Social Links */}
@@ -25,7 +42,7 @@ const Footer: React.FC<FooterProps> = ({
               href={linkedinUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-white hover:text-blue-400 transition-colors duration-300 transform hover:scale-110"
+              className="text-white hover:text-accent transition-colors duration-300 transform hover:scale-110"
               aria-label="LinkedIn Profile"
             >
               <svg
@@ -43,7 +60,7 @@ const Footer: React.FC<FooterProps> = ({
               href={githubUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-white hover:text-gray-300 transition-colors duration-300 transform hover:scale-110"
+              className="text-white hover:text-neutral transition-colors duration-300 transform hover:scale-110"
               aria-label="GitHub Profile"
             >
               <svg
@@ -59,7 +76,7 @@ const Footer: React.FC<FooterProps> = ({
             {/* Gmail */}
             <Link
               href={`mailto:${email}`}
-              className="text-white hover:text-red-400 transition-colors duration-300 transform hover:scale-110"
+              className="text-white hover:text-secondary transition-colors duration-300 transform hover:scale-110"
               aria-label="Send Email"
             >
               <svg
@@ -74,8 +91,8 @@ const Footer: React.FC<FooterProps> = ({
           </div>
 
           {/* Copyright */}
-          <div className="text-center text-gray-400 text-sm">
-            <p>&copy; {currentYear} Your Name. All rights reserved.</p>
+          <div className="text-center text-neutral text-sm">
+            <p>&copy; {currentYear} Cian O&apos;Rourke. All rights reserved.</p>
           </div>
         </div>
       </div>

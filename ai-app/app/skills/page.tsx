@@ -1,92 +1,110 @@
 "use client";
 
 export default function SkillsPage() {
-  const skills = [
-    { name: "React", icon: "⚛️", color: "#61DAFB" },
-    { name: "Next.js", icon: "▲", color: "#000000" },
-    { name: "TypeScript", icon: "TS", color: "#3178C6" },
-    { name: "JavaScript", icon: "JS", color: "#F7DF1E" },
-    { name: "Node.js", icon: "🟢", color: "#339933" },
-    { name: "Python", icon: "🐍", color: "#3776AB" },
-    { name: "PostgreSQL", icon: "🐘", color: "#336791" },
-    { name: "MongoDB", icon: "🍃", color: "#47A248" },
-    { name: "Git", icon: "📦", color: "#F05032" },
-    { name: "Docker", icon: "🐳", color: "#2496ED" },
-    { name: "AWS", icon: "☁️", color: "#FF9900" },
-    { name: "Tailwind", icon: "🎨", color: "#06B6D4" },
-    { name: "Express", icon: "🚀", color: "#000000" },
-    { name: "GraphQL", icon: "◆", color: "#E10098" },
-    { name: "Redis", icon: "📊", color: "#DC382D" },
-    { name: "Figma", icon: "🎯", color: "#F24E1E" }
+  const allSkills = [
+    // Frontend
+    { name: "React", icon: "⚛️" },
+    { name: "Next.js", icon: "▲" },
+    { name: "TypeScript", icon: "TS" },
+    { name: "JavaScript", icon: "JS" },
+    { name: "HTML5", icon: "🌐" },
+    { name: "CSS3", icon: "🎨" },
+    { name: "Tailwind CSS", icon: "💨" },
+    { name: "Bootstrap", icon: "🅱️" },
+    { name: "jQuery", icon: "🔧" },
+    { name: "Sass", icon: "💎" },
+    { name: "Vue.js", icon: "💚" },
+    
+    // Backend
+    { name: "Node.js", icon: "🟢" },
+    { name: "Python", icon: "🐍" },
+    { name: "Django", icon: "🎯" },
+    { name: "Flask", icon: "🌶️" },
+    { name: "Express.js", icon: "🚀" },
+    { name: "FastAPI", icon: "⚡" },
+    { name: "REST APIs", icon: "🔗" },
+    { name: "GraphQL", icon: "◆" },
+    
+    // Database
+    { name: "PostgreSQL", icon: "🐘" },
+    { name: "MongoDB", icon: "🍃" },
+    { name: "MySQL", icon: "🗄️" },
+    { name: "Redis", icon: "📊" },
+    { name: "SQLite", icon: "💽" },
+    
+    // Tools & DevOps
+    { name: "Git", icon: "📦" },
+    { name: "GitHub", icon: "🐙" },
+    { name: "Docker", icon: "🐳" },
+    { name: "Webpack", icon: "📦" },
+    { name: "Vite", icon: "⚡" },
+    { name: "npm", icon: "📋" },
+    { name: "Yarn", icon: "🧶" },
+    
+    // Cloud & Deployment
+    { name: "AWS", icon: "☁️" },
+    { name: "Heroku", icon: "💜" },
+    { name: "Vercel", icon: "▲" },
+    { name: "Netlify", icon: "🌐" },
+    { name: "Digital Ocean", icon: "🌊" },
+    
+    // Design & Other
+    { name: "Figma", icon: "🎨" },
+    { name: "Photoshop", icon: "🖼️" },
+    { name: "Stripe", icon: "💳" },
+    { name: "Chart.js", icon: "📈" },
+    { name: "D3.js", icon: "📊" },
+    { name: "Jest", icon: "🧪" },
+    { name: "Cypress", icon: "🔬" }
   ];
 
-  const skillCategories = {
-    "Frontend Development": [
-      { name: "React", level: 90, color: "#2e6171" },
-      { name: "Next.js", level: 85, color: "#556f7a" },
-      { name: "TypeScript", level: 80, color: "#798086" },
-      { name: "Tailwind CSS", level: 85, color: "#b79fad" },
-      { name: "JavaScript", level: 90, color: "#2e6171" }
-    ],
-    "Backend Development": [
-      { name: "Node.js", level: 85, color: "#556f7a" },
-      { name: "Python", level: 75, color: "#798086" },
-      { name: "Express.js", level: 80, color: "#b79fad" },
-      { name: "GraphQL", level: 70, color: "#2e6171" },
-      { name: "REST APIs", level: 85, color: "#556f7a" }
-    ],
-    "Database & Tools": [
-      { name: "PostgreSQL", level: 80, color: "#798086" },
-      { name: "MongoDB", level: 75, color: "#b79fad" },
-      { name: "Git", level: 90, color: "#2e6171" },
-      { name: "Docker", level: 70, color: "#556f7a" },
-      { name: "AWS", level: 65, color: "#798086" }
-    ]
-  };
+  const skills = [
+    { name: "React", icon: "⚛️", category: "Frontend" },
+    { name: "Next.js", icon: "▲", category: "Frontend" },
+    { name: "TypeScript", icon: "TS", category: "Frontend" },
+    { name: "JavaScript", icon: "JS", category: "Frontend" },
+    { name: "Tailwind CSS", icon: "🎨", category: "Frontend" },
+    { name: "Bootstrap", icon: "🅱️", category: "Frontend" },
+    { name: "Node.js", icon: "🟢", category: "Backend" },
+    { name: "Python", icon: "🐍", category: "Backend" },
+    { name: "Django", icon: "🎯", category: "Backend" },
+    { name: "Flask", icon: "🌶️", category: "Backend" },
+    { name: "Express.js", icon: "🚀", category: "Backend" },
+    { name: "PostgreSQL", icon: "🐘", category: "Database" },
+    { name: "MongoDB", icon: "🍃", category: "Database" },
+    { name: "Git", icon: "📦", category: "Tools" },
+    { name: "Docker", icon: "🐳", category: "Tools" },
+    { name: "AWS", icon: "☁️", category: "Cloud" },
+    { name: "Heroku", icon: "💜", category: "Cloud" }
+  ];
+
+  const categories = ["Frontend", "Backend", "Database", "Tools", "Cloud"];
 
   return (
-    <div className="min-h-screen" style={{ backgroundColor: '#f8f5f7' }}>
-      {/* Hero Section */}
-      <section className="py-16 text-center">
-        <div className="container mx-auto px-4">
-          <h1 className="text-4xl sm:text-5xl font-bold mb-6" style={{ color: '#2e6171' }}>
-            My Technical Skills
-          </h1>
-          <p className="text-lg sm:text-xl max-w-2xl mx-auto" style={{ color: '#556f7a' }}>
-            A showcase of the technologies and tools I use to bring ideas to life
+    <div className="min-h-screen bg-gray-50">
+      
+      {/* HERO SECTION */}
+      <section className="bg-white border-b py-12">
+        <div className="container mx-auto px-6 text-center max-w-4xl">
+          <h1 className="text-3xl md:text-4xl font-bold text-primary mb-3">Technical Skills</h1>
+          <p className="text-text-secondary">
+            Technologies and tools I use to build modern applications
           </p>
         </div>
       </section>
 
-      {/* Sliding Skills Bar */}
-      <section className="py-8 overflow-hidden">
+      {/* ANIMATED SKILLS SHOWCASE */}
+      <section className="py-8 overflow-hidden bg-gradient-to-r from-background-secondary to-white">
         <div className="relative">
-          {/* First sliding row */}
-          <div className="flex animate-slide-right space-x-8 mb-6">
-            {[...skills, ...skills].map((skill, index) => (
+          {/* Moving skills row */}
+          <div className="flex animate-scroll space-x-6">
+            {[...allSkills, ...allSkills].map((skill, index) => (
               <div
-                key={`slide1-${index}`}
-                className="flex-shrink-0 bg-white rounded-xl p-4 shadow-lg border-2 min-w-[120px] text-center transform hover:scale-110 transition-all duration-300"
-                style={{ borderColor: 'rgba(183, 159, 173, 0.3)' }}
+                key={`skill-${index}`}
+                className="flex-shrink-0 bg-white rounded-lg px-4 py-2 shadow-sm border border-gray-200 min-w-[100px] text-center hover:shadow-md transition-shadow group"
               >
-                <div className="text-3xl mb-2">{skill.icon}</div>
-                <div className="font-semibold text-sm" style={{ color: '#2e6171' }}>
-                  {skill.name}
-                </div>
-              </div>
-            ))}
-          </div>
-
-          {/* Second sliding row (reverse direction) */}
-          <div className="flex animate-slide-left space-x-8">
-            {[...skills.slice().reverse(), ...skills.slice().reverse()].map((skill, index) => (
-              <div
-                key={`slide2-${index}`}
-                className="flex-shrink-0 bg-white rounded-xl p-4 shadow-lg border-2 min-w-[120px] text-center transform hover:scale-110 transition-all duration-300"
-                style={{ borderColor: 'rgba(212, 175, 205, 0.3)' }}
-              >
-                <div className="text-3xl mb-2">{skill.icon}</div>
-                <div className="font-semibold text-sm" style={{ color: '#556f7a' }}>
+                <div className="text-lg mb-1 group-hover:scale-110 transition-transform">{skill.icon}</div>
+                <div className="font-medium text-xs text-primary whitespace-nowrap">
                   {skill.name}
                 </div>
               </div>
@@ -95,126 +113,68 @@ export default function SkillsPage() {
         </div>
       </section>
 
-      {/* Detailed Skills Section */}
-      <section className="py-16">
-        <div className="container mx-auto px-4 max-w-6xl">
-          <h2 className="text-3xl font-bold text-center mb-12" style={{ color: '#2e6171' }}>
-            Proficiency Levels
-          </h2>
+      {/* SKILLS GRID */}
+      <section className="py-12">
+        <div className="container mx-auto px-6 max-w-6xl">
           
-          <div className="grid md:grid-cols-3 gap-8">
-            {Object.entries(skillCategories).map(([category, categorySkills]) => (
-              <div key={category} className="bg-white rounded-xl shadow-lg p-6">
-                <h3 className="text-xl font-bold mb-6 text-center" style={{ color: '#2e6171' }}>
-                  {category}
-                </h3>
-                <div className="space-y-4">
-                  {categorySkills.map((skill) => (
-                    <div key={skill.name}>
-                      <div className="flex justify-between mb-2">
-                        <span className="font-medium" style={{ color: '#556f7a' }}>
+          {/* Category Sections */}
+          <div className="space-y-8">
+            {categories.map((category) => {
+              const categorySkills = skills.filter(skill => skill.category === category);
+              return (
+                <div key={category} className="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
+                  <h2 className="text-lg font-semibold text-primary mb-4 border-b border-gray-100 pb-2">
+                    {category}
+                  </h2>
+                  <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+                    {categorySkills.map((skill) => (
+                      <div
+                        key={skill.name}
+                        className="flex flex-col items-center p-3 rounded-lg hover:bg-gray-50 transition-colors group"
+                      >
+                        <div className="text-2xl mb-2 group-hover:scale-110 transition-transform">
+                          {skill.icon}
+                        </div>
+                        <span className="text-sm font-medium text-primary text-center">
                           {skill.name}
                         </span>
-                        <span className="text-sm font-semibold" style={{ color: '#798086' }}>
-                          {skill.level}%
-                        </span>
                       </div>
-                      <div className="w-full bg-gray-200 rounded-full h-2">
-                        <div 
-                          className="h-2 rounded-full transition-all duration-1000 ease-out animate-fill-bar"
-                          style={{ 
-                            width: `${skill.level}%`,
-                            backgroundColor: skill.color
-                          }}
-                        ></div>
-                      </div>
-                    </div>
-                  ))}
+                    ))}
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+
+          {/* ADDITIONAL SKILLS */}
+          <div className="mt-8 bg-white rounded-lg shadow-sm border border-gray-200 p-6">
+            <h2 className="text-lg font-semibold text-primary mb-4 border-b border-gray-100 pb-2">
+              Additional Experience
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="flex items-start space-x-3">
+                <div className="text-2xl">👨‍🍳</div>
+                <div>
+                  <h3 className="font-semibold text-primary mb-1">Award-Winning Kitchen Experience</h3>
+                  <p className="text-sm text-text-secondary">
+                    Trained as chef in Dublin&apos;s award-winning restaurants Crudo and Achara (2021-2025). Managed kitchen teams, supply orders, and delivered high-quality results under tight deadlines in high-pressure environments.
+                  </p>
                 </div>
               </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Additional Skills */}
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-4 max-w-4xl text-center">
-          <h2 className="text-3xl font-bold mb-8" style={{ color: '#2e6171' }}>
-            Beyond Technical Skills
-          </h2>
-          
-          <div className="grid md:grid-cols-2 gap-8">
-            <div className="p-6 rounded-xl" style={{ backgroundColor: 'rgba(183, 159, 173, 0.1)' }}>
-              <div className="text-4xl mb-4">👨‍🍳</div>
-              <h3 className="text-xl font-bold mb-3" style={{ color: '#2e6171' }}>
-                Culinary Expertise
-              </h3>
-              <p style={{ color: '#556f7a' }}>
-                Professional chef training brings precision, creativity, and ability to work under pressure
-              </p>
-            </div>
-            
-            <div className="p-6 rounded-xl" style={{ backgroundColor: 'rgba(212, 175, 205, 0.1)' }}>
-              <div className="text-4xl mb-4">🌍</div>
-              <h3 className="text-xl font-bold mb-3" style={{ color: '#2e6171' }}>
-                International Experience
-              </h3>
-              <p style={{ color: '#556f7a' }}>
-                Worked across multiple countries, bringing adaptability and cultural awareness
-              </p>
+              <div className="flex items-start space-x-3">
+                <div className="text-2xl">🎓</div>
+                <div>
+                  <h3 className="font-semibold text-primary mb-1">Software Development Diploma</h3>
+                  <p className="text-sm text-text-secondary">
+                    Code Institute Diploma (2019-2020) with expertise in object-oriented programming, web development, and version control. Quick learner and problem solver passionate about software development.
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Custom CSS for animations */}
-      <style jsx>{`
-        @keyframes slide-right {
-          0% {
-            transform: translateX(-100%);
-          }
-          100% {
-            transform: translateX(0%);
-          }
-        }
-
-        @keyframes slide-left {
-          0% {
-            transform: translateX(0%);
-          }
-          100% {
-            transform: translateX(-100%);
-          }
-        }
-
-        @keyframes fill-bar {
-          0% {
-            width: 0%;
-          }
-          100% {
-            width: var(--target-width);
-          }
-        }
-
-        .animate-slide-right {
-          animation: slide-right 20s linear infinite;
-        }
-
-        .animate-slide-left {
-          animation: slide-left 25s linear infinite;
-        }
-
-        .animate-fill-bar {
-          animation: fill-bar 2s ease-out 0.5s both;
-        }
-
-        /* Pause animation on hover */
-        .animate-slide-right:hover,
-        .animate-slide-left:hover {
-          animation-play-state: paused;
-        }
-      `}</style>
     </div>
   );
 }
