@@ -1,5 +1,7 @@
 {
-  "buildCommand": "cd ai-app && npm ci && npm run build",
+  "buildCommand": "cd ai-app && npm run build",
   "outputDirectory": "ai-app/.next",
-  "installCommand": "cd ai-app && npm ci"
+  "installCommand": "cd ai-app && npm install",
+  "devCommand": "cd ai-app && npm run dev",
+  "framework": "nextjs"
 }
