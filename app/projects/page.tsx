@@ -17,6 +17,7 @@ interface Project {
   status: 'completed' | 'in-progress' | 'planning' | 'production';
   featured?: boolean;
   isCurrentProject?: boolean;
+  showDetails?: boolean;
 }
 
 export default function ProjectsPage() {
@@ -44,7 +45,8 @@ export default function ProjectsPage() {
       githubLink: "https://github.com/COR1999/ai-app",
       status: "in-progress",
       featured: false,
-      isCurrentProject: true
+      isCurrentProject: true,
+      showDetails: false
     },
     {
       id: 2,
@@ -182,7 +184,7 @@ export default function ProjectsPage() {
                 className={`bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden hover:shadow-lg hover:border-gray-300 transition-all duration-300 cursor-pointer group relative ${
                   project.isCurrentProject ? 'opacity-60' : ''
                 }`}
-                onClick={() => !project.isCurrentProject && setSelectedProject(project)}
+                onClick={() => !project.isCurrentProject && project.showDetails !== false && setSelectedProject(project)}
               >
                 {/* Project Image */}
                 <div className="relative h-48 bg-gray-100 overflow-hidden">
@@ -237,9 +239,11 @@ export default function ProjectsPage() {
 
                   {/* Action Links */}
                   <div className="flex items-center justify-between">
-                    <button className="text-secondary font-medium text-sm hover:text-secondary-dark transition-colors">
-                      View Details →
-                    </button>
+                    {project.showDetails !== false && (
+                      <button className="text-secondary font-medium text-sm hover:text-secondary-dark transition-colors">
+                        View Details →
+                      </button>
+                    )}
                     <div className="flex gap-2">
                       {project.demoLink && (
                         <a
@@ -285,13 +289,13 @@ export default function ProjectsPage() {
           onClick={() => setSelectedProject(null)}
         >
           <div 
-            className="bg-white rounded-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto"
+            className="bg-white rounded-xl max-w-4xl w-full max-h-[90vh] overflow-hidden relative"
             onClick={(e) => e.stopPropagation()}
           >
-            <div className="p-6 md:p-8">
-              {/* Modal Header */}
-              <div className="flex justify-between items-start mb-6">
-                <div>
+            {/* Fixed Header with Close Button */}
+            <div className="sticky top-0 bg-white z-10 border-b border-gray-100 p-6 md:p-8 pb-4">
+              <div className="flex justify-between items-start">
+                <div className="flex-1 pr-4">
                   <h3 className="text-2xl md:text-3xl font-bold text-primary mb-2">{selectedProject.title}</h3>
                   <span className={`px-3 py-1 rounded-md text-sm font-medium ${getStatusColor(selectedProject.status)}`}>
                     {selectedProject.featured && '⭐ '}
@@ -300,11 +304,16 @@ export default function ProjectsPage() {
                 </div>
                 <button
                   onClick={() => setSelectedProject(null)}
-                  className="text-neutral hover:text-primary transition-colors text-2xl p-1"
+                  className="text-neutral hover:text-primary transition-colors text-2xl p-1 bg-gray-50 hover:bg-gray-100 rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0"
                 >
                   ×
                 </button>
               </div>
+            </div>
+
+            {/* Scrollable Content */}
+            <div className="overflow-y-auto max-h-[calc(90vh-120px)]">
+              <div className="p-6 md:p-8 pt-4">
 
               {/* Project Image */}
               <div className="aspect-video rounded-lg overflow-hidden mb-6 bg-gray-100">
@@ -370,6 +379,7 @@ export default function ProjectsPage() {
                     View Code
                   </a>
                 )}
+              </div>
               </div>
             </div>
           </div>

@@ -63,12 +63,12 @@ export default function HomePage() {
           </div>
 
           {/* CALL-TO-ACTION BUTTONS - Primary navigation buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
             
             {/* Primary CTA - View Projects (filled button with gradient) */}
             <Link
               href="/projects"
-              className="text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl bg-gradient-to-r from-primary to-primary-light hover:from-primary-dark hover:to-gunmetal"
+              className="text-white px-4 sm:px-6 lg:px-8 py-3 sm:py-4 rounded-xl font-semibold text-sm sm:text-base lg:text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl bg-gradient-to-r from-primary to-primary-light hover:from-primary-dark hover:to-gunmetal text-center"
             >
               View My Projects
             </Link>
@@ -76,7 +76,7 @@ export default function HomePage() {
             {/* Secondary CTA - About Page (outlined button) */}
             <Link
               href="/about"
-              className="px-8 py-4 rounded-xl font-semibold text-lg border-2 border-secondary text-secondary hover:bg-secondary hover:text-white transition-all duration-300"
+              className="px-4 sm:px-6 lg:px-8 py-3 sm:py-4 rounded-xl font-semibold text-sm sm:text-base lg:text-lg border-2 border-secondary text-secondary hover:bg-secondary hover:text-white transition-all duration-300 text-center"
             >
               Learn More About Me
             </Link>

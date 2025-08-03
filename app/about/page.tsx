@@ -19,22 +19,22 @@ export default function AboutPage() {
     // Main page container with light background
     <div className="min-h-screen bg-background-secondary">
       {/* HERO SECTION - Split layout with text content and visual elements */}
-      <section className="py-20 relative overflow-hidden">
+      <section className="py-8 sm:py-12 lg:py-20 relative overflow-hidden">
         
         {/* Subtle gradient background overlay */}
         <div className="absolute inset-0 bg-gradient-to-br from-background-secondary via-white to-accent-light opacity-60"></div>
         
         {/* Main content container */}
-        <div className="container mx-auto px-4 max-w-7xl relative z-10">
+        <div className="container mx-auto px-4 sm:px-6 max-w-7xl relative z-10">
           
           {/* Two-column grid layout for desktop, stacked on mobile */}
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
             
             {/* LEFT COLUMN - Text Content */}
-            <div className="space-y-8">
+            <div className="space-y-4 sm:space-y-6 lg:space-y-8">
               
               {/* Introduction section with greeting badge */}
-              <div className="space-y-4">
+              <div className="space-y-3 sm:space-y-4">
                 
                 {/* Greeting badge with emoji and friendly message */}
                 <div className="inline-block">
@@ -44,12 +44,12 @@ export default function AboutPage() {
                 </div>
                 
                 {/* Main heading with gradient name effect */}
-                <h1 className="text-5xl lg:text-6xl font-bold text-primary leading-tight">
+                <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-primary leading-tight">
                   I&apos;m <span className="text-transparent bg-clip-text bg-gradient-to-r from-secondary to-accent">Cian O&apos;Rourke</span>
                 </h1>
                 
                 {/* Personal introduction paragraph */}
-                <p className="text-xl text-text-primary leading-relaxed">
+                <p className="text-base sm:text-lg lg:text-xl text-text-primary leading-relaxed">
                   A qualified Full Stack Developer with a Diploma in Software Development from Code Institute. 
                   I&apos;m a versatile, task-oriented individual who enjoys working within a team to achieve challenging objectives. 
                   Having trained as a chef and barman in award-winning Dublin restaurants, I bring unique skills in stress management, 
@@ -58,37 +58,37 @@ export default function AboutPage() {
               </div>
               
               {/* QUICK STATS - Three-column achievement highlights */}
-              <div className="grid grid-cols-3 gap-6 py-8">
+              <div className="grid grid-cols-3 gap-3 sm:gap-4 lg:gap-6 py-4 sm:py-6 lg:py-8">
                 
                 {/* Stat 1: Years of coding experience */}
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-secondary mb-2">5+</div>
-                  <div className="text-text-secondary text-sm">Years Coding</div>
+                  <div className="text-2xl sm:text-3xl font-bold text-secondary mb-1 sm:mb-2">5+</div>
+                  <div className="text-text-secondary text-xs sm:text-sm">Years Coding</div>
                 </div>
                 
                 {/* Stat 2: International experience */}
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-secondary mb-2">3+</div>
-                  <div className="text-text-secondary text-sm">Countries</div>
+                  <div className="text-2xl sm:text-3xl font-bold text-secondary mb-1 sm:mb-2">3+</div>
+                  <div className="text-text-secondary text-xs sm:text-sm">Countries</div>
                 </div>
                 
                 {/* Stat 3: Passion indicator */}
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-secondary mb-2">∞</div>
-                  <div className="text-text-secondary text-sm">Passion</div>
+                  <div className="text-2xl sm:text-3xl font-bold text-secondary mb-1 sm:mb-2">∞</div>
+                  <div className="text-text-secondary text-xs sm:text-sm">Passion</div>
                 </div>
               </div>
               
               {/* CALL-TO-ACTION BUTTONS - Primary and secondary actions */}
-              <div className="flex flex-col sm:flex-row gap-4">
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
                 
                 {/* Primary button - View work (filled gradient button) */}
-                <button className="bg-gradient-to-r from-primary to-primary-light text-white px-8 py-4 rounded-xl font-semibold hover:shadow-lg transition-all duration-300 transform hover:scale-105">
+                <button className="bg-gradient-to-r from-primary to-primary-light text-white px-4 sm:px-6 lg:px-8 py-3 sm:py-4 rounded-xl font-semibold hover:shadow-lg transition-all duration-300 transform hover:scale-105 text-sm sm:text-base">
                   View My Work
                 </button>
                 
                 {/* Secondary button - Contact (outlined button) */}
-                <button className="border-2 border-secondary text-secondary px-8 py-4 rounded-xl font-semibold hover:bg-secondary hover:text-white transition-all duration-300">
+                <button className="border-2 border-secondary text-secondary px-4 sm:px-6 lg:px-8 py-3 sm:py-4 rounded-xl font-semibold hover:bg-secondary hover:text-white transition-all duration-300 text-sm sm:text-base">
                   Get In Touch
                 </button>
               </div>
@@ -146,32 +146,75 @@ export default function AboutPage() {
       </section>
 
       {/* JOURNEY TIMELINE SECTION - Visual timeline showing career progression */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-4 max-w-6xl">
+      <section className="py-8 sm:py-12 lg:py-20 bg-white">
+        <div className="container mx-auto px-4 sm:px-6 max-w-6xl">
           
           {/* Section header with title and description */}
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-primary mb-4">My Journey</h2>
-            <p className="text-xl text-text-primary max-w-2xl mx-auto">
+          <div className="text-center mb-8 sm:mb-12 lg:mb-16">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-primary mb-3 sm:mb-4">My Journey</h2>
+            <p className="text-base sm:text-lg lg:text-xl text-text-primary max-w-2xl mx-auto">
               From professional kitchens to coding bootcamps, every experience has shaped my approach to development
             </p>
           </div>
           
-          {/* Timeline container */}
-          <div className="relative">
+          {/* Mobile: Simple cards, Desktop: Timeline */}
+          <div className="block sm:hidden space-y-4">
+            {/* Mobile Cards Layout */}
+            <div className="bg-secondary/10 p-4 rounded-xl border border-secondary/20">
+              <div className="flex items-center mb-3">
+                <div className="w-8 h-8 bg-secondary rounded-full flex items-center justify-center mr-3">
+                  <span className="text-sm">👨‍🍳</span>
+                </div>
+                <div>
+                  <h3 className="text-sm font-semibold text-primary">Professional Kitchen</h3>
+                  <p className="text-xs text-secondary font-medium">2021-2025</p>
+                </div>
+              </div>
+              <p className="text-xs text-text-primary">Award-winning Dublin restaurants - managed teams and high-pressure environments.</p>
+            </div>
             
-            {/* VERTICAL TIMELINE LINE - Centered gradient line connecting all timeline items */}
+            <div className="bg-accent/10 p-4 rounded-xl border border-accent/20">
+              <div className="flex items-center mb-3">
+                <div className="w-8 h-8 bg-accent rounded-full flex items-center justify-center mr-3">
+                  <span className="text-sm">🎓</span>
+                </div>
+                <div>
+                  <h3 className="text-sm font-semibold text-primary">Software Development</h3>
+                  <p className="text-xs text-accent font-medium">2019-2020</p>
+                </div>
+              </div>
+              <p className="text-xs text-text-primary">Code Institute diploma with focus on full-stack development and problem-solving.</p>
+            </div>
+            
+            <div className="bg-neutral/10 p-4 rounded-xl border border-neutral/20">
+              <div className="flex items-center mb-3">
+                <div className="w-8 h-8 bg-neutral rounded-full flex items-center justify-center mr-3">
+                  <span className="text-sm">💻</span>
+                </div>
+                <div>
+                  <h3 className="text-sm font-semibold text-primary">Dual Career Path</h3>
+                  <p className="text-xs text-neutral font-medium">2021-2025</p>
+                </div>
+              </div>
+              <p className="text-xs text-text-primary">Maintained coding skills through private projects while working as a professional chef.</p>
+            </div>
+          </div>
+
+          {/* Desktop Timeline */}
+          <div className="hidden sm:block relative">
+            
+            {/* VERTICAL TIMELINE LINE - Centered on desktop */}
             <div className="absolute left-1/2 transform -translate-x-px h-full w-0.5 bg-gradient-to-b from-secondary via-accent to-neutral"></div>
             
-            {/* TIMELINE ITEMS - Three major career milestones in alternating layout */}
-            <div className="space-y-16">
+            {/* TIMELINE ITEMS - Desktop alternating layout */}
+            <div className="space-y-8 lg:space-y-12">
               
-              {/* TIMELINE ITEM 1 - Culinary Training (right-aligned) */}
-              <div className="relative flex items-center">
+              {/* TIMELINE ITEM 1 - Professional Kitchen Experience */}
+              <div className="relative">
                 
-                {/* Content card on the left side */}
-                <div className="w-1/2 pr-8 text-right">
-                  <div className="bg-secondary/10 p-8 rounded-xl border border-secondary/20">
+                {/* Mobile: Left aligned, Desktop: Right aligned */}
+                <div className="ml-12 sm:ml-0 sm:w-1/2 sm:pr-8 sm:text-right sm:ml-auto">
+                  <div className="bg-secondary/10 p-4 sm:p-6 lg:p-8 rounded-xl border border-secondary/20">
                     
                     {/* Title with icon */}
                     <div className="flex justify-end items-center mb-4">
@@ -327,29 +370,29 @@ export default function AboutPage() {
       </section>
 
       {/* PERSONAL INTERESTS SECTION - Beyond professional work */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-4 max-w-4xl">
+      <section className="py-8 sm:py-12 lg:py-20 bg-white">
+        <div className="container mx-auto px-4 sm:px-6 max-w-4xl">
           <div className="text-center">
-            <h2 className="text-4xl font-bold text-primary mb-8">Beyond the Screen</h2>
-            <div className="grid md:grid-cols-2 gap-12 items-center">
-              <div className="space-y-6">
-                <p className="text-lg text-text-primary leading-relaxed">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-primary mb-6 sm:mb-8">Beyond the Screen</h2>
+            <div className="grid md:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-center">
+              <div className="space-y-4 sm:space-y-6">
+                <p className="text-sm sm:text-base lg:text-lg text-text-primary leading-relaxed">
                   After completing my software development diploma, I continued to work on small private projects 
                   while working full-time as a chef. This dual approach allowed me to maintain and grow my 
                   technical skills while gaining invaluable experience in high-pressure professional environments.
                 </p>
-                <p className="text-lg text-text-primary leading-relaxed">
+                <p className="text-sm sm:text-base lg:text-lg text-text-primary leading-relaxed">
                   When I&apos;m not crafting code, you&apos;ll find me experimenting with new recipes, 
                   exploring local food markets, or planning my next culinary adventure. 
                   Whether I&apos;m debugging a complex algorithm or perfecting a new dish, 
                   I approach every challenge with curiosity, creativity, and persistence.
                 </p>
               </div>
-              <div className="bg-gradient-to-br from-secondary/10 to-accent/10 p-8 rounded-2xl">
-                <div className="text-center space-y-4">
-                  <div className="text-4xl">🐟</div>
-                  <h3 className="text-xl font-bold text-primary">Current Obsession</h3>
-                  <p className="text-text-secondary">
+              <div className="bg-gradient-to-br from-secondary/10 to-accent/10 p-4 sm:p-6 lg:p-8 rounded-2xl">
+                <div className="text-center space-y-3 sm:space-y-4">
+                  <div className="text-3xl sm:text-4xl">🐟</div>
+                  <h3 className="text-lg sm:text-xl font-bold text-primary">Current Obsession</h3>
+                  <p className="text-sm sm:text-base text-text-secondary">
                     I love working with fish and learning about all the different ways 
                     you can use fish and fish butchery techniques.
                   </p>

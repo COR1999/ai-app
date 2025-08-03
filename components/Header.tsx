@@ -1,12 +1,21 @@
 /**
  * HEADER COMPONENT
  * 
- * Responsive navigation header featuring:
- * - Logo/brand name with personal branding
- * - Desktop navigation menu with hover effects
- * - Mobile hamburger menu with smooth animations
+ * Main navigation component that provides:
+ * - Responsive navigation across all device sizes
+ * - Desktop horizontal menu with hover animations
+ * - Mobile hamburger menu with smooth slide animations
  * - Sticky positioning for persistent navigation
- * - Custom color scheme integration
+ * - Personal branding with name and title
+ * - Custom color scheme integration using Tailwind
+ * 
+ * Features:
+ * - Full width header that stretches across screen
+ * - Logo section with name and professional title
+ * - Desktop navigation with underline hover effects
+ * - Mobile menu with animated hamburger icon
+ * - Automatic menu closing when links are clicked
+ * - Responsive padding and typography
  */
 
 "use client";
@@ -15,34 +24,56 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 
 const Header: React.FC = () => {
-  // State to control mobile menu visibility
+  /**
+   * STATE MANAGEMENT
+   * Controls the visibility of the mobile navigation menu
+   * - false: Menu is closed (default state)
+   * - true: Menu is open and visible
+   */
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   /**
-   * MOBILE MENU TOGGLE
-   * Handles opening/closing of mobile navigation menu
+   * MOBILE MENU TOGGLE FUNCTION
+   * Toggles the mobile menu between open and closed states
+   * Used by the hamburger button to show/hide navigation
    */
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
   return (
-    <header className="bg-white shadow-lg sticky top-0 z-50">
-      <div className="container mx-auto px-4">
-        <div className="flex justify-between items-center py-4">
-          {/* Logo - Clean Name */}
+    <header className="bg-white shadow-lg sticky top-0 z-50 w-full">
+      {/* HEADER CONTENT CONTAINER */}
+      {/* Responsive padding: tight on mobile, wider on larger screens */}
+      <div className="w-full px-4 sm:px-6 lg:px-8">
+        {/* MAIN HEADER LAYOUT */}
+        {/* Flexbox layout: logo on left, navigation on right */}
+        {/* Responsive padding: smaller on mobile for space efficiency */}
+        <div className="flex justify-between items-center py-3 sm:py-4">
+          
+          {/* LOGO/BRAND SECTION */}
+          {/* Clickable logo that links to homepage */}
+          {/* Group hover effect makes entire logo area interactive */}
           <Link href="/" className="flex items-center group">
             <div className="text-left">
-              <h1 className="text-2xl sm:text-3xl font-bold transition-all duration-300 group-hover:scale-105 text-primary">
+              {/* MAIN NAME/TITLE */}
+              {/* Responsive text sizing: smaller on mobile, larger on desktop */}
+              {/* Hover effect: slight scale increase for interactivity */}
+              <h1 className="text-xl sm:text-2xl lg:text-3xl font-bold transition-all duration-300 group-hover:scale-105 text-primary">
                 Cian O&apos;Rourke
               </h1>
-              <p className="text-sm sm:text-base font-medium text-text-secondary">
+              {/* PROFESSIONAL SUBTITLE */}
+              {/* Shows role/title below name */}
+              {/* Responsive sizing and muted color for hierarchy */}
+              <p className="text-xs sm:text-sm lg:text-base font-medium text-text-secondary">
                 Full Stack Developer
               </p>
             </div>
           </Link>
 
-          {/* Desktop Navigation */}
+          {/* DESKTOP NAVIGATION MENU */}
+          {/* Hidden on mobile (md:flex), visible on medium screens and up */}
+          {/* Horizontal layout with consistent spacing */}
           <nav className="hidden md:flex space-x-8">
             <Link
               href="/"
@@ -94,7 +125,7 @@ const Header: React.FC = () => {
         </div>
 
         {/* Mobile Navigation */}
-        <div className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${isMenuOpen ? 'max-h-60 pb-4' : 'max-h-0'}`}>
+        <div className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${isMenuOpen ? 'max-h-80 pb-4' : 'max-h-0'}`}>
           <nav className="flex flex-col space-y-3 pt-4 border-t border-neutral/30">
             <Link
               href="/"
