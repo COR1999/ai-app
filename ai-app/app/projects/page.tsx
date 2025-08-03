@@ -17,6 +17,7 @@ interface Project {
   status: 'completed' | 'in-progress' | 'planning' | 'production';
   featured?: boolean;
   isCurrentProject?: boolean;
+  showDetails?: boolean;
 }
 
 export default function ProjectsPage() {
@@ -44,7 +45,8 @@ export default function ProjectsPage() {
       githubLink: "https://github.com/COR1999/ai-app",
       status: "in-progress",
       featured: false,
-      isCurrentProject: true
+      isCurrentProject: true,
+      showDetails: false
     },
     {
       id: 2,
@@ -182,7 +184,7 @@ export default function ProjectsPage() {
                 className={`bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden hover:shadow-lg hover:border-gray-300 transition-all duration-300 cursor-pointer group relative ${
                   project.isCurrentProject ? 'opacity-60' : ''
                 }`}
-                onClick={() => !project.isCurrentProject && setSelectedProject(project)}
+                onClick={() => !project.isCurrentProject && project.showDetails !== false && setSelectedProject(project)}
               >
                 {/* Project Image */}
                 <div className="relative h-48 bg-gray-100 overflow-hidden">
@@ -237,9 +239,11 @@ export default function ProjectsPage() {
 
                   {/* Action Links */}
                   <div className="flex items-center justify-between">
-                    <button className="text-secondary font-medium text-sm hover:text-secondary-dark transition-colors">
-                      View Details →
-                    </button>
+                    {project.showDetails !== false && (
+                      <button className="text-secondary font-medium text-sm hover:text-secondary-dark transition-colors">
+                        View Details →
+                      </button>
+                    )}
                     <div className="flex gap-2">
                       {project.demoLink && (
                         <a

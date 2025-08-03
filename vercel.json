@@ -1,7 +1,19 @@
 {
-  "buildCommand": "cd ai-app && npm run build",
-  "outputDirectory": "ai-app/.next",
-  "installCommand": "cd ai-app && npm install",
-  "devCommand": "cd ai-app && npm run dev",
-  "framework": "nextjs"
+  "version": 2,
+  "name": "ai-app",
+  "builds": [
+    {
+      "src": "ai-app/package.json",
+      "use": "@vercel/next",
+      "config": {
+        "distDir": ".next"
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/ai-app/$1"
+    }
+  ]
 }
