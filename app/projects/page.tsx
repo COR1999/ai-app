@@ -116,6 +116,27 @@ export default function ProjectsPage() {
     },
     {
       id: 5,
+      title: "Kitchen App",
+      shortDescription: "Building an application for professional kitchens to keep track of invoices and spending and other data",
+      fullDescription: "A comprehensive kitchen management application designed for professional kitchens to streamline invoice tracking, spending management, and operational data. This application helps kitchen managers and staff efficiently monitor expenses, track vendor invoices, and maintain detailed records of kitchen operations.",
+      technologies: ["React", "Node.js", "TypeScript", "MongoDB", "Express"],
+      features: [
+        "Invoice tracking and management",
+        "Spending analytics and reporting",
+        "Vendor management system",
+        "Expense categorization",
+        "Data visualization dashboard",
+        "Multi-user access controls",
+        "Export functionality for reports",
+        "Real-time expense monitoring"
+      ],
+      image: "/images/projects/notavailable.png",
+      imageAlt: "Kitchen App - Professional Kitchen Management",
+      githubLink: "https://github.com/COR1999/kitchenapp",
+      status: "in-progress"
+    },
+    {
+      id: 6,
       title: "One Byte of a Baker's Dozen",
       shortDescription: "Full-stack recipe management web application with user authentication",
       fullDescription: "A recipe management web application that allows users to create, edit, and manage their personal recipe collections. Features user authentication with encrypted password storage, MongoDB database integration, and a straightforward user experience for recipe management. Note: This project was completed under a very tight deadline, and while functional, it represents work I wasn't entirely satisfied with due to time constraints. The image shown is from development as the project is no longer hosted.",
