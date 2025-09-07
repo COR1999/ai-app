@@ -137,6 +137,25 @@ export default function ProjectsPage() {
     },
     {
       id: 6,
+      title: "Fitness Tracker",
+      shortDescription: "A simple fitness tracking application focusing on functionality and clean code",
+      fullDescription: "A straightforward fitness tracking application that prioritizes functionality and clean code architecture. This simple yet effective app helps users monitor their workouts, track progress, and achieve their fitness goals through an intuitive dashboard with workout overview, progress charts, and calorie tracking.",
+      technologies: ["React 19", "TypeScript", "Tailwind CSS", "Highcharts", "Vite", "Playwright", "Vercel", "ESLint"],
+      features: [
+        "Add Workouts: Easy-to-use form to log your exercise sessions",
+        "View Statistics: Comprehensive overview of your fitness progress",
+        "Interactive Charts: Visual representation of your workout data using Highcharts",
+        "Responsive Design: Optimized for both desktop and mobile devices (tested on iOS and Android devices)",
+        "Performance Optimized: Lazy loading and code splitting for fast load times"
+      ],
+      image: "/images/projects/fitnesstracker.png",
+      imageAlt: "Fitness Tracker Application Dashboard",
+      demoLink: "https://fitness-tracker-bice-one.vercel.app/",
+      githubLink: "https://github.com/COR1999/fitnessTracker",
+      status: "completed"
+    },
+    {
+      id: 7,
       title: "One Byte of a Baker's Dozen",
       shortDescription: "Full-stack recipe management web application with user authentication",
       fullDescription: "A recipe management web application that allows users to create, edit, and manage their personal recipe collections. Features user authentication with encrypted password storage, MongoDB database integration, and a straightforward user experience for recipe management. Note: This project was completed under a very tight deadline, and while functional, it represents work I wasn't entirely satisfied with due to time constraints. The image shown is from development as the project is no longer hosted.",
