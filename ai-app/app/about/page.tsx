@@ -213,7 +213,7 @@ export default function AboutPage() {
               <div className="relative">
                 
                 {/* Mobile: Left aligned, Desktop: Right aligned */}
-                <div className="ml-12 sm:ml-0 sm:w-1/2 sm:pr-8 sm:text-right sm:ml-auto">
+                <div className="ml-12 sm:w-1/2 sm:pr-8 sm:text-right sm:ml-auto">
                   <div className="bg-secondary/10 p-4 sm:p-6 lg:p-8 rounded-xl border border-secondary/20">
                     
                     {/* Title with icon */}
