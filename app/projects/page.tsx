@@ -156,6 +156,28 @@ export default function ProjectsPage() {
     },
     {
       id: 7,
+      title: "Greystones Sailing Club",
+      shortDescription: "Modern website for Greystones Sailing Club with membership management and event features",
+      fullDescription: "A comprehensive website for Greystones Sailing Club built with modern web technologies. The site features membership management, event scheduling, club information, and a responsive design optimized for both desktop and mobile devices. Currently implementing CRUD operations using Sanity CMS for content management and data persistence. Active development continues with ongoing feature additions and improvements.",
+      technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Sanity CMS", "Vercel"],
+      features: [
+        "Responsive design optimized for all devices",
+        "Membership management system",
+        "Event scheduling and calendar integration",
+        "Club information and news updates",
+        "Contact forms and communication features",
+        "Modern UI with sailing club branding",
+        "Performance optimized for fast loading",
+        "SEO optimized for better visibility"
+      ],
+      image: "/images/projects/gscWeb.png",
+      imageAlt: "Greystones Sailing Club Website Screenshot",
+      demoLink: "https://gsc-web.vercel.app/",
+      githubLink: "https://github.com/COR1999/gscWeb",
+      status: "in-progress"
+    },
+    {
+      id: 8,
       title: "One Byte of a Baker's Dozen",
       shortDescription: "Full-stack recipe management web application with user authentication",
       fullDescription: "A recipe management web application that allows users to create, edit, and manage their personal recipe collections. Features user authentication with encrypted password storage, MongoDB database integration, and a straightforward user experience for recipe management. Note: This project was completed under a very tight deadline, and while functional, it represents work I wasn't entirely satisfied with due to time constraints. The image shown is from development as the project is no longer hosted.",
