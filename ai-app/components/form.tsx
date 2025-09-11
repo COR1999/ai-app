@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 
 
-export default function(){
+const ContactForm = function(){
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
     const [formData, setFormData] = useState({
@@ -112,3 +112,7 @@ export default function(){
           </form>
   );
 }
+
+ContactForm.displayName = 'ContactForm';
+
+export default ContactForm;

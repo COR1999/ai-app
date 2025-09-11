@@ -22,6 +22,7 @@ interface Project {
 
 export default function ProjectsPage() {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+  const [sortBy, setSortBy] = useState<'default' | 'status'>('status');
 
   const projects: Project[] = [
     {
@@ -116,23 +117,24 @@ export default function ProjectsPage() {
     },
     {
       id: 5,
-      title: "Kitchen App",
-      shortDescription: "Building an application for professional kitchens to keep track of invoices and spending and other data",
-      fullDescription: "A comprehensive kitchen management application designed for professional kitchens to streamline invoice tracking, spending management, and operational data. This application helps kitchen managers and staff efficiently monitor expenses, track vendor invoices, and maintain detailed records of kitchen operations.",
-      technologies: ["React", "Node.js", "TypeScript", "MongoDB", "Express"],
+      title: "PieroGals",
+      shortDescription: "A web application for pierogi enthusiasts featuring recipes, ordering system, and community features",
+      fullDescription: "PieroGals is a comprehensive web application dedicated to pierogi lovers, offering traditional and modern pierogi recipes, an online ordering system, and community features for sharing culinary experiences. The platform combines e-commerce functionality with recipe management and social features.",
+      technologies: ["React", "Next.js", "TypeScript", "Node.js", "MongoDB"],
       features: [
-        "Invoice tracking and management",
-        "Spending analytics and reporting",
-        "Vendor management system",
-        "Expense categorization",
-        "Data visualization dashboard",
-        "Multi-user access controls",
-        "Export functionality for reports",
-        "Real-time expense monitoring"
+        "Traditional pierogi recipe collection",
+        "Online ordering and delivery system",
+        "User account management",
+        "Recipe sharing community",
+        "Interactive cooking guides",
+        "Shopping cart functionality",
+        "Order tracking system",
+        "Mobile-responsive design"
       ],
-      image: "/images/projects/notavailable.png",
-      imageAlt: "Kitchen App - Professional Kitchen Management",
-      githubLink: "https://github.com/COR1999/kitchenapp",
+      image: "/images/projects/piergogals.png",
+      imageAlt: "PieroGals - Pierogi Web Application",
+      demoLink: "https://pierogals-web.vercel.app/",
+      githubLink: "https://github.com/COR1999/pierogalsWeb",
       status: "in-progress"
     },
     {
@@ -156,6 +158,28 @@ export default function ProjectsPage() {
     },
     {
       id: 7,
+      title: "Greystones Sailing Club",
+      shortDescription: "Modern website for Greystones Sailing Club with membership management and event features",
+      fullDescription: "A comprehensive website for Greystones Sailing Club built with modern web technologies. The site features membership management, event scheduling, club information, and a responsive design optimized for both desktop and mobile devices. Currently implementing CRUD operations using Sanity CMS for content management and data persistence. Active development continues with ongoing feature additions and improvements.",
+      technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Sanity CMS", "Vercel"],
+      features: [
+        "Responsive design optimized for all devices",
+        "Membership management system",
+        "Event scheduling and calendar integration",
+        "Club information and news updates",
+        "Contact forms and communication features",
+        "Modern UI with sailing club branding",
+        "Performance optimized for fast loading",
+        "SEO optimized for better visibility"
+      ],
+      image: "/images/projects/gscWeb.png",
+      imageAlt: "Greystones Sailing Club Website Screenshot",
+      demoLink: "https://gsc-web.vercel.app/",
+      githubLink: "https://github.com/COR1999/gscWeb",
+      status: "in-progress"
+    },
+    {
+      id: 8,
       title: "One Byte of a Baker's Dozen",
       shortDescription: "Full-stack recipe management web application with user authentication",
       fullDescription: "A recipe management web application that allows users to create, edit, and manage their personal recipe collections. Features user authentication with encrypted password storage, MongoDB database integration, and a straightforward user experience for recipe management. Note: This project was completed under a very tight deadline, and while functional, it represents work I wasn't entirely satisfied with due to time constraints. The image shown is from development as the project is no longer hosted.",
@@ -198,6 +222,21 @@ export default function ProjectsPage() {
     }
   };
 
+  const getSortedProjects = () => {
+    if (sortBy === 'status') {
+      return [...projects].sort((a, b) => {
+        const statusOrder = {
+          'in-progress': 0,
+          'planning': 1,
+          'production': 2,
+          'completed': 3
+        };
+        return statusOrder[a.status as keyof typeof statusOrder] - statusOrder[b.status as keyof typeof statusOrder];
+      });
+    }
+    return projects;
+  };
+
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -214,11 +253,33 @@ export default function ProjectsPage() {
         </div>
       </section>
 
+      {/* SORT CONTROLS */}
+      <section className="py-6 border-b bg-white">
+        <div className="container mx-auto px-6 max-w-7xl">
+          <div className="flex flex-wrap items-center justify-between gap-4">
+            <div className="flex items-center gap-2">
+              <span className="text-sm font-medium text-text-primary">Sort by:</span>
+              <select 
+                value={sortBy} 
+                onChange={(e) => setSortBy(e.target.value as 'default' | 'status')}
+                className="px-3 py-1 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent"
+              >
+                <option value="status">Status (In Progress First)</option>
+                <option value="default">Default Order</option>
+              </select>
+            </div>
+            <div className="text-sm text-text-secondary">
+              {getSortedProjects().length} projects total
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* PROJECTS GRID */}
       <section className="py-16">
         <div className="container mx-auto px-6 max-w-7xl">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {projects.map((project) => (
+            {getSortedProjects().map((project) => (
               <div
                 key={project.id}
                 className={`bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden hover:shadow-lg hover:border-gray-300 transition-all duration-300 cursor-pointer group relative ${
