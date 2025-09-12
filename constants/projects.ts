@@ -175,5 +175,23 @@ export const projects: Project[] = [
     imageAlt: "One Byte of a Baker's Dozen Recipe App Development Screenshot",
     githubLink: "https://github.com/COR1999/one-byte-of-a-bakers-dozen",
     status: "completed"
+  },
+  {
+    id: 9,
+    title: "Invoice to Google Sheets",
+    shortDescription: "Convert PDF invoices into structured Google Sheets entries with ease.",
+    fullDescription: "An easy-to-use web application that lets users upload PDF invoices, automatically extracts essential details like vendor, date, and amount, and seamlessly records them into a connected Google Sheets spreadsheet. Built for simplicity, speed, and accuracy.",
+    technologies: ["Next.js", "React", "TypeScript", "TailwindCSS", "Google Sheets API", "PDF-Parse"],
+    features: [
+      "Upload PDF invoices directly from the browser",
+      "Extract key fields such as date, vendor, and total amount",
+      "Automatically update a linked Google Sheets document",
+      "Clean, responsive interface styled with TailwindCSS",
+      "Deployed easily on Vercel for fast and reliable access"
+    ],
+    image: "/images/projects/invoice-to-sheets.png",
+    imageAlt: "Invoice to Google Sheets Application Screenshot",
+    githubLink: "https://github.com/COR1999/invoiceToSheet",
+    status: "in-progress"
   }
 ];
