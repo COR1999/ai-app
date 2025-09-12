@@ -11,6 +11,7 @@
 
 import React from 'react';
 import Link from 'next/link';
+import { PERSONAL_INFO } from '@/constants/personal-info';
 
 /**
  * FOOTER PROPS INTERFACE
@@ -23,10 +24,10 @@ interface FooterProps {
 }
 
 const Footer: React.FC<FooterProps> = ({
-  // Default URLs - updated with actual profile links
-  linkedinUrl = "https://www.linkedin.com/in/cian-o-rourke-8ba03a14a/",
-  githubUrl = "https://github.com/COR1999",
-  email = "cian.orourke@gmail.com"
+  // Default URLs from constants - can be overridden via props
+  linkedinUrl = PERSONAL_INFO.linkedin,
+  githubUrl = PERSONAL_INFO.github,
+  email = PERSONAL_INFO.email
 }) => {
   // Dynamic copyright year
   const currentYear = new Date().getFullYear();
@@ -92,7 +93,7 @@ const Footer: React.FC<FooterProps> = ({
 
           {/* Copyright */}
           <div className="text-center text-neutral text-sm">
-            <p>&copy; {currentYear} Cian O&apos;Rourke. All rights reserved.</p>
+            <p>&copy; {currentYear} {PERSONAL_INFO.name}. All rights reserved.</p>
           </div>
         </div>
       </div>

@@ -22,6 +22,8 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
+import { navigationItems } from '@/constants/navigation';
+import { PERSONAL_INFO } from '@/constants/personal-info';
 
 const Header: React.FC = () => {
   /**
@@ -60,13 +62,13 @@ const Header: React.FC = () => {
               {/* Responsive text sizing: smaller on mobile, larger on desktop */}
               {/* Hover effect: slight scale increase for interactivity */}
               <h1 className="text-xl sm:text-2xl lg:text-3xl font-bold transition-all duration-300 group-hover:scale-105 text-primary">
-                Cian O&apos;Rourke
+                {PERSONAL_INFO.name}
               </h1>
               {/* PROFESSIONAL SUBTITLE */}
               {/* Shows role/title below name */}
               {/* Responsive sizing and muted color for hierarchy */}
               <p className="text-xs sm:text-sm lg:text-base font-medium text-text-secondary">
-                Full Stack Developer
+                {PERSONAL_INFO.title}
               </p>
             </div>
           </Link>
@@ -75,41 +77,16 @@ const Header: React.FC = () => {
           {/* Hidden on mobile (md:flex), visible on medium screens and up */}
           {/* Horizontal layout with consistent spacing */}
           <nav className="hidden md:flex space-x-8">
-            <Link
-              href="/"
-              className="font-medium transition-colors duration-300 relative group text-text-primary hover:text-primary"
-            >
-              Home
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
-            </Link>
-            <Link
-              href="/projects"
-              className="font-medium transition-colors duration-300 relative group text-text-primary hover:text-primary"
-            >
-              Projects
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
-            </Link>
-            <Link
-              href="/skills"
-              className="font-medium transition-colors duration-300 relative group text-text-primary hover:text-primary"
-            >
-              Skills
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
-            </Link>
-            <Link
-              href="/about"
-              className="font-medium transition-colors duration-300 relative group text-text-primary hover:text-primary"
-            >
-              About
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
-            </Link>
-            <Link
-              href="/contact"
-              className="font-medium transition-colors duration-300 relative group text-text-primary hover:text-primary"
-            >
-              Contact
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
-            </Link>
+            {navigationItems.map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="font-medium transition-colors duration-300 relative group text-text-primary hover:text-primary"
+              >
+                {item.label}
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+              </Link>
+            ))}
           </nav>
 
           {/* Mobile Menu Button */}
@@ -127,41 +104,16 @@ const Header: React.FC = () => {
         {/* Mobile Navigation */}
         <div className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${isMenuOpen ? 'max-h-80 pb-4' : 'max-h-0'}`}>
           <nav className="flex flex-col space-y-3 pt-4 border-t border-neutral/30">
-            <Link
-              href="/"
-              className="font-medium py-2 px-4 rounded-lg transition-all duration-300 text-text-primary hover:text-primary hover:bg-neutral/10"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Home
-            </Link>
-            <Link
-              href="/projects"
-              className="font-medium py-2 px-4 rounded-lg transition-all duration-300 text-text-primary hover:text-primary hover:bg-neutral/10"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Projects
-            </Link>
-            <Link
-              href="/skills"
-              className="font-medium py-2 px-4 rounded-lg transition-all duration-300 text-text-primary hover:text-primary hover:bg-neutral/10"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Skills
-            </Link>
-            <Link
-              href="/about"
-              className="font-medium py-2 px-4 rounded-lg transition-all duration-300 text-text-primary hover:text-primary hover:bg-neutral/10"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              About
-            </Link>
-            <Link
-              href="/contact"
-              className="font-medium py-2 px-4 rounded-lg transition-all duration-300 text-text-primary hover:text-primary hover:bg-neutral/10"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Contact
-            </Link>
+            {navigationItems.map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="font-medium py-2 px-4 rounded-lg transition-all duration-300 text-text-primary hover:text-primary hover:bg-neutral/10"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                {item.label}
+              </Link>
+            ))}
           </nav>
         </div>
       </div>

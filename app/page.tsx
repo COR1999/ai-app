@@ -8,6 +8,7 @@
 
 "use client";
 import Link from 'next/link';
+import { PERSONAL_INFO } from '@/constants/personal-info';
 
 export default function HomePage() {
   return (
@@ -33,12 +34,11 @@ export default function HomePage() {
           <div className="max-w-2xl mx-auto mb-8">
             {/* Name introduction with highlighted name */}
             <p className="text-2xl mb-4 text-text-primary">
-              Hi, I&apos;m <span className="font-semibold text-primary">Cian O&apos;Rourke</span>
+              Hi, I&apos;m <span className="font-semibold text-primary">{PERSONAL_INFO.name}</span>
             </p>
             {/* Professional description */}
             <p className="text-lg leading-relaxed text-text-secondary">
-              Full Stack Developer passionate about creating exceptional web experiences. 
-              Currently building innovative solutions with modern technologies and frameworks.
+              {PERSONAL_INFO.introduction}
             </p>
           </div>
 
@@ -53,12 +53,12 @@ export default function HomePage() {
             
             {/* Job title */}
             <h2 className="text-xl font-bold text-primary">
-              Full Stack Developer
+              {PERSONAL_INFO.currentRole}
             </h2>
             
             {/* Job description */}
             <p className="mt-2 text-text-secondary">
-              Specializing in React, Next.js, and modern web technologies
+              {PERSONAL_INFO.specialization}
             </p>
           </div>
 
@@ -88,19 +88,19 @@ export default function HomePage() {
           
           {/* Stat 1: Technologies */}
           <div className="text-center">
-            <div className="text-3xl font-bold mb-2 text-secondary">5+</div>
+            <div className="text-3xl font-bold mb-2 text-secondary">{PERSONAL_INFO.stats.technologies}</div>
             <div className="text-text-light">Technologies Mastered</div>
           </div>
           
           {/* Stat 2: Countries */}
           <div className="text-center">
-            <div className="text-3xl font-bold mb-2 text-secondary">3+</div>
+            <div className="text-3xl font-bold mb-2 text-secondary">{PERSONAL_INFO.stats.countries}</div>
             <div className="text-text-light">Countries Worked In</div>
           </div>
           
           {/* Stat 3: Passion (infinity symbol) */}
           <div className="text-center">
-            <div className="text-3xl font-bold mb-2 text-secondary">∞</div>
+            <div className="text-3xl font-bold mb-2 text-secondary">{PERSONAL_INFO.stats.passion}</div>
             <div className="text-text-light">Passion for Learning</div>
           </div>
         </div>
