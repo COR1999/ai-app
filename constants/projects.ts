@@ -20,7 +20,7 @@ export const projects: Project[] = [
     image: "/images/projects/aiapp.png",
     imageAlt: "Portfolio Website Screenshot",
     githubLink: "https://github.com/COR1999/ai-app",
-    status: "in-progress",
+    status: "production",
     featured: false,
     isCurrentProject: true,
     showDetails: false

@@ -23,11 +23,15 @@ export default function ProjectsPage() {
 
   /**
    * SORTING LOGIC
-   * Sorts projects by status with in-progress items first
+   * Sorts projects by status with in-progress items first, but puts current project at end
    */
   const getSortedProjects = () => {
     if (sortBy === 'status') {
       return [...projects].sort((a, b) => {
+        // Always put current project (this portfolio) at the end when sorting by status
+        if (a.isCurrentProject) return 1;
+        if (b.isCurrentProject) return -1;
+        
         const statusOrder = {
           'in-progress': 0,
           'planning': 1,
