@@ -193,5 +193,28 @@ export const projects: Project[] = [
     imageAlt: "Invoice to Google Sheets Application Screenshot",
     githubLink: "https://github.com/COR1999/invoiceToSheet",
     status: "in-progress"
+  },
+  {
+    id: 10,
+    title: "Simple login Page ",
+    shortDescription: "A simple and modern authentication system with login and registration functionality.",
+    fullDescription: " Built with **Next.js** and **Firebase Authentication** (email/password). Users can sign up, log in, choose “Remember me” (persistent login), and are redirected to a home page on success. The design is clean and modern, utilizing **Tailwind CSS** for styling. Form validation and error handling are included for a smooth user experience.",
+    technologies: ["Next.js", "React", "TypeScript", "TailwindCSS", "Firebase Authentication", "ESLint"],
+    features: [
+      "Sign up with full name, email & password fields",
+      "Sign in for existing users  with email & password",
+      "“Remember me” persistence (local or session) option",
+      "Friendly form validation and error messages",
+      "Password strength indicator on sign up",
+      "Clean UI built with TailwindCSS (custom properties for easy theming)",
+      "Next.js App Router (`app/` directory) + client components where needed",
+      "Simple architecture: UI component (`LoginForm`) + custom hook (`useAuthForm`) for logic separation",
+      "light and dark mode support"
+    ],
+    image: "/images/projects/loginApplication.png",
+    imageAlt: "login Application Screenshot",
+    githubLink: "https://github.com/COR1999/loginApplication",
+    demoLink: "https://login-application-virid.vercel.app/login",
+    status: "completed"
   }
 ];
