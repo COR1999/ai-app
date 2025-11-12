@@ -74,7 +74,7 @@ export const projects: Project[] = [
     title: "WikiMusic",
     shortDescription: "Single page music encyclopedia with search and discovery features",
     fullDescription: "A music information platform inspired by Wikipedia, designed as a single page application for discovering artists, albums, and songs. Features a clean UX with search functionality and Top 100 songs chart with sorting capabilities using the LastFM API.",
-    technologies: ["HTML5", "CSS3", "Bootstrap", "jQuery", "DataTables", "Font Awesome", "LastFM API"],
+    technologies: ["HTML5", "CSS3","Javascript", "Bootstrap", "jQuery", "DataTables", "Font Awesome", "LastFM API"],
     features: [
       "Single page application architecture",
       "Mobile-first responsive design",
@@ -118,7 +118,7 @@ export const projects: Project[] = [
     title: "Fitness Tracker",
     shortDescription: "A simple fitness tracking application focusing on functionality and clean code",
     fullDescription: "A straightforward fitness tracking application that prioritizes functionality and clean code architecture. This simple yet effective app helps users monitor their workouts, track progress, and achieve their fitness goals through an intuitive dashboard with workout overview, progress charts, and calorie tracking.",
-    technologies: ["React 19", "TypeScript", "Tailwind CSS", "Highcharts", "Vite", "Playwright", "Vercel", "ESLint"],
+    technologies: ["React 19", "TypeScript", "Tailwind CSS", "Highcharts", "Vite", "Playwright", "ESLint" ,"Vercel" ],
     features: [
       "Add Workouts: Easy-to-use form to log your exercise sessions",
       "View Statistics: Comprehensive overview of your fitness progress",

@@ -18,9 +18,10 @@ export const PERSONAL_INFO = {
   siteDescription: "Portfolio of Cian O'Rourke, Full Stack Developer with culinary background",
   
   // Professional details
-  currentRole: "Full Stack Developer",
-  specialization: "Specializing in React, Next.js, and modern web technologies",
-  introduction: "Full Stack Developer passionate about creating exceptional web experiences. Currently building innovative solutions with modern technologies and frameworks.",
+  currentRole: "Open for Work",
+  specialization: "Python | JavaScript | React | Node.js | Django | Flask",
+  introduction: "Entry-level Full-Stack Developer skilled in Python, JavaScript, and modern frameworks, with project experience"
+    + " and a background in culinary arts. Passionate about creating efficient, user-friendly applications and eager to contribute to innovative tech teams.",
   
   // Quick stats for homepage
   stats: {
