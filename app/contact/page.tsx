@@ -1,8 +1,7 @@
 "use client";
 
 import React from 'react';
-import Form from '@/components/form';
-
+import ContactForm from '@/components/Contactform';
 
 export default function ContactPage() {
   
@@ -12,7 +11,7 @@ export default function ContactPage() {
       <h1 className="text-4xl font-bold text-center mb-12 text-primary">Get In Touch</h1>
 
       <div className="bg-white rounded-lg shadow-lg p-8">
-        <Form></Form>
+        <ContactForm></ContactForm>
       </div>
     </div>
   </div>

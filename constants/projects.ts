@@ -6,7 +6,7 @@ export const projects: Project[] = [
     title: "Portfolio Website",
     shortDescription: "Modern Next.js portfolio website showcasing my development skills and culinary background",
     fullDescription: "A responsive portfolio website built with Next.js and TypeScript, featuring a custom color scheme and modern design. The site showcases my unique journey from professional kitchens to software development, highlighting my projects, skills, and experience.",
-    technologies: ["Next.js", "TypeScript", "Tailwind CSS", "React", "Vercel"],
+    technologies: ["Next.js", "TypeScript", "Tailwind CSS", "React", "Vercel", "EmailJS"],
     features: [
       "Responsive design with mobile-first approach",
       "Custom color scheme and modern UI",
@@ -15,7 +15,8 @@ export const projects: Project[] = [
       "Professional timeline and about section",
       "Contact form with social media integration",
       "Optimized performance and SEO",
-      "Deployed on Vercel with CI/CD"
+      "Deployed on Vercel with CI/CD",
+      "EmailJS integration for contact form"
     ],
     image: "/images/projects/aiapp.png",
     imageAlt: "Portfolio Website Screenshot",

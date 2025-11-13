@@ -13,6 +13,7 @@
 
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 export default function AboutPage() {
   return (
@@ -83,14 +84,14 @@ export default function AboutPage() {
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
                 
                 {/* Primary button - View work (filled gradient button) */}
-                <button className="bg-gradient-to-r from-primary to-primary-light text-white px-4 sm:px-6 lg:px-8 py-3 sm:py-4 rounded-xl font-semibold hover:shadow-lg transition-all duration-300 transform hover:scale-105 text-sm sm:text-base">
+                <Link href="projects" className="bg-gradient-to-r from-primary to-primary-light text-white px-4 sm:px-6 lg:px-8 py-3 sm:py-4 rounded-xl font-semibold hover:shadow-lg transition-all duration-300 transform hover:scale-105 text-sm sm:text-base">
                   View My Work
-                </button>
+                </Link>
                 
                 {/* Secondary button - Contact (outlined button) */}
-                <button className="border-2 border-secondary text-secondary px-4 sm:px-6 lg:px-8 py-3 sm:py-4 rounded-xl font-semibold hover:bg-secondary hover:text-white transition-all duration-300 text-sm sm:text-base">
+                <Link href="/contact" className="border-2 border-secondary text-secondary px-4 sm:px-6 lg:px-8 py-3 sm:py-4 rounded-xl font-semibold hover:bg-secondary hover:text-white transition-all duration-300 text-sm sm:text-base">
                   Get In Touch
-                </button>
+                </Link>
               </div>
             </div>
             
