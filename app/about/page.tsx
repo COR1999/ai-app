@@ -104,7 +104,7 @@ export default function AboutPage() {
                   {/* Profile photo with overlay */}
                   <div className="absolute inset-4 rounded-full overflow-hidden">
                     <Image
-                      src="/images/about/cianheadshot.jpg"
+                      src="/images/about/cianheadshotNew.jpg"
                       alt="Cian O'Rourke - Full Stack Developer and Chef"
                       fill
                       className="object-cover"

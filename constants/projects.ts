@@ -22,8 +22,8 @@ export const projects: Project[] = [
     githubLink: "https://github.com/COR1999/ai-app",
     status: "production",
     featured: false,
-    isCurrentProject: true,
-    showDetails: false
+    // isCurrentProject: true,
+    showDetails: true
   },
   {
     id: 2,
