@@ -19,7 +19,7 @@ export const PERSONAL_INFO = {
   
   // Professional details
   currentRole: "Open for Work",
-  specialization: "Python | JavaScript | React | Node.js | Django | Flask",
+  specialization: "Python | JavaScript | React | Next.js | Django | Flask",
   introduction: "Entry-level Full-Stack Developer skilled in Python, JavaScript, and modern frameworks, with project experience"
     + " and a background in culinary arts. Passionate about creating efficient, user-friendly applications and eager to contribute to innovative tech teams.",
   
