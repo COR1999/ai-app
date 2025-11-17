@@ -17,10 +17,9 @@ const CredlyBadge = ({ badgeId, width = 150, height = 270 }: CredlyBadgeProps) =
       script.async = true;
       document.body.appendChild(script);
     } else {
-      // When script already exists, manually trigger the badge load
-      // @ts-ignore
+      // @ts-expect-error credly global
       if (window?.Credly?.renderBadges) {
-        // @ts-ignore
+        // @ts-expect-error credly global
         window.Credly.renderBadges();
       }
     }
