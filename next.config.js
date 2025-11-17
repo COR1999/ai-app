@@ -9,6 +9,7 @@ const nextConfig = {
         pathname: '/**',
       },
     ],
+    domains: ["api.accredible.com"],
   },
 }
 

@@ -7,11 +7,10 @@ const ContactForm: React.FC = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [stateMessage, setStateMessage] = useState<string | null>(null);
   const [isSuccess, setIsSuccess] = useState<boolean | null>(null);
-
+  
   const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
-
     const form = e.currentTarget;
 
     emailjs
@@ -38,6 +37,7 @@ const ContactForm: React.FC = () => {
         setIsSubmitting(false);
         setTimeout(() => setStateMessage(null), 5000);
       });
+
   };
 
   return (

@@ -1,4 +1,8 @@
 "use client";
+import React from "react";
+import CredlyBadge from "@/components/CredlyBadge"; 
+import CertificateEmbed from "@/components/CertificateEmbed";
+
 
 export default function SkillsPage() {
   const allSkills = [
@@ -116,11 +120,10 @@ export default function SkillsPage() {
       {/* SKILLS GRID */}
       <section className="py-12">
         <div className="container mx-auto px-6 max-w-6xl">
-          
           {/* Category Sections */}
           <div className="space-y-8">
             {categories.map((category) => {
-              const categorySkills = skills.filter(skill => skill.category === category);
+              const categorySkills = skills.filter((skill) => skill.category === category);
               return (
                 <div key={category} className="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
                   <h2 className="text-lg font-semibold text-primary mb-4 border-b border-gray-100 pb-2">
@@ -146,35 +149,59 @@ export default function SkillsPage() {
             })}
           </div>
 
-          {/* ADDITIONAL SKILLS */}
+          {/* ADDITIONAL EXPERIENCE */}
           <div className="mt-8 bg-white rounded-lg shadow-sm border border-gray-200 p-6">
-            <h2 className="text-lg font-semibold text-primary mb-4 border-b border-gray-100 pb-2">
-              Additional Experience
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="flex items-start space-x-3">
-                <div className="text-2xl">👨‍🍳</div>
-                <div>
-                  <h3 className="font-semibold text-primary mb-1">Award-Winning Kitchen Experience</h3>
-                  <p className="text-sm text-text-secondary">
-                    Trained as chef in Dublin&apos;s award-winning restaurants Crudo and Achara (2021-2025). Managed kitchen teams, supply orders, and delivered high-quality results under tight deadlines in high-pressure environments.
-                  </p>
-                </div>
+          <h2 className="text-lg font-semibold text-primary mb-4 border-b border-gray-100 pb-2">
+            Additional Experience
+          </h2>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {/* Chef Experience */}
+            <div className="flex items-start space-x-3">
+              <div className="text-2xl">👨‍🍳</div>
+              <div>
+                <h3 className="font-semibold text-primary mb-1">
+                  Award-Winning Kitchen Experience
+                </h3>
+                <p className="text-sm text-text-secondary">
+                  Trained as chef in Dublin&apos;s award-winning restaurants Crudo and Achara (2021-2025). Managed kitchen teams...
+                </p>
               </div>
-              <div className="flex items-start space-x-3">
+            </div>
+
+            {/* Software Development Diploma */}
+            <div className="flex items-start space-x-3">
                 <div className="text-2xl">🎓</div>
-                <div>
-                  <h3 className="font-semibold text-primary mb-1">Software Development Diploma</h3>
-                  <p className="text-sm text-text-secondary">
-                    Code Institute Diploma (2019-2020) with expertise in object-oriented programming, web development, and version control. Quick learner and problem solver passionate about software development.
+                <div className="w-full">
+                  <h3 className="font-semibold text-primary mb-1">
+                    Software Development Diploma
+                  </h3>
+                  <p className="text-sm text-text-secondary mb-2">
+                    Code Institute / Full Stack Software Development Diploma (2019–2020).
                   </p>
+                  <h3 className="font-semibold text-primary mb-1">IBM SkillsBuild Certifications</h3>
+                <p className="text-sm text-text-secondary mb-3">
+                  Verified badges for completing industry-aligned courses.
+                </p>
                 </div>
+                
               </div>
+          </div>
+          <div className="ml-full mt-4 flex flex-wrap gap-6">
+              <CredlyBadge badgeId="9dee485d-517b-4482-9c3f-f0b5b941a5c9" />
+              <CredlyBadge badgeId="2d29f4ba-bdd0-4d4a-ac4a-e5ec5ea3264a" />
+              <CertificateEmbed
+                        imageUrl="https://api.accredible.com/v1/frontend/credential_website_embed_image/certificate/26823684"
+                        linkUrl="https://verify.accredible.com/26823684"
+                        altText="Full Stack Software Development Certificate"
+                        width={150}
+                        height={270}
+                      />
             </div>
           </div>
         </div>
-      </section>
 
+      </section>
     </div>
   );
 }
