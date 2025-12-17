@@ -218,4 +218,5 @@ export const projects: Project[] = [
     demoLink: "https://login-application-virid.vercel.app/login",
     status: "completed"
   }
+  // Add foodgen project soon
 ];
