@@ -200,7 +200,7 @@ export const projects: Project[] = [
     title: "Simple login Page ",
     shortDescription: "A simple and modern authentication system with login and registration functionality.",
     fullDescription: " Built with **Next.js** and **Firebase Authentication** (email/password). Users can sign up, log in, choose “Remember me” (persistent login), and are redirected to a home page on success. The design is clean and modern, utilizing **Tailwind CSS** for styling. Form validation and error handling are included for a smooth user experience.",
-    technologies: ["Next.js", "React", "TypeScript", "TailwindCSS", "Firebase Authentication", "ESLint"],
+    technologies: ["Next.js", "TypeScript", "TailwindCSS", "Firebase Authentication", "ESLint"],
     features: [
       "Sign up with full name, email & password fields",
       "Sign in for existing users  with email & password",
