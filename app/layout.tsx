@@ -3,6 +3,7 @@ import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import { Metadata } from 'next'
 import { PERSONAL_INFO } from '@/constants/personal-info'
+import { Analytics } from '@vercel/analytics/next'
 
 export const metadata: Metadata = {
   title: PERSONAL_INFO.siteTitle,
@@ -27,6 +28,7 @@ export default function RootLayout({
           {children}
         </main>
         <Footer />
+        <Analytics />
       </body>
     </html>
   )
