@@ -9,6 +9,7 @@ export interface Project {
   imageAlt: string;
   demoLink?: string;
   githubLink?: string;
+  videoLink?: string;
   status: 'completed' | 'in-progress' | 'planning' | 'production';
   featured?: boolean;
   isCurrentProject?: boolean;

@@ -264,5 +264,32 @@ export const projects: Project[] = [
   featured: true,
 
   showDetails: true
+  },
+  {
+    id: 12,
+    title: "Senus Board Report",
+    shortDescription: "AI-native board reporting platform that extracts financial metrics from a company's PDF filings and presents them as an executive dashboard with AI-generated commentary.",
+    fullDescription: "An AI-native board reporting platform: upload a company's financial filing (PDF), and it extracts structured financial metrics, computes the ratios a board actually asks about, and presents them as an executive dashboard with AI commentary. Built as a graduate technical assessment for Assiduous Corp, using real public filings from Senus PLC (an Irish natural-capital/MRV SaaS company listed on Euronext Access Dublin) rather than synthetic data. Extraction is deterministic-first (a context-aware regex/table parser over native-text PDFs) with Gemini used only as a fallback for gaps and for narrative commentary, backed by a transparent point-based confidence score that gates whether a document's data ever reaches the dashboard.",
+    technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS", "FastAPI", "Python", "SQLAlchemy", "PostgreSQL", "PyMuPDF", "Google Gemini", "Recharts", "Vercel", "Railway"],
+    features: [
+      "PDF upload with deterministic regex/table extraction of financial metrics",
+      "Gemini LLM fallback for gaps, plus vision-based extraction for scanned filings",
+      "Transparent point-based confidence score gating auto-accept / needs-review / rejected",
+      "Executive dashboard covering Growth & Revenue, Profitability, Cash & Liquidity, Solvency & Leverage, and Returns",
+      "AI-generated board insights (positive / risk / opportunity commentary) from computed metrics",
+      "Period selector to compare filings with different reporting cadences without blending trend lines",
+      "Review-and-approve workflow for needs-review and rejected documents",
+      "Investor-relations API integration to import newly published filings on demand",
+      "Light/dark theme with a fixed-palette branded sidebar",
+      "244 backend (pytest) + 236 frontend (Vitest) tests, validated against the live deployed system"
+    ],
+    image: "/images/projects/senusboardreport.png",
+    imageAlt: "Senus Board Report Executive Dashboard",
+    demoLink: "https://senus-board-report.vercel.app",
+    githubLink: "https://github.com/COR1999/senus-board-report",
+    videoLink: "https://youtu.be/fpC68-ZhlA8",
+    status: "completed",
+    featured: true,
+    showDetails: true
   }
 ];

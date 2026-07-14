@@ -126,6 +126,16 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, isOpen, onClose })
                   View Code
                 </a>
               )}
+              {project.videoLink && (
+                <a
+                  href={project.videoLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="border-2 border-secondary text-secondary px-6 py-3 rounded-lg font-semibold hover:bg-secondary hover:text-white transition-all"
+                >
+                  Watch Demo Video
+                </a>
+              )}
             </div>
           </div>
         </div>
