@@ -6,12 +6,29 @@ import { PERSONAL_INFO } from '@/constants/personal-info'
 import { Analytics } from '@vercel/analytics/next'
 
 export const metadata: Metadata = {
+  metadataBase: new URL(PERSONAL_INFO.siteUrl),
   title: PERSONAL_INFO.siteTitle,
   description: PERSONAL_INFO.siteDescription,
   icons: {
     icon: '/favicon.svg',
     shortcut: '/favicon.svg',
     apple: '/favicon.svg',
+  },
+  openGraph: {
+    title: PERSONAL_INFO.siteTitle,
+    description: PERSONAL_INFO.siteDescription,
+    url: PERSONAL_INFO.siteUrl,
+    siteName: PERSONAL_INFO.siteTitle,
+    locale: 'en_IE',
+    type: 'profile',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: PERSONAL_INFO.siteTitle,
+    description: PERSONAL_INFO.siteDescription,
+  },
+  alternates: {
+    canonical: PERSONAL_INFO.siteUrl,
   },
 }
 

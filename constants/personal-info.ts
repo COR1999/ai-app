@@ -15,6 +15,7 @@ export const PERSONAL_INFO = {
   resumeUrl: "/resume/Cian-ORourke-CV.pdf",
 
   // Site metadata
+  siteUrl: "https://cianorourke.com",
   siteTitle: "Cian O'Rourke - Full Stack Developer",
   siteDescription: "Portfolio of Cian O'Rourke, Full Stack Developer with culinary background",
   
