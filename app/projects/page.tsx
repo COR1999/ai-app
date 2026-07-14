@@ -18,7 +18,7 @@ import ProjectCard from '@/components/ProjectCard';
 import ProjectModal from '@/components/ProjectModal';
 
 export default function ProjectsPage() {
-  const [sortBy, setSortBy] = useState<'default' | 'status'>('status');
+  const [sortBy, setSortBy] = useState<'default' | 'status'>('default');
   const { isOpen, data: selectedProject, openModal, closeModal } = useModal<Project>();
 
   /**
@@ -70,8 +70,8 @@ export default function ProjectsPage() {
                 onChange={(e) => setSortBy(e.target.value as 'default' | 'status')}
                 className="px-3 py-1 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent"
               >
-                <option value="status">Status (In Progress First)</option>
                 <option value="default">Default Order</option>
+                <option value="status">Status (In Progress First)</option>
               </select>
             </div>
             <div className="text-sm text-text-secondary">
