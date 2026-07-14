@@ -37,6 +37,11 @@ export default function SkillsPage() {
     { name: "Modal (serverless AI)", icon: "🧬", category: "AI & LLM" },
     { name: "PyMuPDF", icon: "📄", category: "AI & LLM" },
 
+    // AI Tools
+    { name: "Claude", icon: "🤖", category: "AI Tools" },
+    { name: "GitHub Copilot", icon: "🧑‍💻", category: "AI Tools" },
+    { name: "ChatGPT", icon: "💬", category: "AI Tools" },
+
     // Database
     { name: "PostgreSQL", icon: "🐘", category: "Database" },
     { name: "MongoDB", icon: "🍃", category: "Database" },
@@ -57,7 +62,7 @@ export default function SkillsPage() {
 
   const allSkills = skills.map(({ name, icon }) => ({ name, icon }));
 
-  const categories = ["Frontend", "Backend", "AI & LLM", "Database", "Cloud", "Tools"];
+  const categories = ["Frontend", "Backend", "AI & LLM", "AI Tools", "Database", "Cloud", "Tools"];
 
   return (
     <div className="min-h-screen bg-gray-50">
