@@ -12,16 +12,16 @@ export const PERSONAL_INFO = {
   email: "cian.orourke@gmail.com",
   linkedin: "https://www.linkedin.com/in/cian-o-rourke-8ba03a14a/",
   github: "https://github.com/COR1999",
-  
+
   // Site metadata
   siteTitle: "Cian O'Rourke - Full Stack Developer",
   siteDescription: "Portfolio of Cian O'Rourke, Full Stack Developer with culinary background",
   
   // Professional details
-  currentRole: "Web Developer at Babylon",
-  specialization: "Python | JavaScript | React | Next.js | Django | Flask",
-  introduction: "Entry-level Full-Stack Developer skilled in Python, JavaScript, and modern frameworks, with project experience"
-    + " and a background in culinary arts. Passionate about creating efficient, user-friendly applications and eager to contribute to innovative tech teams.",
+  currentRole: "Full Stack Software Developer & Team Lead at Babylon",
+  specialization: "TypeScript | JavaScript | React | Next.js | Tailwind CSS | Firebase | Python | Django | Flask",
+  introduction: "Full Stack Software Developer and team lead at Babylon, skilled in Python, JavaScript, React, and Next.js,"
+    + " with project experience spanning AI-integrated applications and a background in culinary arts. Passionate about mentoring developers and building efficient, user-friendly applications.",
   
   // Quick stats for homepage
   stats: {

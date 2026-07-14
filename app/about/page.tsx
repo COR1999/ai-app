@@ -51,10 +51,11 @@ export default function AboutPage() {
                 
                 {/* Personal introduction paragraph */}
                 <p className="text-base sm:text-lg lg:text-xl text-text-primary leading-relaxed">
-                  A qualified Full Stack Developer with a Diploma in Software Development from Code Institute. 
-                  I&apos;m a versatile, task-oriented individual who enjoys working within a team to achieve challenging objectives. 
-                  Having trained as a chef and barman in award-winning Dublin restaurants, I bring unique skills in stress management, 
-                  team organization, and working under tight deadlines to the world of software development.
+                  A Full Stack Software Developer and team lead at Babylon, with a Diploma in Software Development from Code Institute.
+                  I lead technical direction for my team &mdash; running code reviews, unblocking junior developers, and driving key
+                  technical decisions &mdash; while staying hands-on building full-stack, AI-integrated applications with Next.js,
+                  TypeScript, and Firebase. Having trained as a chef and barman in award-winning Dublin restaurants, I bring unique
+                  skills in stress management, team organization, and working under tight deadlines to the world of software development.
                 </p>
               </div>
               
@@ -161,6 +162,19 @@ export default function AboutPage() {
           {/* Mobile: Simple cards, Desktop: Timeline */}
           <div className="block sm:hidden space-y-4">
             {/* Mobile Cards Layout */}
+            <div className="bg-primary/10 p-4 rounded-xl border border-primary/20">
+              <div className="flex items-center mb-3">
+                <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center mr-3">
+                  <span className="text-sm">💼</span>
+                </div>
+                <div>
+                  <h3 className="text-sm font-semibold text-primary">Full Stack Developer &amp; Team Lead, Babylon</h3>
+                  <p className="text-xs text-primary font-medium">December 2025 - Present</p>
+                </div>
+              </div>
+              <p className="text-xs text-text-primary">Own project direction and lead code reviews, unblock junior developers, and drive key technical decisions, building with Next.js, TypeScript, Tailwind CSS, and Firebase.</p>
+            </div>
+
             <div className="bg-secondary/10 p-4 rounded-xl border border-secondary/20">
               <div className="flex items-center mb-3">
                 <div className="w-8 h-8 bg-secondary rounded-full flex items-center justify-center mr-3">
@@ -209,10 +223,43 @@ export default function AboutPage() {
             
             {/* TIMELINE ITEMS - Desktop alternating layout */}
             <div className="space-y-8 lg:space-y-12">
-              
+
+              {/* TIMELINE ITEM 0 - Babylon (current role) */}
+              <div className="relative">
+
+                {/* Mobile: Left aligned, Desktop: Right aligned */}
+                <div className="ml-12 sm:w-1/2 sm:pr-8 sm:text-right sm:ml-auto">
+                  <div className="bg-primary/10 p-4 sm:p-6 lg:p-8 rounded-xl border border-primary/20">
+
+                    {/* Title with icon */}
+                    <div className="flex justify-end items-center mb-4">
+                      <h3 className="text-2xl font-bold text-primary mr-4">Full Stack Developer &amp; Team Lead, Babylon</h3>
+                      <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center">
+                        <span className="text-xl">💼</span>
+                      </div>
+                    </div>
+
+                    {/* Date label */}
+                    <div className="text-sm font-semibold text-primary mb-2">December 2025 - Present</div>
+                    {/* Description */}
+                    <p className="text-text-primary">
+                      Own project direction as team lead, running code reviews, unblocking junior developers, and driving key
+                      technical decisions, while staying hands-on building full-stack, AI-integrated applications with Next.js,
+                      TypeScript, Tailwind CSS, and Firebase.
+                    </p>
+                  </div>
+                </div>
+
+                {/* Timeline dot - centered on the timeline line */}
+                <div className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-primary rounded-full border-4 border-white shadow-lg"></div>
+
+                {/* Empty space on the right */}
+                <div className="w-1/2 pl-8"></div>
+              </div>
+
               {/* TIMELINE ITEM 1 - Professional Kitchen Experience */}
               <div className="relative">
-                
+
                 {/* Mobile: Left aligned, Desktop: Right aligned */}
                 <div className="ml-12 sm:w-1/2 sm:pr-8 sm:text-right sm:ml-auto">
                   <div className="bg-secondary/10 p-4 sm:p-6 lg:p-8 rounded-xl border border-secondary/20">
