@@ -12,6 +12,7 @@ export const PERSONAL_INFO = {
   email: "cian.orourke@gmail.com",
   linkedin: "https://www.linkedin.com/in/cian-o-rourke-8ba03a14a/",
   github: "https://github.com/COR1999",
+  resumeUrl: "/resume/Cian-ORourke-CV.pdf",
 
   // Site metadata
   siteTitle: "Cian O'Rourke - Full Stack Developer",

@@ -14,6 +14,7 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { PERSONAL_INFO } from '@/constants/personal-info';
 
 export default function AboutPage() {
   return (
@@ -93,6 +94,18 @@ export default function AboutPage() {
                 <Link href="/contact" className="border-2 border-secondary text-secondary px-4 sm:px-6 lg:px-8 py-3 sm:py-4 rounded-xl font-semibold hover:bg-secondary hover:text-white transition-all duration-300 text-sm sm:text-base">
                   Get In Touch
                 </Link>
+
+                {/* Tertiary button - Download CV (outlined, neutral) */}
+                <a
+                  href={PERSONAL_INFO.resumeUrl}
+                  download
+                  className="flex items-center justify-center gap-2 border-2 border-neutral text-primary px-4 sm:px-6 lg:px-8 py-3 sm:py-4 rounded-xl font-semibold hover:bg-neutral/10 transition-all duration-300 text-sm sm:text-base"
+                >
+                  <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M7 10l5 5 5-5M12 15V3" />
+                  </svg>
+                  Download CV
+                </a>
               </div>
             </div>
             

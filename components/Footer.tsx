@@ -19,15 +19,17 @@ import { PERSONAL_INFO } from '@/constants/personal-info';
  */
 interface FooterProps {
   linkedinUrl?: string;    // Optional LinkedIn profile URL
-  githubUrl?: string;      // Optional GitHub profile URL  
+  githubUrl?: string;      // Optional GitHub profile URL
   email?: string;          // Optional contact email address
+  resumeUrl?: string;      // Optional resume/CV download URL
 }
 
 const Footer: React.FC<FooterProps> = ({
   // Default URLs from constants - can be overridden via props
   linkedinUrl = PERSONAL_INFO.linkedin,
   githubUrl = PERSONAL_INFO.github,
-  email = PERSONAL_INFO.email
+  email = PERSONAL_INFO.email,
+  resumeUrl = PERSONAL_INFO.resumeUrl
 }) => {
   // Dynamic copyright year
   const currentYear = new Date().getFullYear();
@@ -90,6 +92,18 @@ const Footer: React.FC<FooterProps> = ({
               </svg>
             </Link>
           </div>
+
+          {/* Resume Download */}
+          <a
+            href={resumeUrl}
+            download
+            className="flex items-center gap-2 text-sm font-medium text-neutral hover:text-accent transition-colors duration-300"
+          >
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M7 10l5 5 5-5M12 15V3" />
+            </svg>
+            Download Resume
+          </a>
 
           {/* Copyright */}
           <div className="text-center text-neutral text-sm">
