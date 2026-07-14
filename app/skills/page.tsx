@@ -1,92 +1,67 @@
 "use client";
 import React from "react";
-import CredlyBadge from "@/components/CredlyBadge"; 
+import CredlyBadge from "@/components/CredlyBadge";
 import CertificateEmbed from "@/components/CertificateEmbed";
 
 
 export default function SkillsPage() {
-  const allSkills = [
-    // Frontend
-    { name: "React", icon: "⚛️" },
-    { name: "Next.js", icon: "▲" },
-    { name: "TypeScript", icon: "TS" },
-    { name: "JavaScript", icon: "JS" },
-    { name: "HTML5", icon: "🌐" },
-    { name: "CSS3", icon: "🎨" },
-    { name: "Tailwind CSS", icon: "💨" },
-    { name: "Bootstrap", icon: "🅱️" },
-    { name: "jQuery", icon: "🔧" },
-    { name: "Sass", icon: "💎" },
-    { name: "Vue.js", icon: "💚" },
-    
-    // Backend
-    { name: "Node.js", icon: "🟢" },
-    { name: "Python", icon: "🐍" },
-    { name: "Django", icon: "🎯" },
-    { name: "Flask", icon: "🌶️" },
-    { name: "Express.js", icon: "🚀" },
-    { name: "FastAPI", icon: "⚡" },
-    { name: "REST APIs", icon: "🔗" },
-    { name: "GraphQL", icon: "◆" },
-    
-    // Database
-    { name: "PostgreSQL", icon: "🐘" },
-    { name: "MongoDB", icon: "🍃" },
-    { name: "MySQL", icon: "🗄️" },
-    { name: "Redis", icon: "📊" },
-    { name: "SQLite", icon: "💽" },
-    
-    // Tools & DevOps
-    { name: "Git", icon: "📦" },
-    { name: "GitHub", icon: "🐙" },
-    { name: "Docker", icon: "🐳" },
-    { name: "Webpack", icon: "📦" },
-    { name: "Vite", icon: "⚡" },
-    { name: "npm", icon: "📋" },
-    { name: "Yarn", icon: "🧶" },
-    
-    // Cloud & Deployment
-    { name: "AWS", icon: "☁️" },
-    { name: "Heroku", icon: "💜" },
-    { name: "Vercel", icon: "▲" },
-    { name: "Netlify", icon: "🌐" },
-    { name: "Digital Ocean", icon: "🌊" },
-    
-    // Design & Other
-    { name: "Figma", icon: "🎨" },
-    { name: "Photoshop", icon: "🖼️" },
-    { name: "Stripe", icon: "💳" },
-    { name: "Chart.js", icon: "📈" },
-    { name: "D3.js", icon: "📊" },
-    { name: "Jest", icon: "🧪" },
-    { name: "Cypress", icon: "🔬" }
-  ];
-
+  // Kept in sync with the technologies actually used across shipped projects
+  // (see constants/projects.ts) rather than a generic/aspirational list.
   const skills = [
+    // Frontend
     { name: "React", icon: "⚛️", category: "Frontend" },
     { name: "Next.js", icon: "▲", category: "Frontend" },
     { name: "TypeScript", icon: "TS", category: "Frontend" },
     { name: "JavaScript", icon: "JS", category: "Frontend" },
-    { name: "Tailwind CSS", icon: "🎨", category: "Frontend" },
+    { name: "Tailwind CSS", icon: "💨", category: "Frontend" },
     { name: "Bootstrap", icon: "🅱️", category: "Frontend" },
-    { name: "Node.js", icon: "🟢", category: "Backend" },
+    { name: "HTML5", icon: "🌐", category: "Frontend" },
+    { name: "CSS3", icon: "🎨", category: "Frontend" },
+    { name: "Vite", icon: "⚡", category: "Frontend" },
+    { name: "jQuery", icon: "🔧", category: "Frontend" },
+
+    // Backend
     { name: "Python", icon: "🐍", category: "Backend" },
+    { name: "FastAPI", icon: "🚀", category: "Backend" },
     { name: "Django", icon: "🎯", category: "Backend" },
     { name: "Flask", icon: "🌶️", category: "Backend" },
-    { name: "Express.js", icon: "🚀", category: "Backend" },
+    { name: "Node.js", icon: "🟢", category: "Backend" },
+    { name: "SQLAlchemy", icon: "🗃️", category: "Backend" },
+    { name: "Pydantic", icon: "📐", category: "Backend" },
+    { name: "REST APIs", icon: "🔗", category: "Backend" },
+
+    // AI & LLM
+    { name: "Google Gemini", icon: "✨", category: "AI & LLM" },
+    { name: "Mistral 7B", icon: "🧠", category: "AI & LLM" },
+    { name: "Transformers", icon: "🤗", category: "AI & LLM" },
+    { name: "Modal (serverless AI)", icon: "🧬", category: "AI & LLM" },
+    { name: "PyMuPDF", icon: "📄", category: "AI & LLM" },
+
+    // Database
     { name: "PostgreSQL", icon: "🐘", category: "Database" },
     { name: "MongoDB", icon: "🍃", category: "Database" },
-    { name: "Git", icon: "📦", category: "Tools" },
-    { name: "Docker", icon: "🐳", category: "Tools" },
-    { name: "AWS", icon: "☁️", category: "Cloud" },
-    { name: "Heroku", icon: "💜", category: "Cloud" }
+    { name: "SQLite", icon: "💽", category: "Database" },
+
+    // Cloud & Deployment
+    { name: "Vercel", icon: "▲", category: "Cloud" },
+    { name: "Railway", icon: "🚂", category: "Cloud" },
+    { name: "Heroku", icon: "💜", category: "Cloud" },
+    { name: "AWS S3", icon: "☁️", category: "Cloud" },
+
+    // Tools & Testing
+    { name: "Git & GitHub", icon: "🐙", category: "Tools" },
+    { name: "Playwright", icon: "🎭", category: "Tools" },
+    { name: "ESLint", icon: "🧹", category: "Tools" },
+    { name: "Stripe API", icon: "💳", category: "Tools" }
   ];
 
-  const categories = ["Frontend", "Backend", "Database", "Tools", "Cloud"];
+  const allSkills = skills.map(({ name, icon }) => ({ name, icon }));
+
+  const categories = ["Frontend", "Backend", "AI & LLM", "Database", "Cloud", "Tools"];
 
   return (
     <div className="min-h-screen bg-gray-50">
-      
+
       {/* HERO SECTION */}
       <section className="bg-white border-b py-12">
         <div className="container mx-auto px-6 text-center max-w-4xl">
@@ -184,7 +159,7 @@ export default function SkillsPage() {
                   Verified badges for completing industry-aligned courses.
                 </p>
                 </div>
-                
+
               </div>
           </div>
           <div className="ml-full mt-4 flex flex-wrap gap-6">
