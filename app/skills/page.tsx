@@ -165,6 +165,7 @@ export default function SkillsPage() {
           <div className="ml-full mt-4 flex flex-wrap gap-6">
               <CredlyBadge badgeId="9dee485d-517b-4482-9c3f-f0b5b941a5c9" />
               <CredlyBadge badgeId="2d29f4ba-bdd0-4d4a-ac4a-e5ec5ea3264a" />
+              <CredlyBadge badgeId="5c295b3b-eda1-4276-82d3-6471c0822fb8" />
               <CertificateEmbed
                         imageUrl="https://api.accredible.com/v1/frontend/credential_website_embed_image/certificate/26823684"
                         linkUrl="https://verify.accredible.com/26823684"
