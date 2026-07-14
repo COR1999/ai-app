@@ -26,6 +26,7 @@ export default function SkillsPage() {
     { name: "Django", icon: "🎯", category: "Backend" },
     { name: "Flask", icon: "🌶️", category: "Backend" },
     { name: "Node.js", icon: "🟢", category: "Backend" },
+    { name: "Firebase", icon: "🔥", category: "Backend" },
     { name: "SQLAlchemy", icon: "🗃️", category: "Backend" },
     { name: "Pydantic", icon: "📐", category: "Backend" },
     { name: "REST APIs", icon: "🔗", category: "Backend" },
@@ -41,11 +42,13 @@ export default function SkillsPage() {
     { name: "Claude", icon: "🤖", category: "AI Tools" },
     { name: "GitHub Copilot", icon: "🧑‍💻", category: "AI Tools" },
     { name: "ChatGPT", icon: "💬", category: "AI Tools" },
+    { name: "Codex", icon: "🛠️", category: "AI Tools" },
 
     // Database
     { name: "PostgreSQL", icon: "🐘", category: "Database" },
     { name: "MongoDB", icon: "🍃", category: "Database" },
     { name: "SQLite", icon: "💽", category: "Database" },
+    { name: "SQL", icon: "🗄️", category: "Database" },
 
     // Cloud & Deployment
     { name: "Vercel", icon: "▲", category: "Cloud" },
@@ -55,10 +58,17 @@ export default function SkillsPage() {
 
     // Tools & Testing
     { name: "Git & GitHub", icon: "🐙", category: "Tools" },
+    { name: "Figma", icon: "🖌️", category: "Tools" },
+    { name: "Jira", icon: "📌", category: "Tools" },
+    { name: "Google APIs", icon: "🔍", category: "Tools" },
     { name: "Playwright", icon: "🎭", category: "Tools" },
     { name: "ESLint", icon: "🧹", category: "Tools" },
     { name: "Stripe API", icon: "💳", category: "Tools" }
   ];
+
+  // Primary stack: the technologies from the CV's own "Front-End/Back-End Development" lines,
+  // called out separately so recruiters can see depth vs. breadth at a glance.
+  const primarySkills = ["React", "Next.js", "TypeScript", "Tailwind CSS", "Python", "Django", "Firebase", "REST APIs"];
 
   const allSkills = skills.map(({ name, icon }) => ({ name, icon }));
 
@@ -97,6 +107,33 @@ export default function SkillsPage() {
         </div>
       </section>
 
+      {/* PRIMARY STACK - Depth signal: the handful of technologies used daily, called out from the full list */}
+      <section className="py-10 bg-white border-b">
+        <div className="container mx-auto px-6 max-w-6xl">
+          <h2 className="text-sm font-semibold text-text-secondary uppercase tracking-wide mb-4 text-center">
+            Primary Stack
+          </h2>
+          <div className="flex flex-wrap justify-center gap-3">
+            {primarySkills.map((name) => {
+              const skill = skills.find((s) => s.name === name);
+              if (!skill) return null;
+              return (
+                <div
+                  key={name}
+                  className="flex items-center gap-2 bg-primary text-white px-4 py-2 rounded-full font-medium text-sm shadow-sm"
+                >
+                  <span>{skill.icon}</span>
+                  {skill.name}
+                </div>
+              );
+            })}
+          </div>
+          <p className="text-xs text-text-secondary text-center mt-4">
+            Also marked with <span className="inline-block w-2 h-2 rounded-full bg-secondary align-middle"></span> throughout the full list below
+          </p>
+        </div>
+      </section>
+
       {/* SKILLS GRID */}
       <section className="py-12">
         <div className="container mx-auto px-6 max-w-6xl">
@@ -113,8 +150,14 @@ export default function SkillsPage() {
                     {categorySkills.map((skill) => (
                       <div
                         key={skill.name}
-                        className="flex flex-col items-center p-3 rounded-lg hover:bg-gray-50 transition-colors group"
+                        className="relative flex flex-col items-center p-3 rounded-lg hover:bg-gray-50 transition-colors group"
                       >
+                        {primarySkills.includes(skill.name) && (
+                          <span
+                            className="absolute top-1 right-1 w-2 h-2 rounded-full bg-secondary"
+                            title="Primary stack"
+                          />
+                        )}
                         <div className="text-2xl mb-2 group-hover:scale-110 transition-transform">
                           {skill.icon}
                         </div>
@@ -157,7 +200,8 @@ export default function SkillsPage() {
                     Software Development Diploma
                   </h3>
                   <p className="text-sm text-text-secondary mb-2">
-                    Code Institute / Full Stack Software Development Diploma (2019–2020).
+                    Code Institute / Full Stack Software Development Diploma (2019–2020). Also completed
+                    Harvard University&apos;s CS50: Introduction to Computer Science (2019).
                   </p>
                   <h3 className="font-semibold text-primary mb-1">IBM SkillsBuild Certifications</h3>
                 <p className="text-sm text-text-secondary mb-3">
