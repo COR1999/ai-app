@@ -185,7 +185,7 @@ export default function AboutPage() {
                   <p className="text-xs text-primary font-medium">December 2025 - Present</p>
                 </div>
               </div>
-              <p className="text-xs text-text-primary">Own project direction and lead code reviews, unblock junior developers, and drive key technical decisions, building with Next.js, TypeScript, Tailwind CSS, and Firebase.</p>
+              <p className="text-xs text-text-primary">Building production features with React and Next.js, translating Figma designs into pixel-perfect UI, leading code review and release management, and supporting onboarding for junior developers.</p>
             </div>
 
             <div className="bg-secondary/10 p-4 rounded-xl border border-secondary/20">
@@ -256,9 +256,10 @@ export default function AboutPage() {
                     <div className="text-sm font-semibold text-primary mb-2">December 2025 - Present</div>
                     {/* Description */}
                     <p className="text-text-primary">
-                      Own project direction as team lead, running code reviews, unblocking junior developers, and driving key
-                      technical decisions, while staying hands-on building full-stack, AI-integrated applications with Next.js,
-                      TypeScript, Tailwind CSS, and Firebase.
+                      Build and maintain production features for a multicultural platform with React and Next.js, translating
+                      complex Figma wireframes into responsive, accessible UI. Collaborate with mobile developers on shared
+                      Firebase architecture and API design, lead testing and release management, and support the onboarding
+                      of junior developers.
                     </p>
                   </div>
                 </div>
