@@ -46,11 +46,16 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, onViewDetails }) => 
         />
         
         {/* Status Badge */}
-        <div className="absolute top-3 left-3">
+        <div className="absolute top-3 left-3 flex flex-col gap-1 items-start">
           <span className={`px-2 py-1 rounded-md text-xs font-medium ${getStatusColor(project.status)}`}>
             {project.featured && '⭐ '}
             {getStatusText(project.status)}
           </span>
+          {project.clientProject && (
+            <span className="px-2 py-1 rounded-md text-xs font-medium bg-primary/90 text-white">
+              Client Project
+            </span>
+          )}
         </div>
 
         {/* Viewing Overlay for Current Project */}

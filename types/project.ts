@@ -14,4 +14,5 @@ export interface Project {
   featured?: boolean;
   isCurrentProject?: boolean;
   showDetails?: boolean;
+  clientProject?: boolean;
 }

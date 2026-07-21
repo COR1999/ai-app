@@ -29,6 +29,30 @@ export const projects: Project[] = [
     showDetails: true
   },
   {
+    id: 13,
+    title: "Mama Amaya's",
+    shortDescription: "Production website and e-commerce platform built for a real client — an artisan East African-inspired hot sauce brand — live at mamaamayas.com.",
+    fullDescription: "A full production web platform built and shipped for an actual paying client: Mama Amaya's, an artisan East African-inspired hot sauce brand. The public marketing site is live now, covering product storytelling, a recipe/journal blog, and brand content, all driven by a file-based content system so the client can add products and posts without touching code. Behind that sits a complete, tested e-commerce build: cart, guest checkout, Stripe-hosted payments, and an authenticated admin hub for order management, inventory, and pricing — currently feature-complete and gated behind a flag while the client finishes business-side Stripe verification, so it can go live with a config change rather than new development. Built end-to-end solo, including database schema/RLS policies, CI pipeline, and third-party integrations, for a client who isn't technical.",
+    technologies: ["Next.js 16", "TypeScript", "Tailwind CSS", "shadcn/ui", "Supabase (Postgres, Auth, RLS)", "Stripe (Checkout, Coupons, Webhooks)", "Resend", "Instagram API", "Vitest", "Playwright", "GitHub Actions", "Vercel"],
+    features: [
+      "Stripe-hosted checkout with guest purchase flow, promo/discount codes, and webhook-verified order totals",
+      "Supabase-backed admin hub (Auth + Postgres RLS) for order management, inventory batches, product pricing, and customer history",
+      "Content-driven marketing site — products and blog posts are auto-discovered from files, so the client can publish without a CMS or code changes",
+      "Automated email flows via Resend: newsletter signups and a separate 'notify me' launch waitlist",
+      "Live Instagram feed pulled from the brand's business account, with an automated Vercel Cron job keeping the access token refreshed indefinitely",
+      "Full CI pipeline (GitHub Actions) running ESLint, TypeScript checks, and a Vitest + Playwright test suite on every pull request",
+      "Feature-flagged commerce: checkout and admin tooling are fully built and tested, gated behind a single flag pending the client's Stripe business verification",
+      "SEO-optimized, fully responsive design matching the client's brand identity"
+    ],
+    image: "/images/projects/mamaamayas.jpeg",
+    imageAlt: "Mama Amaya's hot sauce product photography",
+    demoLink: "https://www.mamaamayas.com/",
+    status: "production",
+    featured: true,
+    clientProject: true,
+    showDetails: true
+  },
+  {
     id: 1,
     title: "Portfolio Website",
     shortDescription: "Modern Next.js portfolio website showcasing my development skills and culinary background",

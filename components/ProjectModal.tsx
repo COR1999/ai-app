@@ -45,10 +45,17 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, isOpen, onClose })
           <div className="flex justify-between items-start">
             <div className="flex-1 pr-4">
               <h3 className="text-2xl md:text-3xl font-bold text-primary mb-2">{project.title}</h3>
-              <span className={`px-3 py-1 rounded-md text-sm font-medium ${getStatusColor(project.status)}`}>
-                {project.featured && '⭐ '}
-                {getStatusText(project.status)}
-              </span>
+              <div className="flex flex-wrap gap-2">
+                <span className={`px-3 py-1 rounded-md text-sm font-medium ${getStatusColor(project.status)}`}>
+                  {project.featured && '⭐ '}
+                  {getStatusText(project.status)}
+                </span>
+                {project.clientProject && (
+                  <span className="px-3 py-1 rounded-md text-sm font-medium bg-primary/90 text-white">
+                    Client Project
+                  </span>
+                )}
+              </div>
             </div>
             <button
               onClick={onClose}
