@@ -55,6 +55,11 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, isOpen, onClose })
                     Client Project
                   </span>
                 )}
+                {project.interviewProject && (
+                  <span className="px-3 py-1 rounded-md text-sm font-medium bg-secondary/90 text-white">
+                    Interview Project
+                  </span>
+                )}
               </div>
             </div>
             <button

@@ -56,6 +56,11 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, onViewDetails }) => 
               Client Project
             </span>
           )}
+          {project.interviewProject && (
+            <span className="px-2 py-1 rounded-md text-xs font-medium bg-secondary/90 text-white">
+              Interview Project
+            </span>
+          )}
         </div>
 
         {/* Viewing Overlay for Current Project */}

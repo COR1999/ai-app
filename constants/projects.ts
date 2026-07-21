@@ -26,6 +26,7 @@ export const projects: Project[] = [
     videoLink: "https://youtu.be/fpC68-ZhlA8",
     status: "completed",
     featured: true,
+    interviewProject: true,
     showDetails: true
   },
   {
@@ -182,7 +183,8 @@ export const projects: Project[] = [
     imageAlt: "Fitness Tracker Application Dashboard",
     demoLink: "https://fitness-tracker-bice-one.vercel.app/",
     githubLink: "https://github.com/COR1999/fitnessTracker",
-    status: "completed"
+    status: "completed",
+    interviewProject: true
   },
   {
     id: 7,
