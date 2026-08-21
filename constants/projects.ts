@@ -2,6 +2,26 @@ import { Project } from '@/types/project';
 
 export const projects: Project[] = [
   {
+    id: 14,
+    title: "Agent Workbench",
+    shortDescription: "Open-source, backend-first workbench in active development for designing, testing, and auditing AI agent workflows.",
+    fullDescription: "Agent Workbench is an open-source system design and backend engineering project, currently in active development, for making AI agents easier to build, inspect, and improve. It focuses on the parts that matter behind the scenes: orchestration, prompt and tool routing, persistent run history, evaluation checks, and reviewable outputs. The goal is to give developers a repeatable workspace where agent behaviour can be tested against real tasks, compared over time, and debugged through logs and traces instead of treated like a black box.",
+    technologies: ["AI Agents", "System Design", "Backend Architecture", "API Design", "Tool Orchestration", "Prompt Engineering", "Evaluation", "Observability"],
+    features: [
+      "Agent orchestration layer for coordinating goals, prompts, tools, and task state",
+      "Tool gateway concept for routing external actions through controlled interfaces",
+      "Persistent memory store for reusable context, run history, and evaluation records",
+      "Evaluation layer for checking output quality, regressions, latency, and failure cases",
+      "Audit-friendly traces so agent decisions and tool calls can be reviewed after each run",
+      "Open-source project that is still being built, designed as backend-first rather than a UI showcase"
+    ],
+    image: "/images/projects/agent-workbench-system-design.png",
+    imageAlt: "Agent Workbench system design diagram",
+    status: "in-progress",
+    featured: true,
+    showDetails: true
+  },
+  {
     id: 12,
     title: "Senus Board Report",
     shortDescription: "AI-native board reporting platform that extracts financial metrics from a company's PDF filings and presents them as an executive dashboard with AI-generated commentary.",
