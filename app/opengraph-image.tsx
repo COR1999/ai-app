@@ -1,8 +1,6 @@
 import { ImageResponse } from 'next/og';
 import { PERSONAL_INFO } from '@/constants/personal-info';
 
-export const runtime = 'edge';
-
 export const alt = PERSONAL_INFO.siteTitle;
 export const size = { width: 1200, height: 630 };
 export const contentType = 'image/png';
