@@ -1,6 +1,9 @@
-import React from 'react';
+'use client';
+
+import React, { useEffect, useRef } from 'react';
 import Image from 'next/image';
 import { Project } from '@/types/project';
+import { STATUS_LABELS, STATUS_STYLES } from '@/lib/project-status';
 
 interface ProjectModalProps {
   project: Project | null;
@@ -8,47 +11,71 @@ interface ProjectModalProps {
   onClose: () => void;
 }
 
+const FOCUSABLE_SELECTOR =
+  'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])';
+
 const ProjectModal: React.FC<ProjectModalProps> = ({ project, isOpen, onClose }) => {
+  const dialogRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!isOpen) return;
+
+    const previouslyFocused = document.activeElement as HTMLElement | null;
+    document.body.style.overflow = 'hidden';
+    dialogRef.current?.focus();
+
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        onClose();
+        return;
+      }
+      if (e.key !== 'Tab' || !dialogRef.current) return;
+      const focusable = dialogRef.current.querySelectorAll<HTMLElement>(FOCUSABLE_SELECTOR);
+      if (focusable.length === 0) return;
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+      if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault();
+        last.focus();
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault();
+        first.focus();
+      }
+    };
+
+    document.addEventListener('keydown', handleKeyDown);
+    return () => {
+      document.removeEventListener('keydown', handleKeyDown);
+      document.body.style.overflow = '';
+      previouslyFocused?.focus();
+    };
+  }, [isOpen, onClose]);
+
   if (!isOpen || !project) return null;
 
-  const getStatusColor = (status: string) => {
-    switch (status) {
-      case 'completed': return 'bg-green-100 text-green-800';
-      case 'in-progress': return 'bg-yellow-100 text-yellow-800';
-      case 'planning': return 'bg-blue-100 text-blue-800';
-      case 'production': return 'bg-secondary/20 text-secondary';
-      default: return 'bg-gray-100 text-gray-800';
-    }
-  };
-
-  const getStatusText = (status: string) => {
-    switch (status) {
-      case 'completed': return 'Completed';
-      case 'in-progress': return 'In Progress';
-      case 'planning': return 'Planning';
-      case 'production': return 'Production';
-      default: return 'Unknown';
-    }
-  };
-
   return (
-    <div 
+    <div
       className="fixed inset-0 bg-black/50 flex items-center justify-center p-4 z-50"
       onClick={onClose}
     >
-      <div 
-        className="bg-white rounded-xl max-w-4xl w-full max-h-[90vh] overflow-hidden relative"
+      <div
+        ref={dialogRef}
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="project-modal-title"
+        tabIndex={-1}
+        className="bg-white rounded-xl max-w-4xl w-full max-h-[90vh] overflow-hidden relative outline-none"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Fixed Header with Close Button */}
         <div className="sticky top-0 bg-white z-10 border-b border-gray-100 p-6 md:p-8 pb-4">
           <div className="flex justify-between items-start">
             <div className="flex-1 pr-4">
-              <h3 className="text-2xl md:text-3xl font-bold text-primary mb-2">{project.title}</h3>
+              <h3 id="project-modal-title" className="text-2xl md:text-3xl font-bold text-primary mb-2">{project.title}</h3>
               <div className="flex flex-wrap gap-2">
-                <span className={`px-3 py-1 rounded-md text-sm font-medium ${getStatusColor(project.status)}`}>
+                <span className={`px-3 py-1 rounded-md text-sm font-medium ${STATUS_STYLES[project.status]}`}>
                   {project.featured && '⭐ '}
-                  {getStatusText(project.status)}
+                  {STATUS_LABELS[project.status]}
                 </span>
                 {project.clientProject && (
                   <span className="px-3 py-1 rounded-md text-sm font-medium bg-primary/90 text-white">
@@ -63,7 +90,9 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, isOpen, onClose })
               </div>
             </div>
             <button
+              type="button"
               onClick={onClose}
+              aria-label="Close project details"
               className="text-neutral hover:text-primary transition-colors text-2xl p-1 bg-gray-50 hover:bg-gray-100 rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0"
             >
               ×
