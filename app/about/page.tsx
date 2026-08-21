@@ -9,9 +9,16 @@
  * - Call-to-action section for collaboration
  */
 
+import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import { PERSONAL_INFO } from '@/constants/personal-info';
+
+export const metadata: Metadata = {
+  alternates: {
+    canonical: '/about',
+  },
+};
 
 export default function AboutPage() {
   return (

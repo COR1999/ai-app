@@ -5,6 +5,9 @@ export const metadata: Metadata = {
   title: "Projects | Cian O'Rourke",
   description:
     "Production client work, AI-integrated applications, and full-stack projects by Cian O'Rourke — Next.js, TypeScript, Python, and more.",
+  alternates: {
+    canonical: '/projects',
+  },
 };
 
 export default function ProjectsPage() {

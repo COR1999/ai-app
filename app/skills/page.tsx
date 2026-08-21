@@ -6,6 +6,9 @@ export const metadata: Metadata = {
   title: "Skills | Cian O'Rourke",
   description:
     "Technologies Cian O'Rourke works with daily — React, Next.js, TypeScript, Python, FastAPI, Firebase, and AI/LLM tooling.",
+  alternates: {
+    canonical: '/skills',
+  },
 };
 
 export default function SkillsPage() {
