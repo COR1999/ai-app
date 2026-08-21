@@ -61,9 +61,9 @@ const Header: React.FC = () => {
               {/* MAIN NAME/TITLE */}
               {/* Responsive text sizing: smaller on mobile, larger on desktop */}
               {/* Hover effect: slight scale increase for interactivity */}
-              <h1 className="text-xl sm:text-2xl lg:text-3xl font-bold transition-all duration-300 group-hover:scale-105 text-primary">
+              <p className="text-xl sm:text-2xl lg:text-3xl font-bold transition-all duration-300 group-hover:scale-105 text-primary">
                 {PERSONAL_INFO.name}
-              </h1>
+              </p>
               {/* PROFESSIONAL SUBTITLE */}
               {/* Shows role/title below name */}
               {/* Responsive sizing and muted color for hierarchy */}
@@ -94,6 +94,8 @@ const Header: React.FC = () => {
             onClick={toggleMenu}
             className="md:hidden flex flex-col space-y-1 p-2"
             aria-label="Toggle menu"
+            aria-expanded={isMenuOpen}
+            aria-controls="mobile-navigation"
           >
             <span className={`block w-6 h-0.5 bg-text-primary transition-all duration-300 ${isMenuOpen ? 'rotate-45 translate-y-1.5' : ''}`}></span>
             <span className={`block w-6 h-0.5 bg-text-primary transition-all duration-300 ${isMenuOpen ? 'opacity-0' : ''}`}></span>
@@ -102,7 +104,7 @@ const Header: React.FC = () => {
         </div>
 
         {/* Mobile Navigation */}
-        <div className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${isMenuOpen ? 'max-h-80 pb-4' : 'max-h-0'}`}>
+        <div id="mobile-navigation" className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${isMenuOpen ? 'max-h-80 pb-4' : 'max-h-0'}`}>
           <nav className="flex flex-col space-y-3 pt-4 border-t border-neutral/30">
             {navigationItems.map((item) => (
               <Link

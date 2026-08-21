@@ -12,7 +12,6 @@ export interface Project {
   videoLink?: string;
   status: 'completed' | 'in-progress' | 'planning' | 'production';
   featured?: boolean;
-  isCurrentProject?: boolean;
   showDetails?: boolean;
   clientProject?: boolean;
   interviewProject?: boolean;
