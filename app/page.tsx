@@ -7,7 +7,14 @@
  */
 
 import Link from 'next/link';
+import type { Metadata } from 'next';
 import { PERSONAL_INFO } from '@/constants/personal-info';
+
+export const metadata: Metadata = {
+  alternates: {
+    canonical: '/',
+  },
+}
 
 export default function HomePage() {
   return (

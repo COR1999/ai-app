@@ -17,7 +17,6 @@ export const metadata: Metadata = {
   openGraph: {
     title: PERSONAL_INFO.siteTitle,
     description: PERSONAL_INFO.siteDescription,
-    url: PERSONAL_INFO.siteUrl,
     siteName: PERSONAL_INFO.siteTitle,
     locale: 'en_IE',
     type: 'profile',
@@ -26,9 +25,6 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: PERSONAL_INFO.siteTitle,
     description: PERSONAL_INFO.siteDescription,
-  },
-  alternates: {
-    canonical: PERSONAL_INFO.siteUrl,
   },
 }
 
