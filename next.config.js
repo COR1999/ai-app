@@ -4,12 +4,11 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'picsum.photos',
+        hostname: 'api.accredible.com',
         port: '',
         pathname: '/**',
       },
     ],
-    domains: ["api.accredible.com"],
   },
 }
 
