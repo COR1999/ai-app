@@ -17,6 +17,7 @@ export const projects: Project[] = [
     ],
     image: "/images/projects/agent-workbench-system-design.png",
     imageAlt: "Agent Workbench system design diagram",
+    githubLink: "https://github.com/COR1999/Agent-Workbench",
     status: "in-progress",
     featured: true,
     showDetails: true
