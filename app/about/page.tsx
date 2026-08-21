@@ -86,7 +86,7 @@ export default function AboutPage() {
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
                 
                 {/* Primary button - View work (filled gradient button) */}
-                <Link href="projects" className="bg-gradient-to-r from-primary to-primary-light text-white px-4 sm:px-6 lg:px-8 py-3 sm:py-4 rounded-xl font-semibold hover:shadow-lg transition-all duration-300 transform hover:scale-105 text-sm sm:text-base">
+                <Link href="/projects" className="bg-gradient-to-r from-primary to-primary-light text-white px-4 sm:px-6 lg:px-8 py-3 sm:py-4 rounded-xl font-semibold hover:shadow-lg transition-all duration-300 transform hover:scale-105 text-sm sm:text-base">
                   View My Work
                 </Link>
                 

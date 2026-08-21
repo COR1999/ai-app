@@ -148,7 +148,7 @@ export const projects: Project[] = [
     title: "WikiMusic",
     shortDescription: "Single page music encyclopedia with search and discovery features",
     fullDescription: "A music information platform inspired by Wikipedia, designed as a single page application for discovering artists, albums, and songs. Features a clean UX with search functionality and Top 100 songs chart with sorting capabilities using the LastFM API.",
-    technologies: ["HTML5", "CSS3","Javascript", "Bootstrap", "jQuery", "DataTables", "Font Awesome", "LastFM API"],
+    technologies: ["HTML5", "CSS3", "JavaScript", "Bootstrap", "jQuery", "DataTables", "Font Awesome", "LastFM API"],
     features: [
       "Single page application architecture",
       "Mobile-first responsive design",
@@ -271,9 +271,9 @@ export const projects: Project[] = [
   },
   {
     id: 10,
-    title: "Simple login Page ",
+    title: "Simple Login Page",
     shortDescription: "A simple and modern authentication system with login and registration functionality.",
-    fullDescription: " Built with **Next.js** and **Firebase Authentication** (email/password). Users can sign up, log in, choose “Remember me” (persistent login), and are redirected to a home page on success. The design is clean and modern, utilizing **Tailwind CSS** for styling. Form validation and error handling are included for a smooth user experience.",
+    fullDescription: "Built with Next.js and Firebase Authentication (email/password). Users can sign up, log in, choose \"Remember me\" (persistent login), and are redirected to a home page on success. The design is clean and modern, utilizing Tailwind CSS for styling. Form validation and error handling are included for a smooth user experience.",
     technologies: ["Next.js", "TypeScript", "TailwindCSS", "Firebase Authentication", "ESLint"],
     features: [
       "Sign up with full name, email & password fields",

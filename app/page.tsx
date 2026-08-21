@@ -86,10 +86,10 @@ export default function HomePage() {
         {/* QUICK STATS SECTION - Achievement highlights in grid layout */}
         <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8 max-w-2xl mx-auto">
           
-          {/* Stat 1: Technologies */}
+          {/* Stat 1: Projects */}
           <div className="text-center">
-            <div className="text-3xl font-bold mb-2 text-secondary">{PERSONAL_INFO.stats.technologies}</div>
-            <div className="text-text-light">Technologies Mastered</div>
+            <div className="text-3xl font-bold mb-2 text-secondary">{PERSONAL_INFO.stats.projects}</div>
+            <div className="text-text-light">Projects Built</div>
           </div>
           
           {/* Stat 2: Countries */}

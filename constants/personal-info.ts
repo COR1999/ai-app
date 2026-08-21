@@ -27,8 +27,8 @@ export const PERSONAL_INFO = {
   
   // Quick stats for homepage
   stats: {
-    technologies: "5+",
-    countries: "3+", 
+    projects: "14+",
+    countries: "3+",
     passion: "∞"
   }
 } as const;
