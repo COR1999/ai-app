@@ -2,6 +2,29 @@ import { Project } from '@/types/project';
 
 export const projects: Project[] = [
   {
+    id: 15,
+    title: "Open Source Model Tracker",
+    shortDescription: "Open-source tool for checking which free AI models are currently available on NVIDIA NIM — because they update the list without telling anyone.",
+    fullDescription: "An open-source Next.js dashboard that lets anyone check which free-tier AI models are currently live on NVIDIA's NIM API. NVIDIA regularly adds, removes, and sunsets models from their free catalog without announcements, changelogs, or any form of notification — so developers and AI tinkerers are left guessing which endpoints actually work. This tool hits every model in the catalog with a real test request and shows you what's up, what's down, and what's new, so you can try out the latest models the moment they become available. Built out of frustration with stale docs, broken endpoints, and the constant need to manually verify which models still exist.",
+    technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS", "NVIDIA NIM API", "Vercel"],
+    features: [
+      "Live availability testing for every free NVIDIA NIM model via real API calls",
+      "Per-model status indicators (available, slow, error, removed) with response time tracking",
+      "Searchable, sortable, filterable model list with provider badges",
+      "Batch test-all endpoint with configurable concurrency",
+      "Automatic detection of newly added and recently removed models",
+      "Clean responsive dashboard UI built with Tailwind CSS",
+      "One-click deploy to Vercel with environment-variable configuration"
+    ],
+    image: "/images/projects/open-source-model-tracker.png",
+    imageAlt: "Open Source Model Tracker Dashboard",
+    githubLink: "https://github.com/COR1999/opensource-model-tracker",
+    demoLink: "https://opensource-model-tracker.vercel.app",
+    status: "completed",
+    featured: false,
+    showDetails: true
+  },
+  {
     id: 14,
     title: "Agent Workbench",
     shortDescription: "Open-source skill library and workbench for capturing, reusing, and auditing AI-agent engineering patterns across projects.",
