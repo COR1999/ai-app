@@ -1,8 +1,12 @@
-"use client";
-import React from "react";
+import type { Metadata } from 'next';
 import CredlyBadge from "@/components/CredlyBadge";
 import CertificateEmbed from "@/components/CertificateEmbed";
 
+export const metadata: Metadata = {
+  title: "Skills | Cian O'Rourke",
+  description:
+    "Technologies Cian O'Rourke works with daily — React, Next.js, TypeScript, Python, FastAPI, Firebase, and AI/LLM tooling.",
+};
 
 export default function SkillsPage() {
   // Kept in sync with the technologies actually used across shipped projects

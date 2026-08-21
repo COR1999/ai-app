@@ -1,12 +1,11 @@
 /**
  * HOMEPAGE COMPONENT
- * 
+ *
  * This is the main landing page that introduces visitors to the portfolio.
  * Features a centered hero layout with gradient background, personal introduction,
  * current role highlight, call-to-action buttons, stats, and scroll indicator.
  */
 
-"use client";
 import Link from 'next/link';
 import { PERSONAL_INFO } from '@/constants/personal-info';
 

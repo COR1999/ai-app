@@ -1,6 +1,6 @@
 /**
  * ABOUT PAGE COMPONENT
- * 
+ *
  * Comprehensive about page featuring:
  * - Hero section with personal introduction and visual elements
  * - Timeline showcasing journey from culinary arts to software development
@@ -9,9 +9,6 @@
  * - Call-to-action section for collaboration
  */
 
-"use client";
-
-import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { PERSONAL_INFO } from '@/constants/personal-info';
