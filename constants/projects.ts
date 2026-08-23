@@ -5,10 +5,11 @@ export const projects: Project[] = [
     id: 15,
     title: "Open Source Model Tracker",
     shortDescription: "A free dashboard that checks which AI models are actually working right now — so developers stop guessing when providers quietly change the list.",
-    fullDescription: "Companies like NVIDIA offer a menu of free AI models developers can build on, but they regularly add, remove, and retire them without any announcement. That leaves developers guessing which ones still work. This dashboard removes the guesswork: it quietly sends a small test to every free model and shows you, at a glance, what's working, what's down, and what's newly appeared. You can compare models side by side, see how reliable each one has been over the past week, and share a snapshot of the current status with others. It runs its own check automatically every morning, so the information is always fresh. Built and released as free, open-source software after one too many run-ins with broken links and out-of-date documentation.",
-    technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS", "NVIDIA NIM API", "OpenCode API", "Vercel"],
+    fullDescription: "Companies like NVIDIA and OpenRouter offer menus of free AI models developers can build on, but they regularly add, remove, and retire them without any announcement. That leaves developers guessing which ones still work. This dashboard removes the guesswork: it quietly sends a small test to every free model across NVIDIA NIM, OpenCode, and OpenRouter — 18 always-free OpenRouter models included — and shows you, at a glance, what's working, what's down, and what's newly appeared. You can compare models side by side, see how reliable each one has been over the past week, and share a snapshot of the current status with others. It runs its own check automatically every morning, so the information is always fresh. Built and released as free, open-source software after one too many run-ins with broken links and out-of-date documentation.",
+    technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS", "NVIDIA NIM API", "OpenCode API", "OpenRouter API", "Vercel"],
     features: [
       "Live status check for every free model, so you can see what's actually working before you rely on it",
+      "Three providers tracked in one view — NVIDIA NIM, OpenCode, and OpenRouter's always-free tier",
       "Side-by-side comparison of up to three models — speed, reliability, and capabilities at a glance",
       "A running history of which models were added or removed over the past 30 days",
       "Reliability tracking that shows how dependable each model has been over the past week",
