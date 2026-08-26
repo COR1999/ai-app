@@ -14,7 +14,7 @@ const CredlyBadge = ({ badgeId, width = 150, height = 270 }: CredlyBadgeProps) =
 
     if (!existingScript) {
       const script = document.createElement("script");
-      script.src = "//cdn.credly.com/assets/utilities/embed.js";
+      script.src = "https://cdn.credly.com/assets/utilities/embed.js";
       script.id = "credly-script";
       script.async = true;
       document.body.appendChild(script);
