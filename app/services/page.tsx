@@ -172,7 +172,6 @@ function CheckIcon() {
 export default function ServicesPage() {
   return (
     <div className="min-h-screen bg-background-secondary">
-      {/* HERO */}
       <section className="relative overflow-hidden bg-gradient-to-br from-primary via-primary-light to-gunmetal text-white">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-0 left-1/4 w-96 h-96 bg-secondary rounded-full blur-3xl" />
@@ -211,7 +210,6 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* THE PROBLEM */}
       <section className="py-16 sm:py-20 lg:py-24 bg-white">
         <div className="container mx-auto px-4 sm:px-6 max-w-4xl">
           <div className="text-center mb-12">
@@ -241,7 +239,6 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* WHAT YOU GET */}
       <section className="py-16 sm:py-20 lg:py-24 bg-background-secondary">
         <div className="container mx-auto px-4 sm:px-6 max-w-6xl">
           <div className="text-center mb-12">
@@ -266,7 +263,6 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* HOW IT WORKS */}
       <section className="py-16 sm:py-20 lg:py-24 bg-white">
         <div className="container mx-auto px-4 sm:px-6 max-w-4xl">
           <div className="text-center mb-12">
@@ -287,7 +283,6 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* WHAT I NEED FROM YOU */}
       <section className="py-16 sm:py-20 lg:py-24 bg-background-secondary">
         <div className="container mx-auto px-4 sm:px-6 max-w-4xl">
           <div className="text-center mb-12">
@@ -325,7 +320,6 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* PRICING */}
       <section className="py-16 sm:py-20 lg:py-24 bg-white">
         <div className="container mx-auto px-4 sm:px-6 max-w-3xl">
           <div className="text-center mb-12">
@@ -376,7 +370,6 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* EXAMPLE WEBSITES */}
       <section className="py-16 sm:py-20 lg:py-24 bg-background-secondary">
         <div className="container mx-auto px-4 sm:px-6 max-w-5xl">
           <div className="text-center mb-12">
@@ -405,7 +398,6 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* FAQ */}
       <section className="py-16 sm:py-20 lg:py-24 bg-white">
         <div className="container mx-auto px-4 sm:px-6 max-w-3xl">
           <div className="text-center mb-12">
@@ -432,7 +424,6 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* CONTACT / ENQUIRY FORM */}
       <section id="enquiry" className="py-16 sm:py-20 lg:py-24 bg-background-secondary scroll-mt-20">
         <div className="container mx-auto px-4 sm:px-6 max-w-2xl">
           <div className="text-center mb-10">
@@ -449,7 +440,6 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* BOTTOM CTA */}
       <section className="py-16 sm:py-20 bg-gradient-to-br from-primary to-primary-light text-white text-center">
         <div className="container mx-auto px-4 sm:px-6 max-w-3xl">
           <h2 className="text-3xl sm:text-4xl font-bold mb-4">Ready to get started?</h2>

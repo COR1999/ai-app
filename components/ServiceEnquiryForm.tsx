@@ -108,7 +108,6 @@ const ServiceEnquiryForm: React.FC = () => {
         <input id="website" type="text" name="website" tabIndex={-1} autoComplete="off" />
       </div>
 
-      {/* Your name */}
       <div>
         <label htmlFor="enquiry_name" className="block text-primary font-medium mb-1.5">
           Your name <span className="text-secondary">*</span>
@@ -124,7 +123,6 @@ const ServiceEnquiryForm: React.FC = () => {
         {errors.name && <p className="text-red-500 text-sm mt-1">{errors.name}</p>}
       </div>
 
-      {/* Business name */}
       <div>
         <label htmlFor="enquiry_business" className="block text-primary font-medium mb-1.5">
           Business name <span className="text-secondary">*</span>
@@ -140,7 +138,6 @@ const ServiceEnquiryForm: React.FC = () => {
         {errors.business && <p className="text-red-500 text-sm mt-1">{errors.business}</p>}
       </div>
 
-      {/* Email */}
       <div>
         <label htmlFor="enquiry_email" className="block text-primary font-medium mb-1.5">
           Email <span className="text-secondary">*</span>
@@ -156,7 +153,6 @@ const ServiceEnquiryForm: React.FC = () => {
         {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email}</p>}
       </div>
 
-      {/* Phone */}
       <div>
         <label htmlFor="enquiry_phone" className="block text-primary font-medium mb-1.5">
           Phone <span className="text-secondary">*</span>
@@ -172,7 +168,6 @@ const ServiceEnquiryForm: React.FC = () => {
         {errors.phone && <p className="text-red-500 text-sm mt-1">{errors.phone}</p>}
       </div>
 
-      {/* Business location */}
       <div>
         <label htmlFor="enquiry_location" className="block text-primary font-medium mb-1.5">
           Business location <span className="text-secondary">*</span>
@@ -188,7 +183,6 @@ const ServiceEnquiryForm: React.FC = () => {
         {errors.location && <p className="text-red-500 text-sm mt-1">{errors.location}</p>}
       </div>
 
-      {/* Business website (optional) */}
       <div>
         <label htmlFor="enquiry_website_url" className="block text-primary font-medium mb-1.5">
           Business website <span className="text-text-light text-sm font-normal">(optional)</span>
@@ -202,7 +196,6 @@ const ServiceEnquiryForm: React.FC = () => {
         />
       </div>
 
-      {/* Social media (optional) */}
       <div>
         <label htmlFor="enquiry_social" className="block text-primary font-medium mb-1.5">
           Facebook / Instagram <span className="text-text-light text-sm font-normal">(optional)</span>
@@ -216,7 +209,6 @@ const ServiceEnquiryForm: React.FC = () => {
         />
       </div>
 
-      {/* What does your business do? */}
       <div>
         <label htmlFor="enquiry_description" className="block text-primary font-medium mb-1.5">
           What does your business do?
@@ -230,7 +222,6 @@ const ServiceEnquiryForm: React.FC = () => {
         />
       </div>
 
-      {/* Services */}
       <div>
         <label htmlFor="enquiry_services" className="block text-primary font-medium mb-1.5">
           What services do you offer?
@@ -244,7 +235,6 @@ const ServiceEnquiryForm: React.FC = () => {
         />
       </div>
 
-      {/* Photos */}
       <div>
         <label className="block text-primary font-medium mb-2">
           Do you have photos you&apos;d like to use?
@@ -264,7 +254,6 @@ const ServiceEnquiryForm: React.FC = () => {
         </div>
       </div>
 
-      {/* Anything else */}
       <div>
         <label htmlFor="enquiry_notes" className="block text-primary font-medium mb-1.5">
           Anything else you&apos;d like on the website? <span className="text-text-light text-sm font-normal">(optional)</span>
@@ -278,7 +267,6 @@ const ServiceEnquiryForm: React.FC = () => {
         />
       </div>
 
-      {/* Submit */}
       <button
         type="submit"
         disabled={formState === 'submitting'}
