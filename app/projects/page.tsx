@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 
 export default function ProjectsPage() {
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-background-secondary">
 
       {/* HERO SECTION */}
       <section className="bg-white border-b">

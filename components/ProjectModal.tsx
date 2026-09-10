@@ -68,7 +68,7 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, isOpen, onClose })
         onClick={(e) => e.stopPropagation()}
       >
         {/* Fixed Header with Close Button */}
-        <div className="sticky top-0 bg-white z-10 border-b border-gray-100 p-6 md:p-8 pb-4">
+        <div className="sticky top-0 bg-white z-10 border-b border-neutral/10 p-6 md:p-8 pb-4">
           <div className="flex justify-between items-start">
             <div className="flex-1 pr-4">
               <h3 id="project-modal-title" className="text-2xl md:text-3xl font-bold text-primary mb-2">{project.title}</h3>
@@ -93,7 +93,7 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, isOpen, onClose })
               type="button"
               onClick={onClose}
               aria-label="Close project details"
-              className="text-neutral hover:text-primary transition-colors text-2xl p-1 bg-gray-50 hover:bg-gray-100 rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0"
+              className="text-text-secondary hover:text-primary transition-colors text-2xl p-1 bg-background-secondary hover:bg-neutral/10 rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0"
             >
               ×
             </button>
@@ -104,7 +104,7 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, isOpen, onClose })
         <div className="overflow-y-auto max-h-[calc(90vh-120px)]">
           <div className="p-6 md:p-8 pt-4">
             {/* Project Image */}
-            <div className="aspect-video rounded-lg overflow-hidden mb-6 bg-gray-100">
+            <div className="aspect-video rounded-lg overflow-hidden mb-6 bg-background-secondary">
               <Image
                 src={project.image}
                 alt={project.imageAlt}
@@ -152,7 +152,7 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, isOpen, onClose })
                   href={project.demoLink}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-secondary text-white px-6 py-3 rounded-lg font-semibold hover:bg-secondary-dark transition-colors"
+                  className="bg-secondary text-primary px-6 py-3 rounded-lg font-semibold hover:bg-secondary-dark transition-colors"
                 >
                   Live Demo
                 </a>
@@ -162,7 +162,7 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, isOpen, onClose })
                   href={project.githubLink}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="border-2 border-secondary text-secondary px-6 py-3 rounded-lg font-semibold hover:bg-secondary hover:text-white transition-all"
+                  className="border-2 border-primary text-primary px-6 py-3 rounded-lg font-semibold hover:bg-secondary hover:border-secondary hover:text-primary transition-all"
                 >
                   View Code
                 </a>
@@ -172,7 +172,7 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, isOpen, onClose })
                   href={project.videoLink}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="border-2 border-secondary text-secondary px-6 py-3 rounded-lg font-semibold hover:bg-secondary hover:text-white transition-all"
+                  className="border-2 border-primary text-primary px-6 py-3 rounded-lg font-semibold hover:bg-secondary hover:border-secondary hover:text-primary transition-all"
                 >
                   Watch Demo Video
                 </a>

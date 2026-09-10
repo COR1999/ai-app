@@ -71,7 +71,7 @@ const ContactForm: React.FC = () => {
         </p>
         <a
           href={`mailto:${PERSONAL_INFO.email}`}
-          className="inline-block bg-secondary text-white px-6 py-3 rounded-lg font-medium hover:bg-secondary-dark transition-colors"
+          className="inline-block bg-secondary text-primary px-6 py-3 rounded-lg font-medium hover:bg-secondary-dark transition-colors"
         >
           {PERSONAL_INFO.email}
         </a>
@@ -101,7 +101,7 @@ const ContactForm: React.FC = () => {
           id="user_name"
           type="text"
           name="user_name"
-          className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-secondary focus:border-transparent transition-colors"
+          className="w-full border border-neutral/40 rounded-lg px-4 py-2 focus:ring-2 focus:ring-primary focus:border-transparent transition-colors"
           placeholder="Your name"
           required
         />
@@ -115,7 +115,7 @@ const ContactForm: React.FC = () => {
           id="user_email"
           type="email"
           name="user_email"
-          className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-secondary focus:border-transparent transition-colors"
+          className="w-full border border-neutral/40 rounded-lg px-4 py-2 focus:ring-2 focus:ring-primary focus:border-transparent transition-colors"
           placeholder="your.email@example.com"
           required
         />
@@ -129,7 +129,7 @@ const ContactForm: React.FC = () => {
           id="message"
           name="message"
           rows={5}
-          className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-secondary focus:border-transparent transition-colors resize-vertical"
+          className="w-full border border-neutral/40 rounded-lg px-4 py-2 focus:ring-2 focus:ring-primary focus:border-transparent transition-colors resize-vertical"
           placeholder="Your message..."
           required
         />
@@ -138,7 +138,7 @@ const ContactForm: React.FC = () => {
       <button
         type="submit"
         disabled={isSubmitting}
-        className="w-full bg-secondary text-white py-3 rounded-lg hover:bg-secondary-dark transition-colors font-medium disabled:opacity-50 disabled:cursor-not-allowed"
+        className="w-full bg-secondary text-primary py-3 rounded-lg hover:bg-secondary-dark transition-colors font-medium disabled:opacity-50 disabled:cursor-not-allowed"
       >
         {isSubmitting ? 'Sending…' : 'Send'}
       </button>
@@ -148,7 +148,7 @@ const ContactForm: React.FC = () => {
         <p
           role="status"
           className={`animate-fade-slide-in text-center font-medium mt-4 ${
-            isSuccess ? 'text-green-600' : 'text-red-600'
+            isSuccess ? 'text-green-700' : 'text-red-600'
           }`}
         >
           {stateMessage}

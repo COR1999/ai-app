@@ -42,7 +42,7 @@ export default function ProjectsBrowser() {
                 id="project-sort"
                 value={sortBy}
                 onChange={(e) => setSortBy(e.target.value as 'default' | 'status')}
-                className="px-3 py-1 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent"
+                className="px-3 py-1 border border-neutral/40 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
               >
                 <option value="default">Default Order</option>
                 <option value="status">Status (In Progress First)</option>

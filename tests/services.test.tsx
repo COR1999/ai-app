@@ -1,6 +1,11 @@
-import { describe, it, expect } from 'vitest';
+import { describe, it, expect, vi } from 'vitest';
 import { render, screen } from '@testing-library/react';
-import ServicesPage from '@/app/services/page';
+
+vi.stubEnv('NEXT_PUBLIC_EMAILJS_SERVICE_ID', 'test-service');
+vi.stubEnv('NEXT_PUBLIC_EMAILJS_TEMPLATE_ID', 'test-template');
+vi.stubEnv('NEXT_PUBLIC_EMAILJS_PUBLIC_KEY', 'test-key');
+
+const ServicesPage = (await import('@/app/services/page')).default;
 
 describe('ServicesPage', () => {
   it('renders the hero heading', () => {
@@ -69,7 +74,7 @@ describe('ServicesPage', () => {
     expect(screen.getByText("See what your website could look like.")).toBeDefined();
     expect(screen.getByText("Mama Amaya's")).toBeDefined();
     expect(screen.getByText(/Visit live site/)).toBeDefined();
-    expect(screen.getByText('View my other projects')).toBeDefined();
+    expect(screen.getAllByText('View my other projects').length).toBeGreaterThanOrEqual(1);
   });
 
   it('renders all 6 FAQ items', () => {
@@ -92,6 +97,13 @@ describe('ServicesPage', () => {
     const headings = screen.getAllByText("Let's get your business online.");
     expect(headings.length).toBeGreaterThanOrEqual(1);
     expect(screen.getByText('Send Enquiry')).toBeDefined();
+  });
+
+  it('shows the person behind the service', () => {
+    render(<ServicesPage />);
+    expect(screen.getByText(/Built and looked after by me/)).toBeDefined();
+    expect(screen.getByText(/deal directly with me/)).toBeDefined();
+    expect(screen.getByText('More about me')).toBeDefined();
   });
 
   it('renders the bottom CTA', () => {
