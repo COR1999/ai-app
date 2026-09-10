@@ -2,18 +2,44 @@ import { Project } from '@/types/project';
 
 export const projects: Project[] = [
   {
+    id: 15,
+    title: "Open Source Model Tracker",
+    shortDescription: "A free dashboard that checks which AI models are actually working right now — so developers stop guessing when providers quietly change the list.",
+    fullDescription: "Companies like NVIDIA and OpenRouter offer menus of free AI models developers can build on, but they regularly add, remove, and retire them without any announcement. That leaves developers guessing which ones still work. This dashboard removes the guesswork: it quietly sends a small test to every free model across NVIDIA NIM, OpenCode, and OpenRouter — 18 always-free OpenRouter models included — and shows you, at a glance, what's working, what's down, and what's newly appeared. You can compare models side by side, see how reliable each one has been over the past week, and share a snapshot of the current status with others. It runs its own check automatically every morning, so the information is always fresh. Built and released as free, open-source software after one too many run-ins with broken links and out-of-date documentation.",
+    technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS", "NVIDIA NIM API", "OpenCode API", "OpenRouter API", "Vercel"],
+    features: [
+      "Live status check for every free model, so you can see what's actually working before you rely on it",
+      "Three providers tracked in one view — NVIDIA NIM, OpenCode, and OpenRouter's always-free tier",
+      "Side-by-side comparison of up to three models — speed, reliability, and capabilities at a glance",
+      "A running history of which models were added or removed over the past 30 days",
+      "Reliability tracking that shows how dependable each model has been over the past week",
+      "Filters to quickly find the right kind of model — chat, code, image, or audio",
+      "Highlights for brand-new models that have appeared since your last visit",
+      "A dark and light mode, and a layout that works just as well on a phone",
+      "Shareable links so you can send someone the current status without them signing up",
+      "An automatic daily check every morning, keeping the dashboard up to date on its own"
+    ],
+    image: "/images/projects/open-source-model-tracker.png",
+    imageAlt: "Open Source Model Tracker Dashboard",
+    githubLink: "https://github.com/COR1999/opensource-model-tracker",
+    demoLink: "https://opensource-model-tracker.vercel.app",
+    status: "completed",
+    featured: false,
+    showDetails: true
+  },
+  {
     id: 14,
     title: "Agent Workbench",
-    shortDescription: "Open-source skill library and workbench for capturing, reusing, and auditing AI-agent engineering patterns across projects.",
-    fullDescription: "Agent Workbench is an open-source, actively evolving project for making AI agent work more portable, inspectable, and reusable across codebases. The repository is built around a lessons ledger, reusable skills, templates, and install/adoption scripts that let teams carry proven workflows and guardrails from one project to another. Rather than being a single app UI, it is a structured toolkit for codifying agent behaviour, recording lessons, and applying repeatable review processes with versioned context.",
+    shortDescription: "A free toolkit that helps AI coding assistants work more consistently — by saving the good habits and lessons learned so they carry over from one project to the next.",
+    fullDescription: "When you use an AI assistant to help write software, it starts fresh each time and tends to repeat the same mistakes across different projects. Agent Workbench is a free, open-source toolkit that fixes that. It gives the assistant a shared memory of proven ways of working and a written record of lessons learned, so the good habits travel with you from one project to another instead of being lost. It also comes with simple setup scripts that drop this guidance into a new project in a few steps. Think of it less as an app you open and more as a rulebook and toolkit that makes an AI assistant more reliable, easier to check, and consistent across everything you build. It's actively being developed and improved.",
     technologies: ["AI Agents", "Skills", "Lessons", "Templates", "Shell Scripting", "Agent Workflows", "Versioning", "Project Adoption"],
     features: [
-      "Lessons ledger for capturing reusable engineering knowledge and project-specific working rules",
-      "Reusable skills such as sweep-the-class, deslop, and handoff for structured agent workflows",
-      "Template-driven project setup and adoption flow for bringing the workbench into a repo",
-      "Install and adoption scripts for wiring standardized guidance into a local development setup",
-      "Versioned, evidence-based approach to sharing agent practices without drifting into stale advice",
-      "Open-source toolkit in active development, focused on portability and reviewability rather than a single front-end product"
+      "A written record of lessons learned, so mistakes get fixed once instead of repeated on every project",
+      "A library of reusable, ready-made routines the AI assistant can follow for common tasks",
+      "Simple setup scripts that add this guidance to a new project in just a few steps",
+      "Everything is versioned and written down, so guidance stays current and easy to review rather than going stale",
+      "Designed to travel between projects, so proven ways of working aren't tied to a single codebase",
+      "Free, open-source, and actively being improved"
     ],
     image: "/images/projects/agent-workbench-system-design.png",
     imageAlt: "Agent Workbench system design diagram",
