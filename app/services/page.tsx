@@ -179,6 +179,29 @@ export default function ServicesPage() {
 
       <section className="py-16 sm:py-20 lg:py-24 bg-white">
         <div className="container mx-auto px-4 sm:px-6 max-w-4xl">
+          <div className="text-center mb-8">
+            <h2 className="text-3xl sm:text-4xl font-bold text-primary mb-4">
+              Your website address
+            </h2>
+            <p className="text-lg text-text-secondary">
+              A professional <code className="bg-background-secondary px-2 py-1 rounded text-secondary font-medium">.ie</code> domain for your business.
+            </p>
+          </div>
+          <div className="flex flex-wrap justify-center gap-4 sm:gap-6">
+            {['murphyshardware.ie', 'greystonescafe.ie', 'wicklowplumbing.ie', 'yourbusinessname.ie'].map((domain) => (
+              <div
+                key={domain}
+                className="bg-background-secondary rounded-lg px-5 py-3 text-text-primary font-medium text-sm sm:text-base border border-neutral/20"
+              >
+                {domain}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-16 sm:py-20 lg:py-24 bg-white">
+        <div className="container mx-auto px-4 sm:px-6 max-w-4xl">
           <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl font-bold text-primary mb-4">How it works</h2>
             <p className="text-lg text-text-secondary">Three simple steps.</p>
