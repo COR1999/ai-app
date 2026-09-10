@@ -66,10 +66,10 @@ describe('ServicesPage', () => {
 
   it('renders the example websites section', () => {
     render(<ServicesPage />);
-    expect(screen.getByText("Simple doesn't mean boring.")).toBeDefined();
-    expect(screen.getByText('Example website 1')).toBeDefined();
-    expect(screen.getByText('Example website 2')).toBeDefined();
-    expect(screen.getByText('Example website 3')).toBeDefined();
+    expect(screen.getByText("See what your website could look like.")).toBeDefined();
+    expect(screen.getByText("Mama Amaya's")).toBeDefined();
+    expect(screen.getByText(/Visit live site/)).toBeDefined();
+    expect(screen.getByText('View my other projects')).toBeDefined();
   });
 
   it('renders all 6 FAQ items', () => {

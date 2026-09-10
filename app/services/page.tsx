@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import React from 'react';
+import Image from 'next/image';
 import ServiceEnquiryForm from '@/components/ServiceEnquiryForm';
 import { serviceFeatures, serviceSteps, serviceFaqs } from '@/constants/services';
 
@@ -287,26 +288,44 @@ export default function ServicesPage() {
         <div className="container mx-auto px-4 sm:px-6 max-w-5xl">
           <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl font-bold text-primary mb-4">
-              Simple doesn&apos;t mean boring.
+              See what your website could look like.
             </h2>
             <p className="text-lg text-text-secondary max-w-2xl mx-auto">
-              Every website is designed around the individual business while keeping the experience simple for customers.
+              A real website I built for a real client. Clean, professional and designed around their business.
             </p>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[1, 2, 3].map((i) => (
-              <div
-                key={i}
-                className="bg-white rounded-xl border-2 border-dashed border-neutral/30 aspect-[4/3] flex items-center justify-center"
+          <div className="bg-white rounded-2xl overflow-hidden shadow-sm border border-neutral/20">
+            <div className="relative aspect-[16/10] bg-background-secondary">
+              <Image
+                src="/images/projects/mamaamayas.jpeg"
+                alt="Mama Amaya's website — a production website built for an artisan hot sauce brand"
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 768px"
+              />
+            </div>
+            <div className="p-6 sm:p-8 text-center">
+              <h3 className="text-xl font-semibold text-primary mb-2">Mama Amaya&apos;s</h3>
+              <p className="text-text-secondary mb-4">
+                Artisan East African-inspired hot sauce brand &mdash; product storytelling, recipes and brand content.
+              </p>
+              <a
+                href="https://www.mamaamayas.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block text-secondary font-medium hover:text-secondary-dark transition-colors"
               >
-                <div className="text-center p-6">
-                  <svg className="w-12 h-12 text-neutral/40 mx-auto mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M2.25 15.75l5.159-5.159a2.25 2.25 0 0 1 3.182 0l5.159 5.159m-1.5-1.5 1.409-1.409a2.25 2.25 0 0 1 3.182 0l2.909 2.909M3.75 21h16.5a1.5 1.5 0 0 0 1.5-1.5V5.25a1.5 1.5 0 0 0-1.5-1.5H3.75a1.5 1.5 0 0 0-1.5 1.5v14.25a1.5 1.5 0 0 0 1.5 1.5Z" />
-                  </svg>
-                  <p className="text-sm text-neutral">Example website {i}</p>
-                </div>
-              </div>
-            ))}
+                Visit live site &rarr;
+              </a>
+            </div>
+          </div>
+          <div className="text-center mt-8">
+            <a
+              href="/projects"
+              className="inline-block border-2 border-secondary text-secondary hover:bg-secondary hover:text-white font-semibold px-6 py-3 rounded-xl transition-all duration-300"
+            >
+              View my other projects
+            </a>
           </div>
         </div>
       </section>
