@@ -30,7 +30,7 @@ const ServiceEnquiryForm: React.FC = () => {
     if (!business.value.trim()) newErrors.business = 'Business name is required.';
     if (!email.value.trim()) {
       newErrors.email = 'Email is required.';
-    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)) {
+    } else if (!/^[^\s@]+@[^\s@]+\.[a-zA-Z]{2,}$/.test(email.value)) {
       newErrors.email = 'Please enter a valid email address.';
     }
     if (!phone.value.trim()) newErrors.phone = 'Phone number is required.';
@@ -55,6 +55,7 @@ const ServiceEnquiryForm: React.FC = () => {
 
     if (!isEmailJsConfigured) {
       setFormState('error');
+      setErrors({});
       return;
     }
 
@@ -75,6 +76,7 @@ const ServiceEnquiryForm: React.FC = () => {
         },
         () => {
           setFormState('error');
+          setErrors({});
         }
       );
   };
@@ -120,7 +122,7 @@ const ServiceEnquiryForm: React.FC = () => {
           className={`${inputBase} ${inputBorder('name')}`}
           placeholder="e.g. John Murphy"
         />
-        {errors.name && <p className="text-red-500 text-sm mt-1">{errors.name}</p>}
+        {errors.name && <p className="text-red-600 text-sm mt-1">{errors.name}</p>}
       </div>
 
       <div>
@@ -135,7 +137,7 @@ const ServiceEnquiryForm: React.FC = () => {
           className={`${inputBase} ${inputBorder('business')}`}
           placeholder="e.g. Murphy's Hardware"
         />
-        {errors.business && <p className="text-red-500 text-sm mt-1">{errors.business}</p>}
+        {errors.business && <p className="text-red-600 text-sm mt-1">{errors.business}</p>}
       </div>
 
       <div>
@@ -150,7 +152,7 @@ const ServiceEnquiryForm: React.FC = () => {
           className={`${inputBase} ${inputBorder('email')}`}
           placeholder="john@murphyshardware.ie"
         />
-        {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email}</p>}
+        {errors.email && <p className="text-red-600 text-sm mt-1">{errors.email}</p>}
       </div>
 
       <div>
@@ -165,7 +167,7 @@ const ServiceEnquiryForm: React.FC = () => {
           className={`${inputBase} ${inputBorder('phone')}`}
           placeholder="087 123 4567"
         />
-        {errors.phone && <p className="text-red-500 text-sm mt-1">{errors.phone}</p>}
+        {errors.phone && <p className="text-red-600 text-sm mt-1">{errors.phone}</p>}
       </div>
 
       <div>
@@ -180,7 +182,7 @@ const ServiceEnquiryForm: React.FC = () => {
           className={`${inputBase} ${inputBorder('location')}`}
           placeholder="e.g. Greystones, Co. Wicklow"
         />
-        {errors.location && <p className="text-red-500 text-sm mt-1">{errors.location}</p>}
+        {errors.location && <p className="text-red-600 text-sm mt-1">{errors.location}</p>}
       </div>
 
       <div>
@@ -276,9 +278,9 @@ const ServiceEnquiryForm: React.FC = () => {
       </button>
 
       {formState === 'error' && (
-        <p role="alert" className="text-red-500 text-center text-sm mt-2">
+        <p role="alert" className="text-red-600 text-center text-sm mt-2">
           Something went wrong. Please try again or{' '}
-          <a href="mailto:cian.orourke@gmail.com" className="underline hover:text-red-600">
+          <a href="mailto:cian.orourke@gmail.com" className="underline hover:text-red-700">
             email me directly
           </a>.
         </p>
