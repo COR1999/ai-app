@@ -17,7 +17,7 @@ import { PERSONAL_INFO } from '@/constants/personal-info';
 export const metadata: Metadata = {
   title: "About | Cian O'Rourke",
   description:
-    "Full Stack Software Developer and team lead at Babylon — a chef-turned-developer building AI-integrated applications with Next.js, TypeScript, and Firebase.",
+    "Full Stack Software Developer and team lead at Babylon, a chef-turned-developer building AI-integrated applications with Next.js, TypeScript, and Firebase.",
   alternates: {
     canonical: '/about',
   },
@@ -107,10 +107,10 @@ export default function AboutPage() {
                 {/* Personal introduction paragraph */}
                 <p className="text-base sm:text-lg lg:text-xl text-text-primary leading-relaxed">
                   A Full Stack Software Developer and team lead at Babylon, with a Diploma in Software Development from Code Institute.
-                  I lead technical direction for my team &mdash; running code reviews, unblocking junior developers, and driving key
-                  technical decisions &mdash; while staying hands-on building full-stack, AI-integrated applications with Next.js,
-                  TypeScript, and Firebase. Having trained as a chef and barman in award-winning Dublin restaurants, I bring unique
-                  skills in stress management, team organization, and working under tight deadlines to the world of software development.
+                  I lead the technical direction for my team: running code reviews, unblocking junior developers, and driving the key
+                  technical decisions, while staying hands-on building full-stack, AI-integrated applications with Next.js,
+                  TypeScript, and Firebase. Having trained as a chef and barman in award-winning Dublin restaurants, I bring real
+                  skills in staying calm under pressure, organising a team, and delivering under tight deadlines.
                 </p>
               </div>
               

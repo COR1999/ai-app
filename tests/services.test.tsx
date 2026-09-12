@@ -62,13 +62,19 @@ describe('ServicesPage', () => {
     expect(screen.getByText('You approve it and go live')).toBeDefined();
   });
 
-  it('renders the pricing section', () => {
+  it('renders both pricing tiers with the Care plan featured', () => {
     render(<ServicesPage />);
     expect(screen.getByText('Pricing')).toBeDefined();
-    expect(screen.getByText('One-time setup')).toBeDefined();
-    expect(screen.getByText(/Monthly/)).toBeDefined();
-    // Hosting-only fallback tier is offered alongside the €25 Care plan
-    expect(screen.getByText(/Hosting-only is €10\/month/)).toBeDefined();
+    // Two distinct tiers
+    expect(screen.getByText('Care plan')).toBeDefined();
+    expect(screen.getByText('Hosting-only')).toBeDefined();
+    expect(screen.getByText('€10')).toBeDefined();
+    // Care plan is the highlighted / recommended option
+    expect(screen.getByText('Most popular')).toBeDefined();
+    // Hosting-only is upfront that changes cost extra
+    expect(screen.getByText(/charged at an hourly rate/)).toBeDefined();
+    // One-off setup fee is shown
+    expect(screen.getAllByText(/from €99/).length).toBeGreaterThanOrEqual(1);
   });
 
   it('renders the example section without misrepresenting the one-page product', () => {
@@ -106,7 +112,7 @@ describe('ServicesPage', () => {
   it('shows the person behind the service', () => {
     render(<ServicesPage />);
     expect(screen.getByText(/Built and looked after by me/)).toBeDefined();
-    expect(screen.getByText(/deal directly with me/)).toBeDefined();
+    expect(screen.getByText(/deal with me directly/)).toBeDefined();
     expect(screen.getByText('More about me')).toBeDefined();
   });
 
