@@ -425,9 +425,9 @@ export default function ServicesPage() {
                 Built and looked after by me
               </h2>
               <p className="text-text-primary leading-relaxed mb-4">
-                Hi, I&apos;m Cian O&apos;Rourke, a full-stack developer. When you sign up you deal
-                directly with me: I build your site, handle the domain and hosting, and answer your
-                emails. No agencies, no call centres.
+                You deal with me directly, start to finish. I design and build your site, set up
+                your domain and hosting, and I&apos;m the one who answers when you need a change.
+                Personal, local, and no runaround.
               </p>
               <div className="flex flex-wrap justify-center sm:justify-start gap-x-6 gap-y-2">
                 <Link

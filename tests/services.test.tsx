@@ -112,7 +112,7 @@ describe('ServicesPage', () => {
   it('shows the person behind the service', () => {
     render(<ServicesPage />);
     expect(screen.getByText(/Built and looked after by me/)).toBeDefined();
-    expect(screen.getByText(/deal directly with me/)).toBeDefined();
+    expect(screen.getByText(/deal with me directly/)).toBeDefined();
     expect(screen.getByText('More about me')).toBeDefined();
   });
 
