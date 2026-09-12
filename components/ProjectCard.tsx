@@ -10,9 +10,9 @@ interface ProjectCardProps {
 
 const ProjectCard: React.FC<ProjectCardProps> = ({ project, onViewDetails }) => {
   return (
-    <article className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden hover:shadow-lg hover:border-gray-300 transition-all duration-300 group relative">
+    <article className="bg-white rounded-xl shadow-sm border border-neutral/20 overflow-hidden hover:shadow-lg hover:border-neutral/40 transition-all duration-300 group relative">
       {/* Project Image */}
-      <div className="relative h-48 bg-gray-100 overflow-hidden">
+      <div className="relative h-48 bg-background-secondary overflow-hidden">
         <Image
           src={project.image}
           alt={project.imageAlt}
@@ -69,7 +69,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, onViewDetails }) => 
             <button
               type="button"
               onClick={() => onViewDetails(project)}
-              className="text-secondary font-medium text-sm hover:text-secondary-dark transition-colors"
+              className="text-primary font-medium text-sm hover:text-primary-dark transition-colors"
             >
               View Details →
             </button>
@@ -80,7 +80,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, onViewDetails }) => 
                 href={project.demoLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-neutral hover:text-secondary transition-colors"
+                className="text-text-secondary hover:text-primary transition-colors"
                 title="View Demo"
                 aria-label={`View ${project.title} live demo`}
               >
@@ -94,7 +94,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, onViewDetails }) => 
                 href={project.githubLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-neutral hover:text-secondary transition-colors"
+                className="text-text-secondary hover:text-primary transition-colors"
                 title="View Code"
                 aria-label={`View ${project.title} source code on GitHub`}
               >
@@ -108,7 +108,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, onViewDetails }) => 
                 href={project.videoLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-neutral hover:text-secondary transition-colors"
+                className="text-text-secondary hover:text-primary transition-colors"
                 title="Watch Demo Video"
                 aria-label={`Watch the ${project.title} demo video`}
               >

@@ -29,9 +29,8 @@ export default function HomePage() {
           
           {/* Main headline with large text and gradient accent */}
           <h1 className="text-6xl md:text-7xl font-bold mb-6 text-primary">
-            Welcome to My 
-            {/* Portfolio text with gradient effect using text-transparent and bg-clip-text */}
-            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">
+            Welcome to My
+            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary-light">
               Portfolio
             </span>
           </h1>
@@ -54,7 +53,7 @@ export default function HomePage() {
             {/* Status indicator with animated pulse dot */}
             <div className="flex items-center justify-center mb-3">
               <div className="w-3 h-3 rounded-full mr-3 animate-pulse bg-secondary"></div>
-              <span className="text-sm font-medium uppercase tracking-wide text-text-light">Current Role</span>
+              <span className="text-sm font-medium uppercase tracking-wide text-text-secondary">Current Role</span>
             </div>
             
             {/* Job title */}
@@ -66,6 +65,14 @@ export default function HomePage() {
             <p className="mt-2 text-text-secondary">
               {PERSONAL_INFO.specialization}
             </p>
+          </div>
+
+          <div className="mb-8 max-w-lg mx-auto px-4 py-3 rounded-xl border border-neutral/30 bg-background-card">
+            <Link href="/services" className="block text-center text-sm text-text-secondary hover:text-primary transition-colors">
+              Need a website for your business? One-page sites from{" "}
+              <span className="font-semibold text-primary">€50 setup + €25/month</span> —{" "}
+              <span className="underline underline-offset-2 font-medium">Learn more</span>
+            </Link>
           </div>
 
           {/* CALL-TO-ACTION BUTTONS - Primary navigation buttons */}
@@ -82,7 +89,7 @@ export default function HomePage() {
             {/* Secondary CTA - About Page (outlined button) */}
             <Link
               href="/about"
-              className="px-4 sm:px-6 lg:px-8 py-3 sm:py-4 rounded-xl font-semibold text-sm sm:text-base lg:text-lg border-2 border-secondary text-secondary hover:bg-secondary hover:text-white transition-all duration-300 text-center"
+              className="px-4 sm:px-6 lg:px-8 py-3 sm:py-4 rounded-xl font-semibold text-sm sm:text-base lg:text-lg border-2 border-primary text-primary hover:bg-secondary hover:border-secondary hover:text-primary transition-all duration-300 text-center"
             >
               Learn More About Me
             </Link>
@@ -94,20 +101,20 @@ export default function HomePage() {
           
           {/* Stat 1: Projects */}
           <div className="text-center">
-            <div className="text-3xl font-bold mb-2 text-secondary">{PERSONAL_INFO.stats.projects}</div>
-            <div className="text-text-light">Projects Built</div>
+            <div className="text-3xl font-bold mb-2 text-primary">{PERSONAL_INFO.stats.projects}</div>
+            <div className="text-text-secondary">Projects Built</div>
           </div>
           
           {/* Stat 2: Countries */}
           <div className="text-center">
-            <div className="text-3xl font-bold mb-2 text-secondary">{PERSONAL_INFO.stats.countries}</div>
-            <div className="text-text-light">Countries Worked In</div>
+            <div className="text-3xl font-bold mb-2 text-primary">{PERSONAL_INFO.stats.countries}</div>
+            <div className="text-text-secondary">Countries Worked In</div>
           </div>
           
           {/* Stat 3: Passion (infinity symbol) */}
           <div className="text-center">
-            <div className="text-3xl font-bold mb-2 text-secondary">{PERSONAL_INFO.stats.passion}</div>
-            <div className="text-text-light">Passion for Learning</div>
+            <div className="text-3xl font-bold mb-2 text-primary">{PERSONAL_INFO.stats.passion}</div>
+            <div className="text-text-secondary">Passion for Learning</div>
           </div>
         </div>
 
@@ -116,7 +123,7 @@ export default function HomePage() {
           <div className="flex flex-col items-center">
             
             {/* "Explore More" text */}
-            <span className="text-sm mb-2 text-text-light">Explore More</span>
+            <span className="text-sm mb-2 text-text-secondary">Explore More</span>
             
             {/* Mouse scroll indicator with animated dot */}
             <div className="w-6 h-10 border-2 border-accent rounded-full flex justify-center">

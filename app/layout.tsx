@@ -33,11 +33,40 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
+  const structuredData = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'Person',
+        name: PERSONAL_INFO.name,
+        url: PERSONAL_INFO.siteUrl,
+        jobTitle: PERSONAL_INFO.currentRole,
+        email: PERSONAL_INFO.email,
+        sameAs: [PERSONAL_INFO.linkedin, PERSONAL_INFO.github],
+      },
+      {
+        '@type': 'WebSite',
+        name: PERSONAL_INFO.siteTitle,
+        url: PERSONAL_INFO.siteUrl,
+      },
+    ],
+  }
+
   return (
     <html lang="en">
       <body className="min-h-screen flex flex-col">
+        <a
+          href="#main"
+          className="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-[60] focus:bg-primary focus:text-white focus:px-4 focus:py-2 focus:rounded-md focus:font-semibold"
+        >
+          Skip to content
+        </a>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+        />
         <Header />
-        <main className="flex-grow">
+        <main id="main" className="flex-grow">
           {children}
         </main>
         <Footer />

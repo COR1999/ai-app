@@ -15,12 +15,62 @@ import Link from 'next/link';
 import { PERSONAL_INFO } from '@/constants/personal-info';
 
 export const metadata: Metadata = {
+  title: "About | Cian O'Rourke",
+  description:
+    "Full Stack Software Developer and team lead at Babylon — a chef-turned-developer building AI-integrated applications with Next.js, TypeScript, and Firebase.",
   alternates: {
     canonical: '/about',
   },
 };
 
 export default function AboutPage() {
+  const timeline = [
+    {
+      icon: '💼',
+      title: 'Full Stack Developer & Team Lead, Babylon',
+      period: 'December 2025 - Present',
+      description:
+        'Build and maintain production features for a multicultural platform with React and Next.js, translating complex Figma wireframes into responsive, accessible UI. Collaborate with mobile developers on shared Firebase architecture and API design, lead testing and release management, and support the onboarding of junior developers.',
+      cardClass: 'bg-primary/10 border border-primary/20',
+      iconClass: 'bg-primary',
+      periodClass: 'text-primary',
+      dotClass: 'bg-primary',
+    },
+    {
+      icon: '👨‍🍳',
+      title: 'Professional Kitchen Experience',
+      period: '2021-2025',
+      description:
+        'Trained as chef and barman in award-winning Dublin restaurants Crudo and Achara. Managed kitchen teams, supply orders, and delivered high-quality results under tight deadlines.',
+      cardClass: 'bg-secondary/10 border border-secondary/20',
+      iconClass: 'bg-secondary',
+      periodClass: 'text-secondary',
+      dotClass: 'bg-secondary',
+    },
+    {
+      icon: '🎓',
+      title: 'Software Development Diploma',
+      period: '2019-2020',
+      description:
+        'Completed Diploma in Software Development at Code Institute during Covid. Gained broad skills in technical, problem-solving and communications domains through four focused projects.',
+      cardClass: 'bg-accent/10 border border-accent/20',
+      iconClass: 'bg-accent',
+      periodClass: 'text-accent',
+      dotClass: 'bg-accent',
+    },
+    {
+      icon: '💻',
+      title: 'Culinary to Code',
+      period: '2021-2025',
+      description:
+        'After completing my diploma during Covid when few organisations were hiring junior developers, I gained invaluable experience in award-winning restaurants while staying passionate about my software career and keeping my skills sharp on private projects.',
+      cardClass: 'bg-neutral/10 border border-neutral/20',
+      iconClass: 'bg-neutral',
+      periodClass: 'text-neutral',
+      dotClass: 'bg-neutral',
+    },
+  ];
+
   return (
     // Main page container with light background
     <div className="min-h-screen bg-background-secondary">
@@ -44,14 +94,14 @@ export default function AboutPage() {
                 
                 {/* Greeting badge with emoji and friendly message */}
                 <div className="inline-block">
-                  <span className="bg-secondary/10 text-secondary px-4 py-2 rounded-full text-sm font-medium">
+                  <span className="bg-secondary/10 text-primary px-4 py-2 rounded-full text-sm font-medium">
                     👋 Nice to meet you
                   </span>
                 </div>
                 
                 {/* Main heading with gradient name effect */}
                 <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-primary leading-tight">
-                  I&apos;m <span className="text-transparent bg-clip-text bg-gradient-to-r from-secondary to-accent">Cian O&apos;Rourke</span>
+                  I&apos;m <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary-light">Cian O&apos;Rourke</span>
                 </h1>
                 
                 {/* Personal introduction paragraph */}
@@ -95,7 +145,7 @@ export default function AboutPage() {
                 </Link>
                 
                 {/* Secondary button - Contact (outlined button) */}
-                <Link href="/contact" className="border-2 border-secondary text-secondary px-4 sm:px-6 lg:px-8 py-3 sm:py-4 rounded-xl font-semibold hover:bg-secondary hover:text-white transition-all duration-300 text-sm sm:text-base">
+                <Link href="/contact" className="border-2 border-primary text-primary px-4 sm:px-6 lg:px-8 py-3 sm:py-4 rounded-xl font-semibold hover:bg-secondary hover:border-secondary hover:text-primary transition-all duration-300 text-sm sm:text-base">
                   Get In Touch
                 </Link>
 
@@ -103,7 +153,7 @@ export default function AboutPage() {
                 <a
                   href={PERSONAL_INFO.resumeUrl}
                   download
-                  className="flex items-center justify-center gap-2 border-2 border-neutral text-primary px-4 sm:px-6 lg:px-8 py-3 sm:py-4 rounded-xl font-semibold hover:bg-neutral/10 transition-all duration-300 text-sm sm:text-base"
+                  className="flex items-center justify-center gap-2 border-2 border-text-secondary text-primary px-4 sm:px-6 lg:px-8 py-3 sm:py-4 rounded-xl font-semibold hover:bg-neutral/10 transition-all duration-300 text-sm sm:text-base"
                 >
                   <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M7 10l5 5 5-5M12 15V3" />
@@ -178,178 +228,93 @@ export default function AboutPage() {
           
           {/* Mobile: Simple cards, Desktop: Timeline */}
           <div className="block sm:hidden space-y-4">
-            {/* Mobile Cards Layout */}
-            <div className="bg-primary/10 p-4 rounded-xl border border-primary/20">
-              <div className="flex items-center mb-3">
-                <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center mr-3">
-                  <span className="text-sm">💼</span>
+            {timeline.map((item) => (
+              <div key={item.title} className={`${item.cardClass} p-4 rounded-xl`}>
+                <div className="flex items-center mb-3">
+                  <div className={`w-8 h-8 ${item.iconClass} rounded-full flex items-center justify-center mr-3`}>
+                    <span className="text-sm">{item.icon}</span>
+                  </div>
+                  <div>
+                    <h3 className="text-sm font-semibold text-primary">{item.title}</h3>
+                    <p className={`text-xs ${item.periodClass} font-medium`}>{item.period}</p>
+                  </div>
                 </div>
-                <div>
-                  <h3 className="text-sm font-semibold text-primary">Full Stack Developer &amp; Team Lead, Babylon</h3>
-                  <p className="text-xs text-primary font-medium">December 2025 - Present</p>
-                </div>
+                <p className="text-xs text-text-primary">{item.description}</p>
               </div>
-              <p className="text-xs text-text-primary">Building production features with React and Next.js, translating Figma designs into pixel-perfect UI, leading code review and release management, and supporting onboarding for junior developers.</p>
-            </div>
-
-            <div className="bg-secondary/10 p-4 rounded-xl border border-secondary/20">
-              <div className="flex items-center mb-3">
-                <div className="w-8 h-8 bg-secondary rounded-full flex items-center justify-center mr-3">
-                  <span className="text-sm">👨‍🍳</span>
-                </div>
-                <div>
-                  <h3 className="text-sm font-semibold text-primary">Professional Kitchen</h3>
-                  <p className="text-xs text-secondary font-medium">2021-2025</p>
-                </div>
-              </div>
-              <p className="text-xs text-text-primary">Award-winning Dublin restaurants - managed teams and high-pressure environments.</p>
-            </div>
-            
-            <div className="bg-accent/10 p-4 rounded-xl border border-accent/20">
-              <div className="flex items-center mb-3">
-                <div className="w-8 h-8 bg-accent rounded-full flex items-center justify-center mr-3">
-                  <span className="text-sm">🎓</span>
-                </div>
-                <div>
-                  <h3 className="text-sm font-semibold text-primary">Software Development</h3>
-                  <p className="text-xs text-accent font-medium">2019-2020</p>
-                </div>
-              </div>
-              <p className="text-xs text-text-primary">Code Institute diploma with focus on full-stack development and problem-solving.</p>
-            </div>
-            
-            <div className="bg-neutral/10 p-4 rounded-xl border border-neutral/20">
-              <div className="flex items-center mb-3">
-                <div className="w-8 h-8 bg-neutral rounded-full flex items-center justify-center mr-3">
-                  <span className="text-sm">💻</span>
-                </div>
-                <div>
-                  <h3 className="text-sm font-semibold text-primary">Dual Career Path</h3>
-                  <p className="text-xs text-neutral font-medium">2021-2025</p>
-                </div>
-              </div>
-              <p className="text-xs text-text-primary">Maintained coding skills through private projects while working as a professional chef.</p>
-            </div>
+            ))}
           </div>
 
           {/* Desktop Timeline */}
           <div className="hidden sm:block relative">
-            
+
             {/* VERTICAL TIMELINE LINE - Centered on desktop */}
             <div className="absolute left-1/2 transform -translate-x-px h-full w-0.5 bg-gradient-to-b from-secondary via-accent to-neutral"></div>
-            
-            {/* TIMELINE ITEMS - Desktop alternating layout */}
+
+            {/* TIMELINE ITEMS - Desktop layout */}
             <div className="space-y-8 lg:space-y-12">
+              {timeline.map((item, index) => {
+                if (index <= 1) {
+                  return (
+                    <div key={item.title} className="relative">
 
-              {/* TIMELINE ITEM 0 - Babylon (current role) */}
-              <div className="relative">
+                      <div className="ml-12 sm:w-1/2 sm:pr-8 sm:text-right sm:ml-auto">
+                        <div className={`${item.cardClass} p-4 sm:p-6 lg:p-8 rounded-xl`}>
+                          <div className="flex justify-end items-center mb-4">
+                            <h3 className="text-2xl font-bold text-primary mr-4">{item.title}</h3>
+                            <div className={`w-12 h-12 ${item.iconClass} rounded-full flex items-center justify-center`}>
+                              <span className="text-xl">{item.icon}</span>
+                            </div>
+                          </div>
+                          <div className={`text-sm font-semibold ${item.periodClass} mb-2`}>{item.period}</div>
+                          <p className="text-text-primary">{item.description}</p>
+                        </div>
+                      </div>
 
-                {/* Mobile: Left aligned, Desktop: Right aligned */}
-                <div className="ml-12 sm:w-1/2 sm:pr-8 sm:text-right sm:ml-auto">
-                  <div className="bg-primary/10 p-4 sm:p-6 lg:p-8 rounded-xl border border-primary/20">
+                      <div className={`absolute left-1/2 transform -translate-x-1/2 w-4 h-4 ${item.dotClass} rounded-full border-4 border-white shadow-lg`}></div>
 
-                    {/* Title with icon */}
-                    <div className="flex justify-end items-center mb-4">
-                      <h3 className="text-2xl font-bold text-primary mr-4">Full Stack Developer &amp; Team Lead, Babylon</h3>
-                      <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center">
-                        <span className="text-xl">💼</span>
+                      <div className="w-1/2 pl-8"></div>
+                    </div>
+                  );
+                }
+                if (index === 2) {
+                  return (
+                    <div key={item.title} className="relative flex items-center">
+                      <div className="w-1/2 pr-8"></div>
+                      <div className={`absolute left-1/2 transform -translate-x-1/2 w-4 h-4 ${item.dotClass} rounded-full border-4 border-white shadow-lg`}></div>
+                      <div className="w-1/2 pl-8">
+                        <div className={`${item.cardClass} p-8 rounded-xl`}>
+                          <div className="flex items-center mb-4">
+                            <div className={`w-12 h-12 ${item.iconClass} rounded-full flex items-center justify-center mr-4`}>
+                              <span className="text-xl">{item.icon}</span>
+                            </div>
+                            <h3 className="text-2xl font-bold text-primary">{item.title}</h3>
+                          </div>
+                          <div className={`text-sm font-semibold ${item.periodClass} mb-2`}>{item.period}</div>
+                          <p className="text-text-primary">{item.description}</p>
+                        </div>
                       </div>
                     </div>
-
-                    {/* Date label */}
-                    <div className="text-sm font-semibold text-primary mb-2">December 2025 - Present</div>
-                    {/* Description */}
-                    <p className="text-text-primary">
-                      Build and maintain production features for a multicultural platform with React and Next.js, translating
-                      complex Figma wireframes into responsive, accessible UI. Collaborate with mobile developers on shared
-                      Firebase architecture and API design, lead testing and release management, and support the onboarding
-                      of junior developers.
-                    </p>
-                  </div>
-                </div>
-
-                {/* Timeline dot - centered on the timeline line */}
-                <div className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-primary rounded-full border-4 border-white shadow-lg"></div>
-
-                {/* Empty space on the right */}
-                <div className="w-1/2 pl-8"></div>
-              </div>
-
-              {/* TIMELINE ITEM 1 - Professional Kitchen Experience */}
-              <div className="relative">
-
-                {/* Mobile: Left aligned, Desktop: Right aligned */}
-                <div className="ml-12 sm:w-1/2 sm:pr-8 sm:text-right sm:ml-auto">
-                  <div className="bg-secondary/10 p-4 sm:p-6 lg:p-8 rounded-xl border border-secondary/20">
-                    
-                    {/* Title with icon */}
-                    <div className="flex justify-end items-center mb-4">
-                      <h3 className="text-2xl font-bold text-primary mr-4">Professional Kitchen Experience</h3>
-                      <div className="w-12 h-12 bg-secondary rounded-full flex items-center justify-center">
-                        <span className="text-xl">👨‍🍳</span>
+                  );
+                }
+                return (
+                  <div key={item.title} className="relative flex items-center">
+                    <div className="w-1/2 pr-8 text-right">
+                      <div className={`${item.cardClass} p-8 rounded-xl`}>
+                        <div className="flex justify-end items-center mb-4">
+                          <h3 className="text-2xl font-bold text-primary mr-4">{item.title}</h3>
+                          <div className={`w-12 h-12 ${item.iconClass} rounded-full flex items-center justify-center`}>
+                            <span className="text-xl">{item.icon}</span>
+                          </div>
+                        </div>
+                        <div className={`text-sm font-semibold ${item.periodClass} mb-2`}>{item.period}</div>
+                        <p className="text-text-primary">{item.description}</p>
                       </div>
                     </div>
-                    
-                    {/* Date label */}
-                    <div className="text-sm font-semibold text-secondary mb-2">2021-2025</div>
-                    {/* Description */}
-                    <p className="text-text-primary">
-                      Trained as chef and barman in award-winning Dublin restaurants Crudo and Achara. 
-                      Managed kitchen teams, supply orders, and delivered high-quality results under tight deadlines.
-                    </p>
+                    <div className={`absolute left-1/2 transform -translate-x-1/2 w-4 h-4 ${item.dotClass} rounded-full border-4 border-white shadow-lg`}></div>
+                    <div className="w-1/2 pl-8"></div>
                   </div>
-                </div>
-                
-                {/* Timeline dot - centered on the timeline line */}
-                <div className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-secondary rounded-full border-4 border-white shadow-lg"></div>
-                
-                {/* Empty space on the right */}
-                <div className="w-1/2 pl-8"></div>
-              </div>
-              
-              {/* Item 2 */}
-              <div className="relative flex items-center">
-                <div className="w-1/2 pr-8"></div>
-                <div className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-accent rounded-full border-4 border-white shadow-lg"></div>
-                <div className="w-1/2 pl-8">
-                  <div className="bg-accent/10 p-8 rounded-xl border border-accent/20">
-                    <div className="flex items-center mb-4">
-                      <div className="w-12 h-12 bg-accent rounded-full flex items-center justify-center mr-4">
-                        <span className="text-xl">🎓</span>
-                      </div>
-                      <h3 className="text-2xl font-bold text-primary">Software Development Diploma</h3>
-                    </div>
-                    {/* Date label */}
-                    <div className="text-sm font-semibold text-accent mb-2">2019-2020</div>
-                    <p className="text-text-primary">
-                      Completed Diploma in Software Development at Code Institute during Covid. 
-                      Gained broad skills in technical, problem-solving and communications domains through four focused projects.
-                    </p>
-                  </div>
-                </div>
-              </div>
-              
-              {/* Item 3 */}
-              <div className="relative flex items-center">
-                <div className="w-1/2 pr-8 text-right">
-                  <div className="bg-neutral/10 p-8 rounded-xl border border-neutral/20">
-                    <div className="flex justify-end items-center mb-4">
-                      <h3 className="text-2xl font-bold text-primary mr-4">Culinary to Code</h3>
-                      <div className="w-12 h-12 bg-neutral rounded-full flex items-center justify-center">
-                        <span className="text-xl">💻</span>
-                      </div>
-                    </div>
-                    {/* Date label */}
-                    <div className="text-sm font-semibold text-neutral mb-2">2021-2025</div>
-                    <p className="text-text-primary">
-                      After completing my diploma during Covid when few organisations were hiring junior developers, 
-                      I gained invaluable experience in award-winning restaurants while staying passionate about my software career.
-                    </p>
-                  </div>
-                </div>
-                <div className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-neutral rounded-full border-4 border-white shadow-lg"></div>
-                <div className="w-1/2 pl-8"></div>
-              </div>
+                );
+              })}
             </div>
           </div>
         </div>

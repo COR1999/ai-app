@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import emailjs from '@emailjs/browser';
+import { PERSONAL_INFO } from '@/constants/personal-info';
 
 const EMAILJS_SERVICE_ID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
 const EMAILJS_TEMPLATE_ID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
@@ -12,6 +13,10 @@ const isEmailJsConfigured = Boolean(
 );
 
 type FormState = 'idle' | 'submitting' | 'success' | 'error';
+
+const inputBase =
+  'w-full border rounded-lg px-4 py-3 text-text-primary placeholder:text-text-light/60 focus:ring-2 focus:ring-primary focus:border-transparent transition-colors outline-none';
+const inputBorder = (invalid: boolean) => (invalid ? 'border-red-400' : 'border-neutral/40');
 
 const ServiceEnquiryForm: React.FC = () => {
   const [formState, setFormState] = useState<FormState>('idle');
@@ -85,7 +90,7 @@ const ServiceEnquiryForm: React.FC = () => {
     return (
       <div className="text-center py-12" role="status">
         <div className="w-16 h-16 bg-secondary/10 rounded-full flex items-center justify-center mx-auto mb-6">
-          <svg className="w-8 h-8 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg className="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.5 12.75l6 6 9-13.5" />
           </svg>
         </div>
@@ -97,10 +102,21 @@ const ServiceEnquiryForm: React.FC = () => {
     );
   }
 
-  const inputBase =
-    'w-full border rounded-lg px-4 py-3 text-text-primary placeholder:text-text-light/60 focus:ring-2 focus:ring-secondary focus:border-transparent transition-colors outline-none';
-  const inputBorder = (field: string) =>
-    errors[field] ? 'border-red-400' : 'border-neutral/30';
+  if (!isEmailJsConfigured) {
+    return (
+      <div className="text-center space-y-4" role="alert">
+        <p className="text-text-secondary">
+          The enquiry form isn&apos;t available right now — please email me directly instead.
+        </p>
+        <a
+          href={`mailto:${PERSONAL_INFO.email}`}
+          className="inline-block bg-secondary text-primary px-6 py-3 rounded-lg font-medium hover:bg-secondary-dark transition-colors"
+        >
+          {PERSONAL_INFO.email}
+        </a>
+      </div>
+    );
+  }
 
   return (
     <form onSubmit={handleSubmit} className="space-y-5" noValidate>
@@ -119,10 +135,16 @@ const ServiceEnquiryForm: React.FC = () => {
           name="enquiry_name"
           type="text"
           required
-          className={`${inputBase} ${inputBorder('name')}`}
+          aria-invalid={!!errors.name}
+          aria-describedby={errors.name ? 'enquiry-name-error' : undefined}
+          className={`${inputBase} ${inputBorder(!!errors.name)}`}
           placeholder="e.g. John Murphy"
         />
-        {errors.name && <p className="text-red-600 text-sm mt-1">{errors.name}</p>}
+        {errors.name && (
+          <p id="enquiry-name-error" className="text-red-600 text-sm mt-1">
+            {errors.name}
+          </p>
+        )}
       </div>
 
       <div>
@@ -134,10 +156,16 @@ const ServiceEnquiryForm: React.FC = () => {
           name="enquiry_business"
           type="text"
           required
-          className={`${inputBase} ${inputBorder('business')}`}
+          aria-invalid={!!errors.business}
+          aria-describedby={errors.business ? 'enquiry-business-error' : undefined}
+          className={`${inputBase} ${inputBorder(!!errors.business)}`}
           placeholder="e.g. Murphy's Hardware"
         />
-        {errors.business && <p className="text-red-600 text-sm mt-1">{errors.business}</p>}
+        {errors.business && (
+          <p id="enquiry-business-error" className="text-red-600 text-sm mt-1">
+            {errors.business}
+          </p>
+        )}
       </div>
 
       <div>
@@ -149,10 +177,16 @@ const ServiceEnquiryForm: React.FC = () => {
           name="enquiry_email"
           type="email"
           required
-          className={`${inputBase} ${inputBorder('email')}`}
+          aria-invalid={!!errors.email}
+          aria-describedby={errors.email ? 'enquiry-email-error' : undefined}
+          className={`${inputBase} ${inputBorder(!!errors.email)}`}
           placeholder="john@murphyshardware.ie"
         />
-        {errors.email && <p className="text-red-600 text-sm mt-1">{errors.email}</p>}
+        {errors.email && (
+          <p id="enquiry-email-error" className="text-red-600 text-sm mt-1">
+            {errors.email}
+          </p>
+        )}
       </div>
 
       <div>
@@ -164,10 +198,16 @@ const ServiceEnquiryForm: React.FC = () => {
           name="enquiry_phone"
           type="tel"
           required
-          className={`${inputBase} ${inputBorder('phone')}`}
+          aria-invalid={!!errors.phone}
+          aria-describedby={errors.phone ? 'enquiry-phone-error' : undefined}
+          className={`${inputBase} ${inputBorder(!!errors.phone)}`}
           placeholder="087 123 4567"
         />
-        {errors.phone && <p className="text-red-600 text-sm mt-1">{errors.phone}</p>}
+        {errors.phone && (
+          <p id="enquiry-phone-error" className="text-red-600 text-sm mt-1">
+            {errors.phone}
+          </p>
+        )}
       </div>
 
       <div>
@@ -179,100 +219,49 @@ const ServiceEnquiryForm: React.FC = () => {
           name="enquiry_location"
           type="text"
           required
-          className={`${inputBase} ${inputBorder('location')}`}
+          aria-invalid={!!errors.location}
+          aria-describedby={errors.location ? 'enquiry-location-error' : undefined}
+          className={`${inputBase} ${inputBorder(!!errors.location)}`}
           placeholder="e.g. Greystones, Co. Wicklow"
         />
-        {errors.location && <p className="text-red-600 text-sm mt-1">{errors.location}</p>}
+        {errors.location && (
+          <p id="enquiry-location-error" className="text-red-600 text-sm mt-1">
+            {errors.location}
+          </p>
+        )}
       </div>
 
       <div>
         <label htmlFor="enquiry_website_url" className="block text-primary font-medium mb-1.5">
-          Business website <span className="text-text-light text-sm font-normal">(optional)</span>
+          Business website or social links <span className="text-text-secondary text-sm font-normal">(optional)</span>
         </label>
         <input
           id="enquiry_website_url"
           name="enquiry_website_url"
-          type="url"
-          className={`${inputBase} ${inputBorder('website_url')}`}
-          placeholder="https://..."
-        />
-      </div>
-
-      <div>
-        <label htmlFor="enquiry_social" className="block text-primary font-medium mb-1.5">
-          Facebook / Instagram <span className="text-text-light text-sm font-normal">(optional)</span>
-        </label>
-        <input
-          id="enquiry_social"
-          name="enquiry_social"
           type="text"
-          className={`${inputBase} ${inputBorder('social')}`}
-          placeholder="Links to your pages"
+          className={`${inputBase} ${inputBorder(false)}`}
+          placeholder="e.g. facebook.com/yourbusiness"
         />
       </div>
 
       <div>
         <label htmlFor="enquiry_description" className="block text-primary font-medium mb-1.5">
-          What does your business do?
+          Tell me briefly about your business and the services you offer{' '}
+          <span className="text-text-secondary text-sm font-normal">(optional)</span>
         </label>
         <textarea
           id="enquiry_description"
           name="enquiry_description"
           rows={3}
           className={`${inputBase} resize-y`}
-          placeholder="Tell me briefly about your business..."
-        />
-      </div>
-
-      <div>
-        <label htmlFor="enquiry_services" className="block text-primary font-medium mb-1.5">
-          What services do you offer?
-        </label>
-        <textarea
-          id="enquiry_services"
-          name="enquiry_services"
-          rows={3}
-          className={`${inputBase} resize-y`}
-          placeholder="List your main services..."
-        />
-      </div>
-
-      <div>
-        <label className="block text-primary font-medium mb-2">
-          Do you have photos you&apos;d like to use?
-        </label>
-        <div className="flex flex-wrap gap-3">
-          {['Yes', 'No', 'Some'].map((option) => (
-            <label key={option} className="flex items-center gap-2 cursor-pointer">
-              <input
-                type="radio"
-                name="enquiry_photos"
-                value={option}
-                className="w-4 h-4 text-secondary border-neutral/30 focus:ring-secondary"
-              />
-              <span className="text-text-primary">{option}</span>
-            </label>
-          ))}
-        </div>
-      </div>
-
-      <div>
-        <label htmlFor="enquiry_notes" className="block text-primary font-medium mb-1.5">
-          Anything else you&apos;d like on the website? <span className="text-text-light text-sm font-normal">(optional)</span>
-        </label>
-        <textarea
-          id="enquiry_notes"
-          name="enquiry_notes"
-          rows={3}
-          className={`${inputBase} resize-y`}
-          placeholder="Any special requests or additional info..."
+          placeholder="e.g. A family-run hardware store in Greystones selling tools, paint and garden supplies. Photos welcome too!"
         />
       </div>
 
       <button
         type="submit"
         disabled={formState === 'submitting'}
-        className="w-full bg-secondary hover:bg-secondary-dark text-white font-semibold py-3.5 rounded-xl transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed text-lg"
+        className="w-full bg-secondary hover:bg-secondary-dark text-primary font-semibold py-3.5 rounded-xl transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed text-lg"
       >
         {formState === 'submitting' ? 'Sending…' : 'Send Enquiry'}
       </button>
@@ -280,7 +269,7 @@ const ServiceEnquiryForm: React.FC = () => {
       {formState === 'error' && (
         <p role="alert" className="text-red-600 text-center text-sm mt-2">
           Something went wrong. Please try again or{' '}
-          <a href="mailto:cian.orourke@gmail.com" className="underline hover:text-red-700">
+          <a href={`mailto:${PERSONAL_INFO.email}`} className="underline hover:text-red-700">
             email me directly
           </a>.
         </p>

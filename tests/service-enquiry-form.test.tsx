@@ -36,14 +36,8 @@ describe('ServiceEnquiryForm', () => {
 
   it('renders optional fields', () => {
     render(<ServiceEnquiryForm />);
-    expect(screen.getByLabelText(/Business website/)).toBeDefined();
-    expect(screen.getByLabelText(/Facebook \/ Instagram/)).toBeDefined();
-    expect(screen.getByLabelText(/What does your business do/)).toBeDefined();
-    expect(screen.getByLabelText(/What services do you offer/)).toBeDefined();
-    expect(screen.getByText('Yes')).toBeDefined();
-    expect(screen.getByText('No')).toBeDefined();
-    expect(screen.getByText('Some')).toBeDefined();
-    expect(screen.getByLabelText(/Anything else/)).toBeDefined();
+    expect(screen.getByLabelText(/Business website or social links/)).toBeDefined();
+    expect(screen.getByLabelText(/Tell me briefly about your business/)).toBeDefined();
   });
 
   it('shows errors when submitting empty required fields', async () => {

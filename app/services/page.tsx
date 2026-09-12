@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import ServiceEnquiryForm from '@/components/ServiceEnquiryForm';
 import { serviceFeatures, serviceSteps, serviceFaqs } from '@/constants/services';
 
@@ -14,6 +15,7 @@ export const metadata: Metadata = {
       'Professional one-page websites for local businesses. €50 setup + €25/month including your domain, hosting, maintenance and updates.',
     type: 'website',
     locale: 'en_IE',
+    images: ['/opengraph-image'],
   },
   twitter: {
     card: 'summary_large_image',
@@ -84,8 +86,25 @@ function CheckIcon() {
 }
 
 export default function ServicesPage() {
+  const faqJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: serviceFaqs.map((faq) => ({
+      '@type': 'Question',
+      name: faq.question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: faq.answer,
+      },
+    })),
+  };
+
   return (
     <div className="min-h-screen bg-background-secondary">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
       <section className="relative overflow-hidden bg-gradient-to-br from-primary via-primary-light to-gunmetal text-white">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-0 left-1/4 w-96 h-96 bg-secondary rounded-full blur-3xl" />
@@ -115,11 +134,11 @@ export default function ServicesPage() {
             </div>
             <a
               href="#enquiry"
-              className="inline-block bg-secondary hover:bg-secondary-dark text-white font-semibold px-8 py-4 rounded-xl text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+              className="inline-block bg-secondary hover:bg-secondary-dark text-primary font-semibold px-8 py-4 rounded-xl text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
             >
               Get Your Website Started
             </a>
-            <p className="text-xs text-white/40 mt-6">* Setup cost may vary depending on the domain name you choose.</p>
+            <p className="text-xs text-white/70 mt-6">* Setup cost may vary depending on the domain name you choose.</p>
           </div>
         </div>
       </section>
@@ -250,7 +269,7 @@ export default function ServicesPage() {
                 </li>
               ))}
             </ul>
-            <p className="mt-6 text-sm text-text-light text-center">
+            <p className="mt-6 text-sm text-text-secondary text-center">
               Everything technical is handled by me.
             </p>
           </div>
@@ -298,7 +317,7 @@ export default function ServicesPage() {
               </p>
               <a
                 href="#enquiry"
-                className="inline-block bg-secondary hover:bg-secondary-dark text-white font-semibold px-8 py-3 rounded-xl transition-all duration-300 transform hover:scale-105"
+                className="inline-block bg-secondary hover:bg-secondary-dark text-primary font-semibold px-8 py-3 rounded-xl transition-all duration-300 transform hover:scale-105"
               >
                 Get Started
               </a>
@@ -336,7 +355,7 @@ export default function ServicesPage() {
                 href="https://www.mamaamayas.com/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block text-secondary font-medium hover:text-secondary-dark transition-colors"
+                className="inline-block text-primary font-medium hover:text-primary-dark transition-colors"
               >
                 Visit live site &rarr;
               </a>
@@ -345,10 +364,48 @@ export default function ServicesPage() {
           <div className="text-center mt-8">
             <a
               href="/projects"
-              className="inline-block border-2 border-secondary text-secondary hover:bg-secondary hover:text-white font-semibold px-6 py-3 rounded-xl transition-all duration-300"
+              className="inline-block border-2 border-primary text-primary hover:bg-secondary hover:border-secondary hover:text-primary font-semibold px-6 py-3 rounded-xl transition-all duration-300"
             >
               View my other projects
             </a>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-16 sm:py-20 lg:py-24 bg-background-secondary">
+        <div className="container mx-auto px-4 sm:px-6 max-w-5xl">
+          <div className="bg-white rounded-2xl p-8 sm:p-12 shadow-sm border border-neutral/20 flex flex-col sm:flex-row items-center gap-8">
+            <Image
+              src="/images/about/cianheadshotNew.jpg"
+              alt="Cian O'Rourke, the developer who builds and maintains your website"
+              width={160}
+              height={160}
+              className="rounded-full object-cover w-32 h-32 sm:w-40 sm:h-40 flex-shrink-0 shadow-md"
+            />
+            <div className="text-center sm:text-left">
+              <h2 className="text-2xl sm:text-3xl font-bold text-primary mb-3">
+                Built and looked after by me
+              </h2>
+              <p className="text-text-primary leading-relaxed mb-4">
+                Hi, I&apos;m Cian O&apos;Rourke — a full-stack developer. When you sign up you deal
+                directly with me: I build your site, handle the domain and hosting, and answer your
+                emails. No agencies, no call centres.
+              </p>
+              <div className="flex flex-wrap justify-center sm:justify-start gap-x-6 gap-y-2">
+                <Link
+                  href="/about"
+                  className="text-primary font-medium hover:text-primary-dark underline underline-offset-4"
+                >
+                  More about me
+                </Link>
+                <Link
+                  href="/projects"
+                  className="text-primary font-medium hover:text-primary-dark underline underline-offset-4"
+                >
+                  View my other projects
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -361,7 +418,7 @@ export default function ServicesPage() {
           <div className="space-y-4">
             {serviceFaqs.map((faq) => (
               <details key={faq.question} className="group bg-background-secondary rounded-xl overflow-hidden">
-                <summary className="flex items-center justify-between gap-4 p-6 cursor-pointer font-semibold text-primary hover:text-secondary transition-colors list-none">
+                <summary className="flex items-center justify-between gap-4 p-6 cursor-pointer font-semibold text-primary hover:text-primary-dark transition-colors list-none">
                   {faq.question}
                   <svg
                     className="w-5 h-5 flex-shrink-0 text-text-light group-open:rotate-180 transition-transform duration-200"
@@ -403,7 +460,7 @@ export default function ServicesPage() {
           </p>
           <a
             href="#enquiry"
-            className="inline-block bg-secondary hover:bg-secondary-dark text-white font-semibold px-8 py-4 rounded-xl text-lg transition-all duration-300 transform hover:scale-105 shadow-lg"
+            className="inline-block bg-secondary hover:bg-secondary-dark text-primary font-semibold px-8 py-4 rounded-xl text-lg transition-all duration-300 transform hover:scale-105 shadow-lg"
           >
             Have a Question? Get in Touch
           </a>

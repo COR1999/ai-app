@@ -36,3 +36,26 @@
 .animate-fade-slide-in {
   animation: fade-slide-in 0.4s ease-out;
 }
+
+/* Accessible focus indicator */
+:focus-visible {
+  outline: 3px solid currentColor;
+  outline-offset: 2px;
+}
+
+/* Form controls use their own visible focus ring */
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: none;
+}
+
+/* Respect users who ask for less motion */
+@media (prefers-reduced-motion: reduce) {
+  .animate-scroll,
+  .animate-fade-slide-in,
+  .animate-pulse,
+  .animate-bounce {
+    animation: none;
+  }
+}

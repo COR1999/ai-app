@@ -82,7 +82,7 @@ export default function SkillsPage() {
   const categories = ["Frontend", "Backend", "AI & LLM", "AI Tools", "Database", "Cloud", "Tools"];
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-background-secondary">
 
       {/* HERO SECTION */}
       <section className="bg-white border-b py-12">
@@ -102,7 +102,7 @@ export default function SkillsPage() {
             {[...allSkills, ...allSkills].map((skill, index) => (
               <div
                 key={`skill-${index}`}
-                className="flex-shrink-0 bg-white rounded-lg px-4 py-2 shadow-sm border border-gray-200 min-w-[100px] text-center hover:shadow-md transition-shadow group"
+                className="flex-shrink-0 bg-white rounded-lg px-4 py-2 shadow-sm border border-neutral/20 min-w-[100px] text-center hover:shadow-md transition-shadow group"
               >
                 <div className="text-lg mb-1 group-hover:scale-110 transition-transform">{skill.icon}</div>
                 <div className="font-medium text-xs text-primary whitespace-nowrap">
@@ -149,15 +149,15 @@ export default function SkillsPage() {
             {categories.map((category) => {
               const categorySkills = skills.filter((skill) => skill.category === category);
               return (
-                <div key={category} className="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
-                  <h2 className="text-lg font-semibold text-primary mb-4 border-b border-gray-100 pb-2">
+                <div key={category} className="bg-white rounded-lg shadow-sm border border-neutral/20 p-6">
+                  <h2 className="text-lg font-semibold text-primary mb-4 border-b border-neutral/10 pb-2">
                     {category}
                   </h2>
                   <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
                     {categorySkills.map((skill) => (
                       <div
                         key={skill.name}
-                        className="relative flex flex-col items-center p-3 rounded-lg hover:bg-gray-50 transition-colors group"
+                        className="relative flex flex-col items-center p-3 rounded-lg hover:bg-background-secondary transition-colors group"
                       >
                         {primarySkills.includes(skill.name) && (
                           <span
@@ -180,8 +180,8 @@ export default function SkillsPage() {
           </div>
 
           {/* ADDITIONAL EXPERIENCE */}
-          <div className="mt-8 bg-white rounded-lg shadow-sm border border-gray-200 p-6">
-          <h2 className="text-lg font-semibold text-primary mb-4 border-b border-gray-100 pb-2">
+          <div className="mt-8 bg-white rounded-lg shadow-sm border border-neutral/20 p-6">
+          <h2 className="text-lg font-semibold text-primary mb-4 border-b border-neutral/10 pb-2">
             Additional Experience
           </h2>
 
