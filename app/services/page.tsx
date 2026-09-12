@@ -8,11 +8,11 @@ import { serviceFeatures, serviceSteps, serviceFaqs } from '@/constants/services
 export const metadata: Metadata = {
   title: 'Simple Business Websites | Cian O\'Rourke',
   description:
-    'Professional one-page websites for local businesses. From €99 setup + €25/month for hosting, maintenance and updates — and the domain is registered in your name.',
+    'Professional one-page websites for local businesses. From €99 setup + €25/month for hosting, maintenance and updates, and the domain is registered in your name.',
   openGraph: {
     title: 'Simple Business Websites | Cian O\'Rourke',
     description:
-      'Professional one-page websites for local businesses. From €99 setup + €25/month for hosting, maintenance and updates — and the domain is registered in your name.',
+      'Professional one-page websites for local businesses. From €99 setup + €25/month for hosting, maintenance and updates, and the domain is registered in your name.',
     type: 'website',
     locale: 'en_IE',
     images: ['/opengraph-image'],
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Simple Business Websites | Cian O\'Rourke',
     description:
-      'Professional one-page websites for local businesses. From €99 setup + €25/month for hosting, maintenance and updates — and the domain is registered in your name.',
+      'Professional one-page websites for local businesses. From €99 setup + €25/month for hosting, maintenance and updates, and the domain is registered in your name.',
   },
   alternates: {
     canonical: '/services',
@@ -119,7 +119,7 @@ export default function ServicesPage() {
               </span>
             </h1>
             <p className="text-lg sm:text-xl text-white/80 mb-10 max-w-2xl mx-auto">
-              Professional one-page websites for local businesses &mdash; with your domain, hosting and ongoing maintenance included.
+              Professional one-page websites for local businesses. Hosting and ongoing maintenance included, and the domain is yours.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 mb-10">
               <div className="text-center">
@@ -291,7 +291,7 @@ export default function ServicesPage() {
                 </p>
               </div>
               <div className="text-center sm:text-left">
-                <div className="text-sm font-medium text-white/60 mb-2">Monthly &mdash; Care plan</div>
+                <div className="text-sm font-medium text-white/60 mb-2">Monthly - Care plan</div>
                 <div className="text-5xl font-bold text-secondary">€25</div>
                 <p className="text-sm text-white/70 mt-2">Hosting, support and updates included. No surprises.</p>
               </div>
@@ -313,7 +313,7 @@ export default function ServicesPage() {
             </div>
             <div className="mt-8 border-t border-white/20 pt-6 text-center">
               <p className="text-sm text-white/80">
-                Prefer to look after changes yourself? <span className="font-semibold text-white">Hosting-only is €10/month</span> &mdash; your site stays live and any changes are billed as needed.
+                Prefer to look after changes yourself? <span className="font-semibold text-white">Hosting-only is €10/month</span>: your site stays live and any changes are billed as needed.
               </p>
             </div>
             <div className="mt-6 text-center">
@@ -340,14 +340,14 @@ export default function ServicesPage() {
             <p className="text-lg text-text-secondary max-w-2xl mx-auto">
               Live client work, so you can see the quality and care that goes in. Your
               site will be a clean, focused <span className="font-semibold text-primary">single page</span> built around your
-              business &mdash; simpler than this, and just as professional.
+              business, and simpler than this, but just as professional.
             </p>
           </div>
           <div className="bg-white rounded-2xl overflow-hidden shadow-sm border border-neutral/20">
             <div className="relative aspect-[16/10] bg-background-secondary">
               <Image
                 src="/images/projects/mamaamayas.jpeg"
-                alt="Mama Amaya's website — a production website built for an artisan hot sauce brand"
+                alt="Mama Amaya's website, a production website built for an artisan hot sauce brand"
                 fill
                 className="object-cover"
                 sizes="(max-width: 768px) 100vw, 768px"
@@ -356,7 +356,7 @@ export default function ServicesPage() {
             <div className="p-6 sm:p-8 text-center">
               <h3 className="text-xl font-semibold text-primary mb-2">Mama Amaya&apos;s</h3>
               <p className="text-text-secondary mb-4">
-                Artisan East African-inspired hot sauce brand &mdash; product storytelling, recipes and brand content.
+                Artisan East African-inspired hot sauce brand: product storytelling, recipes and brand content.
               </p>
               <a
                 href="https://www.mamaamayas.com/"
@@ -364,7 +364,7 @@ export default function ServicesPage() {
                 rel="noopener noreferrer"
                 className="inline-block text-primary font-medium hover:text-primary-dark transition-colors"
               >
-                Visit live site &rarr;
+                Visit live site
               </a>
             </div>
           </div>

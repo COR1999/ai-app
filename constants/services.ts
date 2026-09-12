@@ -62,7 +62,7 @@ export const serviceFaqs = [
   {
     question: 'Who owns the domain?',
     answer:
-      'You do — it is registered in your name, so it is always yours. I handle the technical setup and keep it connected to your site. The small annual renewal (usually €15–20) is billed to you.',
+      'You do: it is registered in your name, so it is always yours. I handle the technical setup and keep it connected to your site. The small annual renewal (usually €15 to €20) is billed to you.',
   },
   {
     question: 'What do I need to provide?',
