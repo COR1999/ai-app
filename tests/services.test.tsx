@@ -15,7 +15,7 @@ describe('ServicesPage', () => {
 
   it('displays the setup price in hero and pricing card', () => {
     render(<ServicesPage />);
-    const prices = screen.getAllByText('€50');
+    const prices = screen.getAllByText('from €99');
     expect(prices.length).toBeGreaterThanOrEqual(2);
   });
 
@@ -66,21 +66,25 @@ describe('ServicesPage', () => {
     render(<ServicesPage />);
     expect(screen.getByText('Pricing')).toBeDefined();
     expect(screen.getByText('One-time setup')).toBeDefined();
-    expect(screen.getByText('Monthly')).toBeDefined();
+    expect(screen.getByText(/Monthly/)).toBeDefined();
+    // Hosting-only fallback tier is offered alongside the €25 Care plan
+    expect(screen.getByText(/Hosting-only is €10\/month/)).toBeDefined();
   });
 
-  it('renders the example websites section', () => {
+  it('renders the example section without misrepresenting the one-page product', () => {
     render(<ServicesPage />);
-    expect(screen.getByText("See what your website could look like.")).toBeDefined();
+    expect(screen.getByText("Real work I've built.")).toBeDefined();
     expect(screen.getByText("Mama Amaya's")).toBeDefined();
     expect(screen.getByText(/Visit live site/)).toBeDefined();
+    // The product is a single page — the example must not imply otherwise
+    expect(screen.getByText(/single page/)).toBeDefined();
     expect(screen.getAllByText('View my other projects').length).toBeGreaterThanOrEqual(1);
   });
 
   it('renders all 6 FAQ items', () => {
     render(<ServicesPage />);
     const faqQuestions = [
-      'Do I need to buy the domain?',
+      'Who owns the domain?',
       'What do I need to provide?',
       'Can I update the website later?',
       'Do I need to know anything technical?',
