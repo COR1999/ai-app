@@ -203,7 +203,7 @@ export default function ServicesPage() {
               Your website address
             </h2>
             <p className="text-lg text-text-secondary">
-              A professional <code className="bg-background-secondary px-2 py-1 rounded text-secondary font-medium">.ie</code> or <code className="bg-background-secondary px-2 py-1 rounded text-secondary font-medium">.com</code> domain, registered in your name — so it&apos;s always yours.
+              A professional <code className="bg-background-secondary px-2 py-1 rounded text-secondary font-medium">.ie</code> or <code className="bg-background-secondary px-2 py-1 rounded text-secondary font-medium">.com</code> domain, registered in your name, so it&apos;s always yours.
             </p>
           </div>
           <div className="flex flex-wrap justify-center gap-4 sm:gap-6">
@@ -277,57 +277,88 @@ export default function ServicesPage() {
       </section>
 
       <section className="py-16 sm:py-20 lg:py-24 bg-white">
-        <div className="container mx-auto px-4 sm:px-6 max-w-3xl">
-          <div className="text-center mb-12">
+        <div className="container mx-auto px-4 sm:px-6 max-w-4xl">
+          <div className="text-center mb-10">
             <h2 className="text-3xl sm:text-4xl font-bold text-primary mb-4">Pricing</h2>
+            <p className="text-lg text-text-secondary max-w-2xl mx-auto">
+              A one-time setup fee <span className="font-semibold text-primary">from €99</span> to design
+              and launch your site (this varies with the domain you choose), then a simple monthly plan.
+            </p>
           </div>
-          <div className="bg-gradient-to-br from-primary to-primary-light rounded-2xl p-8 sm:p-12 text-white shadow-xl">
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 mb-8">
-              <div className="text-center sm:text-left">
-                <div className="text-sm font-medium text-white/60 mb-2">One-time setup</div>
-                <div className="text-5xl font-bold text-secondary">from €99</div>
-                <p className="text-sm text-white/70 mt-2">
-                  To design and launch your website. Varies with the domain you choose.
-                </p>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
+            {/* Care plan - recommended */}
+            <div className="relative bg-gradient-to-br from-primary to-primary-light rounded-2xl p-8 text-white shadow-xl ring-2 ring-secondary md:scale-[1.03]">
+              <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-secondary text-primary text-xs font-bold uppercase tracking-wide px-4 py-1 rounded-full shadow">
+                Most popular
+              </span>
+              <h3 className="text-xl font-bold mb-1">Care plan</h3>
+              <p className="text-white/70 text-sm mb-4">Everything handled for you.</p>
+              <div className="mb-6">
+                <span className="text-5xl font-bold text-secondary">€25</span>
+                <span className="text-white/70"> / month</span>
               </div>
-              <div className="text-center sm:text-left">
-                <div className="text-sm font-medium text-white/60 mb-2">Monthly - Care plan</div>
-                <div className="text-5xl font-bold text-secondary">€25</div>
-                <p className="text-sm text-white/70 mt-2">Hosting, support and updates included. No surprises.</p>
+              <ul className="space-y-3 mb-8">
+                {[
+                  'Hosting, SSL and uptime',
+                  'Your domain managed for you',
+                  'Reasonable changes anytime, included',
+                  'Priority support, straight to me',
+                  'No hourly fees, no surprises',
+                ].map((item) => (
+                  <li key={item} className="flex items-start gap-2">
+                    <svg className="w-5 h-5 text-secondary flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.5 12.75l6 6 9-13.5" />
+                    </svg>
+                    <span className="text-white/90 text-sm">{item}</span>
+                  </li>
+                ))}
+              </ul>
+              <a
+                href="#enquiry"
+                className="block text-center bg-secondary hover:bg-secondary-dark text-primary font-semibold px-6 py-3 rounded-xl transition-all duration-300 transform hover:scale-105"
+              >
+                Get started
+              </a>
+            </div>
+
+            {/* Hosting-only - simpler option */}
+            <div className="bg-white border border-neutral/20 rounded-2xl p-8 shadow-sm">
+              <h3 className="text-xl font-bold text-primary mb-1">Hosting-only</h3>
+              <p className="text-text-secondary text-sm mb-4">Keep it simple.</p>
+              <div className="mb-6">
+                <span className="text-5xl font-bold text-primary">€10</span>
+                <span className="text-text-secondary"> / month</span>
               </div>
-            </div>
-            <div className="border-t border-white/20 pt-8">
-              <p className="text-sm font-medium text-white/80 mb-4">Every month includes:</p>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                {['Domain management', 'Hosting', 'SSL', 'Website maintenance', 'Small content updates', 'Technical management'].map(
-                  (item) => (
-                    <div key={item} className="flex items-center gap-2">
-                      <svg className="w-4 h-4 text-secondary flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.5 12.75l6 6 9-13.5" />
-                      </svg>
-                      <span className="text-white/90 text-sm">{item}</span>
-                    </div>
-                  )
-                )}
-              </div>
-            </div>
-            <div className="mt-8 border-t border-white/20 pt-6 text-center">
-              <p className="text-sm text-white/80">
-                Prefer to look after changes yourself? <span className="font-semibold text-white">Hosting-only is €10/month</span>: your site stays live and any changes are billed as needed.
-              </p>
-            </div>
-            <div className="mt-6 text-center">
-              <p className="text-sm text-white/60 mb-6">
-                No complicated packages. No hidden fees. I keep your site online; the domain stays registered in your name.
+              <ul className="space-y-3 mb-4">
+                {[
+                  'Hosting, SSL and uptime',
+                  'Your domain managed for you',
+                  'Your site stays online',
+                ].map((item) => (
+                  <li key={item} className="flex items-start gap-2">
+                    <svg className="w-5 h-5 text-secondary flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.5 12.75l6 6 9-13.5" />
+                    </svg>
+                    <span className="text-text-primary text-sm">{item}</span>
+                  </li>
+                ))}
+              </ul>
+              <p className="text-sm text-text-secondary mb-8">
+                Changes are not included: if you need one, it is charged at an hourly rate.
               </p>
               <a
                 href="#enquiry"
-                className="inline-block bg-secondary hover:bg-secondary-dark text-primary font-semibold px-8 py-3 rounded-xl transition-all duration-300 transform hover:scale-105"
+                className="block text-center border-2 border-primary text-primary hover:bg-background-secondary font-semibold px-6 py-3 rounded-xl transition-all duration-300"
               >
-                Get Started
+                Choose hosting-only
               </a>
             </div>
           </div>
+
+          <p className="text-sm text-text-secondary text-center mt-8">
+            No complicated packages. No hidden fees. The domain stays registered in your name.
+          </p>
         </div>
       </section>
 
@@ -394,7 +425,7 @@ export default function ServicesPage() {
                 Built and looked after by me
               </h2>
               <p className="text-text-primary leading-relaxed mb-4">
-                Hi, I&apos;m Cian O&apos;Rourke — a full-stack developer. When you sign up you deal
+                Hi, I&apos;m Cian O&apos;Rourke, a full-stack developer. When you sign up you deal
                 directly with me: I build your site, handle the domain and hosting, and answer your
                 emails. No agencies, no call centres.
               </p>
