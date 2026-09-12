@@ -1,6 +1,7 @@
 import "./globals.css";
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+import ErrorBoundary from '@/components/ErrorBoundary'
 import { Metadata } from 'next'
 import { PERSONAL_INFO } from '@/constants/personal-info'
 import { Analytics } from '@vercel/analytics/next'
@@ -67,7 +68,7 @@ export default function RootLayout({
         />
         <Header />
         <main id="main" className="flex-grow">
-          {children}
+          <ErrorBoundary>{children}</ErrorBoundary>
         </main>
         <Footer />
         <Analytics />
