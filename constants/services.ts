@@ -60,9 +60,9 @@ export const serviceSteps = [
 
 export const serviceFaqs = [
   {
-    question: 'Do I need to buy the domain?',
+    question: 'Who owns the domain?',
     answer:
-      'No. The domain is included in the monthly service and I handle the technical setup and renewal.',
+      'You do: it is registered in your name, so it is always yours. I handle the technical setup and keep it connected to your site. The small annual renewal (usually €15 to €20) is billed to you.',
   },
   {
     question: 'What do I need to provide?',

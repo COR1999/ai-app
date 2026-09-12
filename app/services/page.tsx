@@ -8,11 +8,11 @@ import { serviceFeatures, serviceSteps, serviceFaqs } from '@/constants/services
 export const metadata: Metadata = {
   title: 'Simple Business Websites | Cian O\'Rourke',
   description:
-    'Professional one-page websites for local businesses. €50 setup + €25/month including your domain, hosting, maintenance and updates.',
+    'Professional one-page websites for local businesses. From €99 setup + €25/month for hosting, maintenance and updates, and the domain is registered in your name.',
   openGraph: {
     title: 'Simple Business Websites | Cian O\'Rourke',
     description:
-      'Professional one-page websites for local businesses. €50 setup + €25/month including your domain, hosting, maintenance and updates.',
+      'Professional one-page websites for local businesses. From €99 setup + €25/month for hosting, maintenance and updates, and the domain is registered in your name.',
     type: 'website',
     locale: 'en_IE',
     images: ['/opengraph-image'],
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Simple Business Websites | Cian O\'Rourke',
     description:
-      'Professional one-page websites for local businesses. €50 setup + €25/month including your domain, hosting, maintenance and updates.',
+      'Professional one-page websites for local businesses. From €99 setup + €25/month for hosting, maintenance and updates, and the domain is registered in your name.',
   },
   alternates: {
     canonical: '/services',
@@ -119,12 +119,12 @@ export default function ServicesPage() {
               </span>
             </h1>
             <p className="text-lg sm:text-xl text-white/80 mb-10 max-w-2xl mx-auto">
-              Professional one-page websites for local businesses &mdash; with your domain, hosting and ongoing maintenance included.
+              Professional one-page websites for local businesses. Hosting and ongoing maintenance included, and the domain is yours.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 mb-10">
               <div className="text-center">
-                <div className="text-3xl sm:text-4xl font-bold text-secondary">€50</div>
-                <div className="text-sm text-white/60 mt-1">setup *</div>
+                <div className="text-3xl sm:text-4xl font-bold text-secondary">from €99</div>
+                <div className="text-sm text-white/60 mt-1">one-off setup *</div>
               </div>
               <div className="hidden sm:block w-px h-12 bg-white/20" />
               <div className="text-center">
@@ -203,11 +203,11 @@ export default function ServicesPage() {
               Your website address
             </h2>
             <p className="text-lg text-text-secondary">
-              A professional <code className="bg-background-secondary px-2 py-1 rounded text-secondary font-medium">.ie</code> domain for your business.
+              A professional <code className="bg-background-secondary px-2 py-1 rounded text-secondary font-medium">.ie</code> or <code className="bg-background-secondary px-2 py-1 rounded text-secondary font-medium">.com</code> domain, registered in your name — so it&apos;s always yours.
             </p>
           </div>
           <div className="flex flex-wrap justify-center gap-4 sm:gap-6">
-            {['murphyshardware.ie', 'greystonescafe.ie', 'wicklowplumbing.ie', 'yourbusinessname.ie'].map((domain) => (
+            {['murphyshardware.ie', 'greystonescafe.com', 'wicklowplumbing.ie', 'yourbusinessname.com'].map((domain) => (
               <div
                 key={domain}
                 className="bg-background-secondary rounded-lg px-5 py-3 text-text-primary font-medium text-sm sm:text-base border border-neutral/20"
@@ -285,21 +285,21 @@ export default function ServicesPage() {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 mb-8">
               <div className="text-center sm:text-left">
                 <div className="text-sm font-medium text-white/60 mb-2">One-time setup</div>
-                <div className="text-5xl font-bold text-secondary">€50</div>
+                <div className="text-5xl font-bold text-secondary">from €99</div>
                 <p className="text-sm text-white/70 mt-2">
-                  To design and launch your website. May vary depending on domain.
+                  To design and launch your website. Varies with the domain you choose.
                 </p>
               </div>
               <div className="text-center sm:text-left">
-                <div className="text-sm font-medium text-white/60 mb-2">Monthly</div>
+                <div className="text-sm font-medium text-white/60 mb-2">Monthly - Care plan</div>
                 <div className="text-5xl font-bold text-secondary">€25</div>
-                <p className="text-sm text-white/70 mt-2">Everything included. No surprises.</p>
+                <p className="text-sm text-white/70 mt-2">Hosting, support and updates included. No surprises.</p>
               </div>
             </div>
             <div className="border-t border-white/20 pt-8">
               <p className="text-sm font-medium text-white/80 mb-4">Every month includes:</p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                {['Domain', 'Hosting', 'SSL', 'Website maintenance', 'Small content updates', 'Technical management'].map(
+                {['Domain management', 'Hosting', 'SSL', 'Website maintenance', 'Small content updates', 'Technical management'].map(
                   (item) => (
                     <div key={item} className="flex items-center gap-2">
                       <svg className="w-4 h-4 text-secondary flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -311,9 +311,14 @@ export default function ServicesPage() {
                 )}
               </div>
             </div>
-            <div className="mt-8 text-center">
+            <div className="mt-8 border-t border-white/20 pt-6 text-center">
+              <p className="text-sm text-white/80">
+                Prefer to look after changes yourself? <span className="font-semibold text-white">Hosting-only is €10/month</span>: your site stays live and any changes are billed as needed.
+              </p>
+            </div>
+            <div className="mt-6 text-center">
               <p className="text-sm text-white/60 mb-6">
-                No complicated packages. No hidden fees. No need to worry about hosting or renewing your domain.
+                No complicated packages. No hidden fees. I keep your site online; the domain stays registered in your name.
               </p>
               <a
                 href="#enquiry"
@@ -330,17 +335,19 @@ export default function ServicesPage() {
         <div className="container mx-auto px-4 sm:px-6 max-w-5xl">
           <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl font-bold text-primary mb-4">
-              See what your website could look like.
+              Real work I&apos;ve built.
             </h2>
             <p className="text-lg text-text-secondary max-w-2xl mx-auto">
-              A real website I built for a real client. Clean, professional and designed around their business.
+              Live client work, so you can see the quality and care that goes in. Your
+              site will be a clean, focused <span className="font-semibold text-primary">single page</span> built around your
+              business, and simpler than this, but just as professional.
             </p>
           </div>
           <div className="bg-white rounded-2xl overflow-hidden shadow-sm border border-neutral/20">
             <div className="relative aspect-[16/10] bg-background-secondary">
               <Image
                 src="/images/projects/mamaamayas.jpeg"
-                alt="Mama Amaya's website — a production website built for an artisan hot sauce brand"
+                alt="Mama Amaya's website, a production website built for an artisan hot sauce brand"
                 fill
                 className="object-cover"
                 sizes="(max-width: 768px) 100vw, 768px"
@@ -349,7 +356,7 @@ export default function ServicesPage() {
             <div className="p-6 sm:p-8 text-center">
               <h3 className="text-xl font-semibold text-primary mb-2">Mama Amaya&apos;s</h3>
               <p className="text-text-secondary mb-4">
-                Artisan East African-inspired hot sauce brand &mdash; product storytelling, recipes and brand content.
+                Artisan East African-inspired hot sauce brand: product storytelling, recipes and brand content.
               </p>
               <a
                 href="https://www.mamaamayas.com/"
@@ -357,7 +364,7 @@ export default function ServicesPage() {
                 rel="noopener noreferrer"
                 className="inline-block text-primary font-medium hover:text-primary-dark transition-colors"
               >
-                Visit live site &rarr;
+                Visit live site
               </a>
             </div>
           </div>
