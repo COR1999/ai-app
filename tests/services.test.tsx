@@ -77,13 +77,16 @@ describe('ServicesPage', () => {
     expect(screen.getAllByText(/from €99/).length).toBeGreaterThanOrEqual(1);
   });
 
-  it('renders the example section without misrepresenting the one-page product', () => {
+  it('features the one-page demos and keeps client proof', () => {
     render(<ServicesPage />);
-    expect(screen.getByText("Real work I've built.")).toBeDefined();
+    expect(screen.getByText('See what your one-page site could look like.')).toBeDefined();
+    // two one-page demo cards
+    expect(screen.getByText('Trades one-pager')).toBeDefined();
+    expect(screen.getByText('Cafe one-pager')).toBeDefined();
+    expect(screen.getAllByText('View live example').length).toBe(2);
+    // real client work kept below as proof
     expect(screen.getByText("Mama Amaya's")).toBeDefined();
     expect(screen.getByText(/Visit live site/)).toBeDefined();
-    // The product is a single page — the example must not imply otherwise
-    expect(screen.getByText(/single page/)).toBeDefined();
     expect(screen.getAllByText('View my other projects').length).toBeGreaterThanOrEqual(1);
   });
 
