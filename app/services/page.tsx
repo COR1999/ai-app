@@ -8,11 +8,11 @@ import { serviceFeatures, serviceSteps, serviceFaqs } from '@/constants/services
 export const metadata: Metadata = {
   title: 'Simple Business Websites | Cian O\'Rourke',
   description:
-    'Professional one-page websites for local businesses. From €99 setup + €25/month for hosting, maintenance and updates, and the domain is registered in your name.',
+    'Professional, mobile-first one-page websites for local businesses. From €99 setup + €25/month for hosting, maintenance and updates, and the domain is registered in your name.',
   openGraph: {
     title: 'Simple Business Websites | Cian O\'Rourke',
     description:
-      'Professional one-page websites for local businesses. From €99 setup + €25/month for hosting, maintenance and updates, and the domain is registered in your name.',
+      'Professional, mobile-first one-page websites for local businesses. From €99 setup + €25/month for hosting, maintenance and updates, and the domain is registered in your name.',
     type: 'website',
     locale: 'en_IE',
     images: ['/opengraph-image'],
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Simple Business Websites | Cian O\'Rourke',
     description:
-      'Professional one-page websites for local businesses. From €99 setup + €25/month for hosting, maintenance and updates, and the domain is registered in your name.',
+      'Professional, mobile-first one-page websites for local businesses. From €99 setup + €25/month for hosting, maintenance and updates, and the domain is registered in your name.',
   },
   alternates: {
     canonical: '/services',
@@ -119,7 +119,7 @@ export default function ServicesPage() {
               </span>
             </h1>
             <p className="text-lg sm:text-xl text-white/80 mb-10 max-w-2xl mx-auto">
-              Professional one-page websites for local businesses. Hosting and ongoing maintenance included, and the domain is yours.
+              Professional one-page websites for local businesses, built mobile-first so they look great on phones. Hosting and ongoing maintenance included, and the domain is yours.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 mb-10">
               <div className="text-center">
@@ -366,46 +366,81 @@ export default function ServicesPage() {
         <div className="container mx-auto px-4 sm:px-6 max-w-5xl">
           <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl font-bold text-primary mb-4">
-              Real work I&apos;ve built.
+              See what your one-page site could look like.
             </h2>
             <p className="text-lg text-text-secondary max-w-2xl mx-auto">
-              Live client work, so you can see the quality and care that goes in. Your
-              site will be a clean, focused <span className="font-semibold text-primary">single page</span> built around your
-              business, and simpler than this, but just as professional.
+              Two live examples, built from the same one-page template I&apos;d use for you.
+              Click either one to open the full site (these use example businesses).
             </p>
           </div>
-          <div className="bg-white rounded-2xl overflow-hidden shadow-sm border border-neutral/20">
-            <div className="relative aspect-[16/10] bg-background-secondary">
-              <Image
-                src="/images/projects/mamaamayas.jpeg"
-                alt="Mama Amaya's website, a production website built for an artisan hot sauce brand"
-                fill
-                className="object-cover"
-                sizes="(max-width: 768px) 100vw, 768px"
-              />
-            </div>
-            <div className="p-6 sm:p-8 text-center">
-              <h3 className="text-xl font-semibold text-primary mb-2">Mama Amaya&apos;s</h3>
-              <p className="text-text-secondary mb-4">
-                Artisan East African-inspired hot sauce brand: product storytelling, recipes and brand content.
-              </p>
-              <a
-                href="https://www.mamaamayas.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block text-primary font-medium hover:text-primary-dark transition-colors"
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {[
+              { view: '/demos/plumber', src: '/demos/plumber.html', title: 'Trades one-pager', blurb: 'A plumber, electrician or builder style site.' },
+              { view: '/demos/cafe', src: '/demos/cafe.html', title: 'Cafe one-pager', blurb: 'A cafe, salon or local food style site.' },
+            ].map((demo) => (
+              <Link
+                key={demo.view}
+                href={demo.view}
+                className="group block bg-white rounded-2xl overflow-hidden shadow-sm border border-neutral/20 hover:shadow-md transition-shadow duration-300"
               >
-                Visit live site
+                <div className="relative aspect-[16/10] overflow-hidden border-b border-neutral/10 bg-white">
+                  <iframe
+                    src={demo.src}
+                    title={`${demo.title} preview`}
+                    loading="lazy"
+                    tabIndex={-1}
+                    aria-hidden="true"
+                    className="absolute left-0 top-0 border-0 pointer-events-none"
+                    style={{ width: '300%', height: '300%', transform: 'scale(0.3333)', transformOrigin: 'top left' }}
+                  />
+                </div>
+                <div className="p-5 text-center">
+                  <h3 className="font-semibold text-primary mb-1">{demo.title}</h3>
+                  <p className="text-sm text-text-secondary mb-2">{demo.blurb}</p>
+                  <span className="text-primary font-medium group-hover:text-primary-dark">View live example</span>
+                </div>
+              </Link>
+            ))}
+          </div>
+
+          <div className="mt-12 pt-10 border-t border-neutral/20">
+            <p className="text-center text-text-secondary mb-6">
+              I also build larger, multi-page sites for clients. Here is a live one:
+            </p>
+            <div className="max-w-md mx-auto bg-white rounded-2xl overflow-hidden shadow-sm border border-neutral/20">
+              <div className="relative aspect-[16/10] bg-background-secondary">
+                <Image
+                  src="/images/projects/mamaamayas.jpeg"
+                  alt="Mama Amaya's website, a production website built for an artisan hot sauce brand"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 448px"
+                />
+              </div>
+              <div className="p-6 text-center">
+                <h3 className="text-lg font-semibold text-primary mb-2">Mama Amaya&apos;s</h3>
+                <p className="text-text-secondary text-sm mb-4">
+                  Artisan East African-inspired hot sauce brand: product storytelling, recipes and brand content.
+                </p>
+                <a
+                  href="https://www.mamaamayas.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block text-primary font-medium hover:text-primary-dark transition-colors"
+                >
+                  Visit live site
+                </a>
+              </div>
+            </div>
+            <div className="text-center mt-8">
+              <a
+                href="/projects"
+                className="inline-block border-2 border-primary text-primary hover:bg-secondary hover:border-secondary hover:text-primary font-semibold px-6 py-3 rounded-xl transition-all duration-300"
+              >
+                View my other projects
               </a>
             </div>
-          </div>
-          <div className="text-center mt-8">
-            <a
-              href="/projects"
-              className="inline-block border-2 border-primary text-primary hover:bg-secondary hover:border-secondary hover:text-primary font-semibold px-6 py-3 rounded-xl transition-all duration-300"
-            >
-              View my other projects
-            </a>
           </div>
         </div>
       </section>

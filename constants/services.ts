@@ -1,15 +1,15 @@
 export const serviceFeatures = [
   {
+    title: 'Mobile friendly',
+    description: 'Most customers will find you on their phone, so your site is built mobile-first to look sharp on phones, tablets and computers.',
+  },
+  {
     title: 'Your own domain',
     description: 'A professional web address for your business.',
   },
   {
     title: 'One-page website',
     description: 'Everything customers need in one simple page.',
-  },
-  {
-    title: 'Mobile friendly',
-    description: 'Designed to work properly on phones, tablets and computers.',
   },
   {
     title: 'Contact buttons',

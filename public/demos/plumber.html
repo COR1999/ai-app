@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<!-- ============================================================= -->
+<!-- ONE-PAGE CLIENT TEMPLATE - Direction A (Trades & Trust) -->
+<!-- To reskin for a new client: edit (1) the <title>/meta below, -->
+<!-- (2) the :root variables, (3) the text content in each section.-->
+<!-- Fictional demo business - safe to publish. -->
+<!-- ============================================================= -->
+<title>Coastline Plumbing & Heating - Greystones Plumber | Boilers, Bathrooms, Emergencies</title>
+<meta name="description" content="Reliable plumbing and heating in Greystones, Bray & Kilcoole. Boiler service, bathroom fit-outs and 24/7 emergency callouts. Call for a free quote." />
+<meta property="og:title" content="Coastline Plumbing & Heating - Greystones" />
+<meta property="og:description" content="Reliable plumbing & heating across North Wicklow. Free quotes, fast callouts." />
+<meta property="og:type" content="website" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Barlow+Condensed:wght@600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    /* ---- RESKIN THESE PER CLIENT ---- */
+ --ink:#0f2233;          /* headings / dark text */
+ --accent:#f4a723;       /* CTA / highlights */
+ --accent-ink:#1c1300;   /* text on accent */
+ --steel:#16324a;        /* hero pattern */
+ --body:#33414d;         /* body text */
+ --muted:#6b7783;
+ --line:#e2e6ea;
+ --bg:#ffffff;
+ --bg-alt:#f6f8fa;
+ --radius:8px;
+ --head:'Barlow Condensed',sans-serif;
+ --font:'Barlow',system-ui,sans-serif;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;font-family:var(--font);color:var(--body);background:var(--bg);line-height:1.6}
+  h1,h2,h3{font-family:var(--head);color:var(--ink);text-transform:uppercase;line-height:1.05;margin:0}
+  a{color:inherit}
+  img{max-width:100%;display:block}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+  .btn{display:inline-block;background:var(--accent);color:var(--accent-ink);font-weight:700;padding:14px 24px;border-radius:var(--radius);text-decoration:none;font-size:17px}
+  .btn.ghost{background:transparent;color:#fff;border:2px solid rgba(255,255,255,.55)}
+  .btn.ink{background:var(--ink);color:#fff}
+  .ph{background-image:linear-gradient(135deg,rgba(0,0,0,.06) 25%,transparent 25%,transparent 50%,rgba(0,0,0,.06) 50%,rgba(0,0,0,.06) 75%,transparent 75%);background-size:16px 16px;display:flex;align-items:center;justify-content:center;color:rgba(0,0,0,.35);font-size:12px;letter-spacing:.1em;text-transform:uppercase;border-radius:var(--radius)}
+
+  /* NAV */
+  header.nav{position:sticky;top:0;z-index:40;background:var(--ink);color:#fff}
+  header.nav .wrap{display:flex;align-items:center;gap:16px;height:64px}
+  header.nav .brand{font-family:var(--head);font-size:22px;color:#fff;text-decoration:none}
+  header.nav nav{margin-left:auto;display:flex;gap:20px}
+  header.nav nav a{color:#cdd7e0;text-decoration:none;font-weight:600;font-size:14px;text-transform:uppercase;letter-spacing:.04em}
+  header.nav nav a:hover{color:var(--accent)}
+  header.nav .call{margin-left:auto}
+  @media(max-width:760px){header.nav nav{display:none}}
+
+  /* HERO */
+  .hero{background:linear-gradient(180deg,rgba(15,34,51,.82),rgba(15,34,51,.94)),repeating-linear-gradient(45deg,var(--steel),var(--steel) 22px,#143047 22px,#143047 44px);color:#fff}
+  .hero .wrap{padding:64px 20px 72px}
+  .kicker{font-family:var(--head);letter-spacing:.14em;color:var(--accent);font-weight:700;font-size:15px}
+  .hero h1{font-size:clamp(34px,6vw,54px);margin:10px 0 14px;color:#fff}
+  .hero p{max-width:56ch;color:#cfd9e2;font-size:18px}
+  .hero .actions{margin-top:22px;display:flex;gap:12px;flex-wrap:wrap}
+  .trust{margin-top:26px;display:flex;gap:22px;flex-wrap:wrap;color:#aebccb;font-size:14px;font-weight:600}
+  .trust span::before{content:"- ";color:var(--accent)}
+
+  /* SECTIONS */
+  section{padding:56px 0}
+  section.alt{background:var(--bg-alt)}
+  .sec-head{text-align:center;margin-bottom:34px}
+  .sec-head h2{font-size:clamp(26px,4vw,36px)}
+  .sec-head p{color:var(--muted);margin:8px 0 0}
+
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .card{background:var(--bg);border:1px solid var(--line);border-top:4px solid var(--accent);border-radius:var(--radius);padding:20px}
+  .card h3{font-size:20px;margin-bottom:6px}
+  .card p{margin:0;font-size:15px}
+  @media(max-width:760px){.cards{grid-template-columns:1fr}}
+
+  .about{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:center}
+  @media(max-width:760px){.about{grid-template-columns:1fr}}
+
+  .gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+  .gallery .ph{height:150px}
+  @media(max-width:760px){.gallery{grid-template-columns:repeat(2,1fr)}}
+
+  .contact{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+  @media(max-width:760px){.contact{grid-template-columns:1fr}}
+  .field{margin-bottom:14px}
+  label{display:block;font-weight:600;font-size:14px;margin-bottom:4px;color:var(--ink)}
+  input,textarea{width:100%;padding:12px;border:1px solid var(--line);border-radius:var(--radius);font:inherit}
+  .info li{margin-bottom:10px;list-style:none}
+  .info ul{padding:0;margin:0}
+  .info b{color:var(--ink)}
+
+  footer{background:var(--ink);color:#aebccb;padding:28px 0;font-size:14px}
+  footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+  footer a{color:#fff;text-decoration:none}
+
+  :focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+  @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="#top">Coastline Plumbing</a>
+    <nav>
+      <a href="#services">Services</a>
+      <a href="#about">About</a>
+      <a href="#work">Work</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="btn call" href="tel:+353870000000"> 087 000 0000</a>
+  </div>
+</header>
+
+<a id="top"></a>
+<section class="hero" style="padding:0">
+  <div class="wrap">
+    <p class="kicker">Greystones - Bray - Kilcoole</p>
+    <h1>Reliable plumbing,<br>done right the first time</h1>
+    <p>Family-run heating and plumbing across North Wicklow. Gas-safe registered,
+       fully insured, and known for turning up when we say we will.</p>
+    <div class="actions">
+      <a class="btn" href="tel:+353870000000"> Call for a free quote</a>
+      <a class="btn ghost" href="#contact">Send an enquiry</a>
+    </div>
+    <div class="trust"><span>Gas-safe registered</span><span>Fully insured</span><span>Same-week callouts</span><span>4.9* locally</span></div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="wrap">
+    <div class="sec-head"><h2>What we do</h2><p>Domestic plumbing &amp; heating, done cleanly.</p></div>
+    <div class="cards">
+      <div class="card"><h3>Boiler Service &amp; Repair</h3><p>Annual servicing, fault-finding and replacements for all major brands.</p></div>
+      <div class="card"><h3>Bathrooms</h3><p>Full bathroom fit-outs, leak repairs, taps, showers and tiling.</p></div>
+      <div class="card"><h3>Emergencies</h3><p>Burst pipes and no heat - fast callout, tidy work, no surprises.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="about" class="alt">
+  <div class="wrap about">
+    <div>
+      <div class="sec-head" style="text-align:left;margin-bottom:14px"><h2>Local, trusted, tidy</h2></div>
+      <p>We've served Greystones and the surrounding villages for over 15 years. No
+         call-out gimmicks, no mess left behind - just honest work and a fair price.
+         Every job is guaranteed and we're only ever a phone call away.</p>
+      <a class="btn ink" href="#contact">Get in touch</a>
+    </div>
+    <div class="ph" style="height:260px">Photo of the team / a van</div>
+  </div>
+</section>
+
+<section id="work">
+  <div class="wrap">
+    <div class="sec-head"><h2>Recent work</h2><p>A few jobs from around North Wicklow.</p></div>
+    <div class="gallery">
+      <div class="ph">Job photo</div><div class="ph">Job photo</div>
+      <div class="ph">Job photo</div><div class="ph">Job photo</div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="alt">
+  <div class="wrap contact">
+    <div>
+      <div class="sec-head" style="text-align:left;margin-bottom:14px"><h2>Get a free quote</h2></div>
+      <!-- Replace action= with your Formspree/Web3Forms endpoint -->
+      <form action="https://formspree.io/f/YOUR_ID" method="POST">
+        <div class="field"><label for="name">Name</label><input id="name" name="name" required></div>
+        <div class="field"><label for="phone">Phone</label><input id="phone" name="phone" required></div>
+        <div class="field"><label for="msg">What do you need?</label><textarea id="msg" name="message" rows="4" required></textarea></div>
+        <button class="btn" type="submit">Send enquiry</button>
+        <p style="font-size:12px;color:var(--muted)">We only use your details to reply to this enquiry.</p>
+      </form>
+    </div>
+    <div class="info">
+      <div class="sec-head" style="text-align:left;margin-bottom:14px"><h2>Contact</h2></div>
+      <ul>
+        <li><b>Phone:</b> <a href="tel:+353870000000">087 000 0000</a></li>
+        <li><b>Email:</b> <a href="mailto:hello@example.ie">hello@coastlineplumbing.ie</a></li>
+        <li><b>Hours:</b> Mon-Sat, 8am-6pm - Emergencies 24/7</li>
+        <li><b>Area:</b> Greystones, Bray, Kilcoole &amp; surrounding</li>
+      </ul>
+      <div class="ph" style="height:200px;margin-top:12px">Google Map embed</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>(c) <span id="yr"></span> Coastline Plumbing &amp; Heating - Greystones, Co. Wicklow</div>
+    <div>Website by <a href="#">Your Name</a></div>
+  </div>
+</footer>
+<script>document.getElementById('yr').textContent=new Date().getFullYear();</script>
+</body>
+</html>
