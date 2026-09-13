@@ -1,5 +1,6 @@
 import { describe, it, expect, vi } from 'vitest';
 import { render, screen } from '@testing-library/react';
+import { priceLabels } from '@/constants/pricing';
 
 vi.stubEnv('NEXT_PUBLIC_EMAILJS_SERVICE_ID', 'test-service');
 vi.stubEnv('NEXT_PUBLIC_EMAILJS_TEMPLATE_ID', 'test-template');
@@ -15,13 +16,13 @@ describe('ServicesPage', () => {
 
   it('displays the setup price in hero and pricing card', () => {
     render(<ServicesPage />);
-    const prices = screen.getAllByText('from €99');
+    const prices = screen.getAllByText(priceLabels.setupFrom);
     expect(prices.length).toBeGreaterThanOrEqual(2);
   });
 
   it('displays the monthly price in hero and pricing card', () => {
     render(<ServicesPage />);
-    const prices = screen.getAllByText('€25');
+    const prices = screen.getAllByText(priceLabels.carePlanMonthly);
     expect(prices.length).toBeGreaterThanOrEqual(2);
   });
 
@@ -68,13 +69,13 @@ describe('ServicesPage', () => {
     // Two distinct tiers
     expect(screen.getByText('Care plan')).toBeDefined();
     expect(screen.getByText('Hosting-only')).toBeDefined();
-    expect(screen.getByText('€10')).toBeDefined();
+    expect(screen.getByText(priceLabels.hostingOnlyMonthly)).toBeDefined();
     // Care plan is the highlighted / recommended option
     expect(screen.getByText('Most popular')).toBeDefined();
     // Hosting-only is upfront that changes cost extra
     expect(screen.getByText(/charged at an hourly rate/)).toBeDefined();
     // One-off setup fee is shown
-    expect(screen.getAllByText(/from €99/).length).toBeGreaterThanOrEqual(1);
+    expect(screen.getAllByText(priceLabels.setupFrom).length).toBeGreaterThanOrEqual(1);
   });
 
   it('features the one-page demos and keeps client proof', () => {

@@ -4,15 +4,16 @@ import Image from 'next/image';
 import Link from 'next/link';
 import ServiceEnquiryForm from '@/components/ServiceEnquiryForm';
 import { serviceFeatures, serviceSteps, serviceFaqs } from '@/constants/services';
+import { priceLabels } from '@/constants/pricing';
+
+const metaDescription = `Professional, mobile-first one-page websites for local businesses. From ${priceLabels.setupPlusMonthly} for hosting, maintenance and updates, and the domain is registered in your name.`;
 
 export const metadata: Metadata = {
   title: 'Simple Business Websites | Cian O\'Rourke',
-  description:
-    'Professional, mobile-first one-page websites for local businesses. From €99 setup + €25/month for hosting, maintenance and updates, and the domain is registered in your name.',
+  description: metaDescription,
   openGraph: {
     title: 'Simple Business Websites | Cian O\'Rourke',
-    description:
-      'Professional, mobile-first one-page websites for local businesses. From €99 setup + €25/month for hosting, maintenance and updates, and the domain is registered in your name.',
+    description: metaDescription,
     type: 'website',
     locale: 'en_IE',
     images: ['/opengraph-image'],
@@ -20,8 +21,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Simple Business Websites | Cian O\'Rourke',
-    description:
-      'Professional, mobile-first one-page websites for local businesses. From €99 setup + €25/month for hosting, maintenance and updates, and the domain is registered in your name.',
+    description: metaDescription,
   },
   alternates: {
     canonical: '/services',
@@ -123,12 +123,12 @@ export default function ServicesPage() {
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 mb-10">
               <div className="text-center">
-                <div className="text-3xl sm:text-4xl font-bold text-secondary">from €99</div>
+                <div className="text-3xl sm:text-4xl font-bold text-secondary">{priceLabels.setupFrom}</div>
                 <div className="text-sm text-white/60 mt-1">one-off setup *</div>
               </div>
               <div className="hidden sm:block w-px h-12 bg-white/20" />
               <div className="text-center">
-                <div className="text-3xl sm:text-4xl font-bold text-secondary">€25</div>
+                <div className="text-3xl sm:text-4xl font-bold text-secondary">{priceLabels.carePlanMonthly}</div>
                 <div className="text-sm text-white/60 mt-1">per month</div>
               </div>
             </div>
@@ -281,7 +281,7 @@ export default function ServicesPage() {
           <div className="text-center mb-10">
             <h2 className="text-3xl sm:text-4xl font-bold text-primary mb-4">Pricing</h2>
             <p className="text-lg text-text-secondary max-w-2xl mx-auto">
-              A one-time setup fee <span className="font-semibold text-primary">from €99</span> to design
+              A one-time setup fee <span className="font-semibold text-primary">{priceLabels.setupFrom}</span> to design
               and launch your site (this varies with the domain you choose), then a simple monthly plan.
             </p>
           </div>
@@ -295,7 +295,7 @@ export default function ServicesPage() {
               <h3 className="text-xl font-bold mb-1">Care plan</h3>
               <p className="text-white/70 text-sm mb-4">Everything handled for you.</p>
               <div className="mb-6">
-                <span className="text-5xl font-bold text-secondary">€25</span>
+                <span className="text-5xl font-bold text-secondary">{priceLabels.carePlanMonthly}</span>
                 <span className="text-white/70"> / month</span>
               </div>
               <ul className="space-y-3 mb-8">
@@ -327,7 +327,7 @@ export default function ServicesPage() {
               <h3 className="text-xl font-bold text-primary mb-1">Hosting-only</h3>
               <p className="text-text-secondary text-sm mb-4">Keep it simple.</p>
               <div className="mb-6">
-                <span className="text-5xl font-bold text-primary">€10</span>
+                <span className="text-5xl font-bold text-primary">{priceLabels.hostingOnlyMonthly}</span>
                 <span className="text-text-secondary"> / month</span>
               </div>
               <ul className="space-y-3 mb-4">
