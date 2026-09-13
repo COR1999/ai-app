@@ -8,11 +8,11 @@ import { serviceFeatures, serviceSteps, serviceFaqs } from '@/constants/services
 export const metadata: Metadata = {
   title: 'Simple Business Websites | Cian O\'Rourke',
   description:
-    'Professional one-page websites for local businesses. From €99 setup + €25/month for hosting, maintenance and updates, and the domain is registered in your name.',
+    'Professional, mobile-first one-page websites for local businesses. From €99 setup + €25/month for hosting, maintenance and updates, and the domain is registered in your name.',
   openGraph: {
     title: 'Simple Business Websites | Cian O\'Rourke',
     description:
-      'Professional one-page websites for local businesses. From €99 setup + €25/month for hosting, maintenance and updates, and the domain is registered in your name.',
+      'Professional, mobile-first one-page websites for local businesses. From €99 setup + €25/month for hosting, maintenance and updates, and the domain is registered in your name.',
     type: 'website',
     locale: 'en_IE',
     images: ['/opengraph-image'],
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Simple Business Websites | Cian O\'Rourke',
     description:
-      'Professional one-page websites for local businesses. From €99 setup + €25/month for hosting, maintenance and updates, and the domain is registered in your name.',
+      'Professional, mobile-first one-page websites for local businesses. From €99 setup + €25/month for hosting, maintenance and updates, and the domain is registered in your name.',
   },
   alternates: {
     canonical: '/services',
@@ -119,7 +119,7 @@ export default function ServicesPage() {
               </span>
             </h1>
             <p className="text-lg sm:text-xl text-white/80 mb-10 max-w-2xl mx-auto">
-              Professional one-page websites for local businesses. Hosting and ongoing maintenance included, and the domain is yours.
+              Professional one-page websites for local businesses, built mobile-first so they look great on phones. Hosting and ongoing maintenance included, and the domain is yours.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 mb-10">
               <div className="text-center">
