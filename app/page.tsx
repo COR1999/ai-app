@@ -70,7 +70,7 @@ export default function HomePage() {
           <div className="mb-8 max-w-lg mx-auto px-4 py-3 rounded-xl border border-neutral/30 bg-background-card">
             <Link href="/services" className="block text-center text-sm text-text-secondary hover:text-primary transition-colors">
               Need a website for your business? One-page sites from{" "}
-              <span className="font-semibold text-primary">€50 setup + €25/month</span> —{" "}
+              <span className="font-semibold text-primary">€99 setup + €25/month</span>.{" "}
               <span className="underline underline-offset-2 font-medium">Learn more</span>
             </Link>
           </div>
