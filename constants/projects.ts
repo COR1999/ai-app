@@ -2,6 +2,33 @@ import { Project } from '@/types/project';
 
 export const projects: Project[] = [
   {
+    id: 16,
+    title: "Greystones Sailing Club — Race Results & Scoring",
+    shortDescription: "A mobile-friendly site for following sailing race results, with a private admin side that lets the club enter races — even offline on the water — score them, and publish their own results.",
+    fullDescription: "A fast, mobile-friendly website for following sailing race results at Greystones Sailing Club. Sailors can quickly see how they did, where they stand overall, who's ahead, and which races have been dropped from their score. It began as a clean, easy-to-read view of the club's official published results, and has grown into a tool the club can run itself: members with a login can set up a season's races, keep a register of competitors, and enter results — even out on the water with no internet, saving on the device and syncing once back online. It works out the scores itself (by finishing place or by handicap-corrected time, including dropped races and all the standard racing codes) and can double-check them against the official results. When the club publishes a series, those results appear on the public site in place of the old source, with a note if they're later amended. It's built to stay reliable — if the results source is briefly unavailable, the site keeps showing the last good data instead of a blank page.",
+    technologies: ["Next.js 16", "React 19", "TypeScript", "Tailwind CSS", "PostgreSQL", "Drizzle ORM", "Auth.js", "Neon", "Dexie (IndexedDB)", "Resend", "Zod", "cheerio", "Vitest", "Vercel"],
+    features: [
+      "Clear, mobile-first standings you can filter by fleet and class",
+      "See a boat's results across the whole season, and save 'my boat' to spot yourself in the list",
+      "Race-by-race pages showing handicap-corrected finishing times",
+      "Search for sailors, boats, or classes",
+      "Automatically reads the club's official published results, and keeps showing the last good data if the source is briefly down — so the page is never blank",
+      "A private, login-only admin area to set up races, keep a competitor register (with spreadsheet import), and enter results",
+      "Enter results out on the water with no internet — they save on the device and sync automatically once back online",
+      "Works out the scores itself — by finishing place or handicap time, with dropped races and all the standard racing codes — and cross-checks against the official results",
+      "One-click publishing: published results replace the old source on the public site, with an 'amended' note if they're later corrected",
+      "Manage who can log in and what they can do, including sending someone a one-time sign-in link",
+      "Passwordless sign-in by email link, light and dark mode, and a fast phone-friendly layout"
+    ],
+    image: "/images/projects/gsc-sailing-results.png",
+    imageAlt: "Greystones Sailing Club race results and standings",
+    demoLink: "https://gsc-sailing-results.vercel.app",
+    githubLink: "https://github.com/COR1999/gsc-sailing-results",
+    status: "in-progress",
+    featured: true,
+    showDetails: true
+  },
+  {
     id: 15,
     title: "Open Source Model Tracker",
     shortDescription: "A free dashboard that checks which AI models are actually working right now — so developers stop guessing when providers quietly change the list.",
