@@ -64,11 +64,11 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, isOpen, onClose })
         aria-modal="true"
         aria-labelledby="project-modal-title"
         tabIndex={-1}
-        className="bg-white rounded-xl max-w-4xl w-full max-h-[90vh] overflow-hidden relative outline-none"
+        className="bg-white rounded-xl max-w-4xl w-full max-h-[90dvh] overflow-hidden relative outline-none flex flex-col"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Fixed Header with Close Button */}
-        <div className="sticky top-0 bg-white z-10 border-b border-neutral/10 p-6 md:p-8 pb-4">
+        <div className="flex-shrink-0 bg-white border-b border-neutral/10 p-6 md:p-8 pb-4">
           <div className="flex justify-between items-start">
             <div className="flex-1 pr-4">
               <h3 id="project-modal-title" className="text-2xl md:text-3xl font-bold text-primary mb-2">{project.title}</h3>
@@ -101,7 +101,7 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, isOpen, onClose })
         </div>
 
         {/* Scrollable Content */}
-        <div className="overflow-y-auto max-h-[calc(90vh-120px)]">
+        <div className="flex-1 min-h-0 overflow-y-auto">
           <div className="p-6 md:p-8 pt-4">
             {/* Project Image */}
             <div className="aspect-video rounded-lg overflow-hidden mb-6 bg-background-secondary">
