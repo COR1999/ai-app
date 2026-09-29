@@ -67,7 +67,7 @@ const ContactForm: React.FC = () => {
     return (
       <div className="text-center space-y-4" role="alert">
         <p className="text-text-secondary">
-          The contact form isn&apos;t available right now — please email me directly instead.
+          The contact form isn&apos;t available right now. Please email me directly instead.
         </p>
         <a
           href={`mailto:${PERSONAL_INFO.email}`}
@@ -81,7 +81,7 @@ const ContactForm: React.FC = () => {
 
   return (
     <form onSubmit={sendEmail} className="space-y-6 max-w-lg mx-auto">
-      {/* Honeypot field — hidden from humans, irresistible to bots */}
+      {/* Honeypot field: hidden from humans, irresistible to bots */}
       <div className="absolute -left-[9999px] top-auto" aria-hidden="true">
         <label htmlFor="company">Company</label>
         <input

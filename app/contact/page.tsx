@@ -4,7 +4,7 @@ import ContactForm from '@/components/ContactForm';
 export const metadata: Metadata = {
   title: "Contact | Cian O'Rourke",
   description:
-    "Get in touch with Cian O'Rourke — Full Stack Developer available for collaborations and opportunities.",
+    "Get in touch with Cian O'Rourke, Full Stack Developer available for collaborations and opportunities.",
   alternates: {
     canonical: '/contact',
   },

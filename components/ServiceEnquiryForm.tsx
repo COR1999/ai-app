@@ -106,7 +106,7 @@ const ServiceEnquiryForm: React.FC = () => {
     return (
       <div className="text-center space-y-4" role="alert">
         <p className="text-text-secondary">
-          The enquiry form isn&apos;t available right now — please email me directly instead.
+          The enquiry form isn&apos;t available right now. Please email me directly instead.
         </p>
         <a
           href={`mailto:${PERSONAL_INFO.email}`}
