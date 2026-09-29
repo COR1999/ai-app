@@ -2,6 +2,30 @@ import { Project } from '@/types/project';
 
 export const projects: Project[] = [
   {
+    id: 17,
+    title: "Capital-Preservation Trading Research Platform",
+    shortDescription: "A trading research system whose proudest feature is that it refuses to trade — built to rigorously test whether market strategies actually work, and honest enough to say 'no' when they don't.",
+    fullDescription: "Most 'trading bot' projects show a beautiful backtest and imply easy money. This one is built to do the opposite: to avoid fooling its owner. It was created after a real, concentrated retail portfolio lost more than half its value, with one goal — make that outcome structurally hard to repeat. The system searches for a genuine market edge and holds every result to a standard fixed in advance; if nothing survives honest testing, it returns the correct answer — no trade — instead of a confident-looking illusion. Under the hood it runs an honest backtesting engine (no peeking at the future, realistic trading costs, and a survivorship-bias-aware universe of ~900 current and delisted S&P 500 companies), a disciplined research pipeline with pre-registered ideas and a sealed 'exam' period of data it never looks at until the final test, and even machine learning — used not as a magic wand but as a tougher way to try (and fail) to find an edge. Across technical strategies, factor and momentum approaches, and machine learning over two decades of data, nothing reliably beat simply owning the market once real costs and risk were accounted for — and the platform proves it with numbers, then points to the safe, evidence-based alternative. Real-money trading is deliberately unimplemented: the live path is a wall that refuses to run even if every safety switch is flipped, so it can never accidentally risk a cent.",
+    technologies: ["Python 3.11", "pandas", "NumPy", "scikit-learn", "SQLAlchemy", "SQLite", "PostgreSQL", "Alpaca API", "Tiingo API", "pytest"],
+    features: [
+      "Refuses to trade unless a strategy passes a standard fixed in advance — no moving the goalposts to make results look good",
+      "Honest backtesting: never peeks at future data, includes realistic trading costs, and accounts for companies that were delisted (so results aren't flattered)",
+      "Tested many strategies and machine learning over 20 years of data — and showed none reliably beat simply owning the market once costs and risk are counted",
+      "A real research method: pre-registered ideas, statistical significance controls, and a sealed period of data kept untouched until the final test",
+      "Safety by design — real-money trading is deliberately unbuilt, so it physically cannot place a live order",
+      "A circuit breaker and broker reconciliation that halt trading on anything unexpected, plus conservative risk limits throughout",
+      "Paper-trades on a live simulated account and tracks a real external portfolio (read-only) for monitoring",
+      "Turns the findings into an evidence-based 'grow safely' recommendation instead of a risky stock-picking gimmick",
+      "Runs entirely on free data sources — total data cost of zero"
+    ],
+    image: "/images/projects/trading-research-platform.png",
+    imageAlt: "Capital-preservation trading research platform",
+    githubLink: "https://github.com/COR1999/trading-bot",
+    status: "completed",
+    featured: true,
+    showDetails: true
+  },
+  {
     id: 16,
     title: "Greystones Sailing Club — Race Results & Scoring",
     shortDescription: "A complete system for running a sailing club's racing: set up and enter races (even offline on the water), score them with the club's handicap rules, and publish the results — plus a fast, mobile-friendly site where sailors follow the standings.",
