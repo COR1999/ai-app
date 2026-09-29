@@ -20,7 +20,7 @@ export const projects: Project[] = [
     ],
     image: "/images/projects/trading-research-platform.png",
     imageAlt: "Capital-preservation trading research platform",
-    githubLink: "https://github.com/COR1999/trading-bot",
+    githubLink: "https://github.com/COR1999/trading-research-platform",
     status: "completed",
     featured: true,
     showDetails: true
