@@ -43,6 +43,15 @@
   outline-offset: 2px;
 }
 
+/* Containers focused programmatically for accessibility (e.g. the project modal,
+   tabindex="-1") are not keyboard-navigable controls, so they must not show a
+   focus ring — otherwise a bold outline appears around the dialog on open. Real
+   interactive controls keep the ring defined above. */
+[tabindex="-1"]:focus,
+[tabindex="-1"]:focus-visible {
+  outline: none;
+}
+
 /* Form controls use their own visible focus ring */
 input:focus-visible,
 select:focus-visible,
