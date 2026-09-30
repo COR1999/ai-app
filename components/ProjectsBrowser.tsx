@@ -16,18 +16,18 @@ export default function ProjectsBrowser() {
    * Sorts projects by status with in-progress items first
    */
   const getSortedProjects = () => {
-    if (sortBy === 'status') {
-      return [...projects].sort((a, b) => {
-        const statusOrder = {
-          'in-progress': 0,
-          'planning': 1,
-          'production': 2,
-          'completed': 3
-        };
-        return statusOrder[a.status as keyof typeof statusOrder] - statusOrder[b.status as keyof typeof statusOrder];
-      });
-    }
-    return projects;
+    const ordered = sortBy === 'status'
+      ? [...projects].sort((a, b) => {
+          const statusOrder = {
+            'in-progress': 0,
+            'planning': 1,
+            'production': 2,
+            'completed': 3
+          };
+          return statusOrder[a.status as keyof typeof statusOrder] - statusOrder[b.status as keyof typeof statusOrder];
+        })
+      : projects;
+    return [...ordered.filter((p) => !p.earlierWork), ...ordered.filter((p) => p.earlierWork)];
   };
 
   return (
@@ -60,11 +60,17 @@ export default function ProjectsBrowser() {
         <div className="container mx-auto px-6 max-w-7xl">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {getSortedProjects().map((project) => (
-              <ProjectCard
-                key={project.id}
-                project={project}
-                onViewDetails={openModal}
-              />
+              <div key={project.id} className="contents">
+                {project.earlierWork && (
+                  <div className="col-span-full mt-4 pt-10 pb-2 border-t border-neutral/30">
+                    <h2 className="text-lg font-semibold text-primary">Earlier work</h2>
+                    <p className="text-sm text-text-secondary">
+                      Projects from my diploma years and my first years as a developer.
+                    </p>
+                  </div>
+                )}
+                <ProjectCard project={project} onViewDetails={openModal} />
+              </div>
             ))}
           </div>
         </div>

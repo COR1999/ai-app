@@ -37,6 +37,11 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, onViewDetails }) => 
               Interview Project
             </span>
           )}
+          {project.hackathonProject && (
+            <span className="px-2 py-1 rounded-md text-xs font-medium bg-primary/90 text-white">
+              Hackathon
+            </span>
+          )}
         </div>
       </div>
 
