@@ -23,8 +23,22 @@ export const metadata: Metadata = {
   },
 };
 
+type TimelineSide = 'left' | 'right' | 'center';
+
+interface TimelineEntry {
+  icon: string;
+  title: string;
+  period: string;
+  description: string;
+  cardClass: string;
+  iconClass: string;
+  periodClass: string;
+  dotClass: string;
+  side: TimelineSide;
+}
+
 export default function AboutPage() {
-  const timeline = [
+  const timeline: TimelineEntry[] = [
     {
       icon: '💼',
       title: 'Full Stack Developer & Team Lead, Babylon',
@@ -35,6 +49,7 @@ export default function AboutPage() {
       iconClass: 'bg-primary',
       periodClass: 'text-primary',
       dotClass: 'bg-primary',
+      side: 'right',
     },
     {
       icon: '👨‍🍳',
@@ -46,6 +61,7 @@ export default function AboutPage() {
       iconClass: 'bg-secondary',
       periodClass: 'text-secondary',
       dotClass: 'bg-secondary',
+      side: 'right',
     },
     {
       icon: '🎓',
@@ -57,6 +73,7 @@ export default function AboutPage() {
       iconClass: 'bg-accent',
       periodClass: 'text-accent',
       dotClass: 'bg-accent',
+      side: 'center',
     },
     {
       icon: '💻',
@@ -68,6 +85,7 @@ export default function AboutPage() {
       iconClass: 'bg-neutral',
       periodClass: 'text-neutral',
       dotClass: 'bg-neutral',
+      side: 'left',
     },
   ];
 
@@ -252,8 +270,8 @@ export default function AboutPage() {
 
             {/* TIMELINE ITEMS - Desktop layout */}
             <div className="space-y-8 lg:space-y-12">
-              {timeline.map((item, index) => {
-                if (index <= 1) {
+              {timeline.map((item) => {
+                if (item.side === 'right') {
                   return (
                     <div key={item.title} className="relative">
 
@@ -276,7 +294,7 @@ export default function AboutPage() {
                     </div>
                   );
                 }
-                if (index === 2) {
+                if (item.side === 'center') {
                   return (
                     <div key={item.title} className="relative flex items-center">
                       <div className="w-1/2 pr-8"></div>
