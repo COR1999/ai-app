@@ -19,10 +19,11 @@ export const projects: Project[] = [
       "55 passing tests covering the policy engine, the finance engine and the settings rules",
       "Still in active development, currently at phase 3 of 8"
     ],
-    // TODO: replace this screenshot once the app is further along. It shows the
-    // phase 2 dashboard (balance, safe-to-spend, obligations). Re-shoot after the
-    // agent, proposal and approval flow land in later phases, since those are the
-    // parts a reviewer will want to see. Delete this comment with the swap.
+    // TODO: re-shoot once the agent, proposal and approval flow land. The app is
+    // at phase 3 of 8 and none of those exist yet, so the current shot can only
+    // show what phase 2 built: the finance and policy engines plus the dashboard.
+    // Those are the parts a reviewer will want to see. Tracked in issue #50.
+    // Delete this comment with the swap.
     image: "/images/projects/financial-operator.png",
     imageAlt: "Small Business Financial Operator dashboard",
     status: "in-progress",
