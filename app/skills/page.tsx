@@ -70,7 +70,7 @@ export default function SkillsPage() {
             })}
           </div>
           <p className="text-xs text-text-secondary text-center mt-4">
-            Also marked with <span className="inline-block w-2 h-2 rounded-full bg-secondary align-middle"></span> throughout the full list below
+            Marked with <span className="inline-block w-2 h-2 rounded-full bg-secondary align-middle"></span> throughout the full list below
           </p>
         </div>
       </section>
