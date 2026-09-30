@@ -30,6 +30,11 @@ export default function ProjectsBrowser() {
     return [...ordered.filter((p) => !p.earlierWork), ...ordered.filter((p) => p.earlierWork)];
   };
 
+  // The heading belongs above the first earlierWork project only. Keying it off
+  // the flag itself renders it once per flagged project.
+  const sorted = getSortedProjects();
+  const firstEarlierIndex = sorted.findIndex((p) => p.earlierWork);
+
   return (
     <>
       {/* SORT CONTROLS */}
@@ -49,7 +54,7 @@ export default function ProjectsBrowser() {
               </select>
             </div>
             <div className="text-sm text-text-secondary" aria-live="polite">
-              {getSortedProjects().length} projects total
+              {sorted.length} projects total
             </div>
           </div>
         </div>
@@ -59,9 +64,9 @@ export default function ProjectsBrowser() {
       <section className="py-16">
         <div className="container mx-auto px-6 max-w-7xl">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {getSortedProjects().map((project) => (
+            {sorted.map((project, index) => (
               <div key={project.id} className="contents">
-                {project.earlierWork && (
+                {index === firstEarlierIndex && (
                   <div className="col-span-full mt-4 pt-10 pb-2 border-t border-neutral/30">
                     <h2 className="text-lg font-semibold text-primary">Earlier work</h2>
                     <p className="text-sm text-text-secondary">
