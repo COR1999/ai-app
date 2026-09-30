@@ -5,8 +5,8 @@ export const projects: Project[] = [
     id: 19,
     title: "Small Business Financial Operator",
     shortDescription: "An AI finance agent that proposes payments, a policy engine that decides, and a human who approves before anything moves. Still in progress, built for the Tameion hackathon with Canteen, Circle and Arc.",
-    fullDescription: "Most small business finance software tells you what already happened. This answers the question owners actually ask: what can I safely do with my money right now? You ask in plain English, for example 'can I pay ABC Coffee 2,400?', and the system reads the business state, runs the answer past a rules engine, works out who has to sign off, gets that approval, and only then settles the payment. The important design decision is where the AI is allowed to go. The model can read data and draft a proposal, and that is all. It cannot sign anything, touch a key, move money, or skip the policy engine. One server-side path does the actual work: it reloads the authoritative proposal and policies, re-runs the rules, rejects anything tampered with or already paid, and only then submits. Payments settle in USDC and EURC stablecoins on Circle's Arc testnet rather than going through a payment processor. This is my entry for the Tameion hackathon, run with Canteen, Circle and Arc, and it is still in progress at phase 3 of 8.",
-    technologies: ["Next.js 16", "React 19", "TypeScript", "Tailwind CSS v4", "Zod", "Vitest", "Anthropic API", "Arc (Circle L1)", "USDC", "EURC"],
+    fullDescription: "Most small business finance software tells you what already happened. This answers the question owners actually ask: what can I safely do with my money right now? You ask in plain English, for example 'can I pay ABC Coffee 2,400?', and the system reads the business state, runs the answer past a rules engine, works out who has to sign off, gets that approval, and only then settles the payment. The important design decision is where the AI is allowed to go. The model can read data and draft a proposal, and that is all. It cannot sign anything, touch a key, move money, or skip the policy engine. One server-side path does the actual work: it reloads the authoritative proposal and policies, re-runs the rules, rejects anything tampered with or already paid, and only then submits. Payments settle in USDC and EURC stablecoins on Circle's Arc testnet rather than going through a payment processor. This is my entry for the Tameion hackathon, run with Canteen, Circle and Arc, and it is still in progress at phase 6 of 8.",
+    technologies: ["Next.js 16", "React 19", "TypeScript", "Tailwind CSS v4", "Zod", "Vitest", "Google Gemini API", "Arc (Circle L1)", "USDC", "EURC"],
     features: [
       "A finance agent that answers plain English questions about cash, upcoming bills, and what is safe to spend",
       "The agent can only propose. A policy engine decides, and a human approves whenever a limit says so",
@@ -16,13 +16,9 @@ export const projects: Project[] = [
       "Payments settle in stablecoins on Circle Arc, with an explorer link and testnet labelling throughout",
       "Money handled as integer cents end to end, never as floating point numbers",
       "Zod validation on every boundary, including every argument the AI agent passes",
-      "55 passing tests covering the policy engine, the finance engine and the settings rules",
-      "Still in active development, currently at phase 3 of 8"
+      "85 passing tests covering the policy engine, the finance engine, payment execution and the settings rules",
+      "Still in active development, currently at phase 6 of 8"
     ],
-    // TODO: replace this screenshot once the app is further along. It shows the
-    // phase 2 dashboard (balance, safe-to-spend, obligations). Re-shoot after the
-    // agent, proposal and approval flow land in later phases, since those are the
-    // parts a reviewer will want to see. Delete this comment with the swap.
     image: "/images/projects/financial-operator.png",
     imageAlt: "Small Business Financial Operator dashboard",
     status: "in-progress",
