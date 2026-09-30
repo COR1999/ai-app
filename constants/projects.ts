@@ -2,6 +2,57 @@ import { Project } from '@/types/project';
 
 export const projects: Project[] = [
   {
+    id: 19,
+    title: "Small Business Financial Operator",
+    shortDescription: "An AI finance agent that proposes payments, a policy engine that decides, and a human who approves before anything moves. Still in progress, built for the Tameion hackathon with Canteen, Circle and Arc.",
+    fullDescription: "Most small business finance software tells you what already happened. This answers the question owners actually ask: what can I safely do with my money right now? You ask in plain English, for example 'can I pay ABC Coffee 2,400?', and the system reads the business state, runs the answer past a rules engine, works out who has to sign off, gets that approval, and only then settles the payment. The important design decision is where the AI is allowed to go. The model can read data and draft a proposal, and that is all. It cannot sign anything, touch a key, move money, or skip the policy engine. One server-side path does the actual work: it reloads the authoritative proposal and policies, re-runs the rules, rejects anything tampered with or already paid, and only then submits. Payments settle in USDC and EURC stablecoins on Circle's Arc testnet rather than going through a payment processor. This is my entry for the Tameion hackathon, run with Canteen, Circle and Arc, and it is still in progress at phase 3 of 8.",
+    technologies: ["Next.js 16", "React 19", "TypeScript", "Tailwind CSS v4", "Zod", "Vitest", "Anthropic API", "Arc (Circle L1)", "USDC", "EURC"],
+    features: [
+      "A finance agent that answers plain English questions about cash, upcoming bills, and what is safe to spend",
+      "The agent can only propose. A policy engine decides, and a human approves whenever a limit says so",
+      "One server-side execution path that re-runs every rule before submitting, so nothing client-side is trusted",
+      "Role based limits for owner, accountant and employee, with reasons attached to every decision",
+      "Safe-to-spend calculation and a 30 day cash forecast, both shown with the formula behind them",
+      "Payments settle in stablecoins on Circle Arc, with an explorer link and testnet labelling throughout",
+      "Money handled as integer cents end to end, never as floating point numbers",
+      "Zod validation on every boundary, including every argument the AI agent passes",
+      "55 passing tests covering the policy engine, the finance engine and the settings rules",
+      "Still in active development, currently at phase 3 of 8"
+    ],
+    // TODO: replace this screenshot once the app is further along. It shows the
+    // phase 2 dashboard (balance, safe-to-spend, obligations). Re-shoot after the
+    // agent, proposal and approval flow land in later phases, since those are the
+    // parts a reviewer will want to see. Delete this comment with the swap.
+    image: "/images/projects/financial-operator.png",
+    imageAlt: "Small Business Financial Operator dashboard",
+    status: "in-progress",
+    featured: true,
+    hackathonProject: true,
+    showDetails: true
+  },
+  {
+    id: 18,
+    title: "Claude Autonomous Runner",
+    shortDescription: "A small PowerShell script that keeps an AI coding assistant working unattended overnight and stops itself cleanly when the usage limit hits.",
+    fullDescription: "An AI coding assistant is fast but it stops the moment it needs input, which means most of its potential goes unused overnight. This script fixes that. It loops the assistant in headless mode, resuming the most recent session each time so the work picks up exactly where it left off, until the goal is met or the usage limit is reached. Proven in real use: scheduled overnight it resumed a session and merged 14 pull requests in about an hour before the quota stopped it. The safety design matters more than the loop. There is a hard deadline, a limit on consecutive failed turns, and a stop when the model reports it is finished, so a run always terminates on its own terms. Every turn is written to a timestamped log so you can review exactly what happened afterwards. The README is honest about the trade-offs, including that it runs with permissions skipped and that limit detection depends on undocumented error wording.",
+    technologies: ["PowerShell", "Windows Task Scheduler", "Markdown"],
+    features: [
+      "Loops headless AI coding turns back to back so the model never sits idle waiting for a prompt",
+      "Resumes the last session in the project folder each turn, so work continues rather than restarting",
+      "Stops cleanly on completion, on the usage limit, after repeated failures, or at the deadline, whichever comes first",
+      "Schedule it with Windows Task Scheduler to run unattended overnight",
+      "Every turn written to a timestamped log for review afterwards",
+      "Configurable deadline, failure limit, turn delay and prompt",
+      "MIT licensed and documented with the honest caveats spelled out"
+    ],
+    image: "/images/projects/claude-autonomous-runner.png",
+    imageAlt: "Flowchart of the Claude Autonomous Runner loop and its four stop conditions",
+    githubLink: "https://github.com/COR1999/claude-autonomous-runner",
+    status: "completed",
+    featured: true,
+    showDetails: true
+  },
+  {
     id: 17,
     title: "Capital-Preservation Trading Research Platform",
     shortDescription: "A trading research system whose proudest feature is that it refuses to trade. It rigorously tests whether market strategies actually work, and is honest enough to say 'no' when they don't.",
@@ -46,9 +97,9 @@ export const projects: Project[] = [
     image: "/images/projects/gsc-sailing-results.png",
     imageAlt: "Greystones Sailing Club race results and standings",
     demoLink: "https://gsc-sailing-results.vercel.app",
-    githubLink: "https://github.com/COR1999/gsc-sailing-results",
     status: "in-progress",
     featured: true,
+    clientProject: true,
     showDetails: true
   },
   {
@@ -172,7 +223,6 @@ export const projects: Project[] = [
     githubLink: "https://github.com/COR1999/ai-app",
     status: "production",
     featured: false,
-    // isCurrentProject: true,
     showDetails: true
   },
   {
@@ -195,7 +245,8 @@ export const projects: Project[] = [
     imageAlt: "COVID Cases Platform Dashboard",
     githubLink: "https://github.com/COR1999/covid_case",
     status: "completed",
-    featured: true
+    featured: false,
+    earlierWork: true
   },
   {
     id: 11,
@@ -217,7 +268,8 @@ export const projects: Project[] = [
     imageAlt: "Vinyl O'Rourke Website Screenshot",
     demoLink: "https://cor1999.github.io/Vinyl-ORourke/",
     githubLink: "https://github.com/COR1999/Vinyl-ORourke",
-    status: "completed"
+    status: "completed",
+    earlierWork: true
   },
   {
     id: 4,
@@ -239,7 +291,8 @@ export const projects: Project[] = [
     imageAlt: "WikiMusic Application Screenshot",
     demoLink: "https://cor1999.github.io/WikiMusic/",
     githubLink: "https://github.com/COR1999/WikiMusic",
-    status: "completed"
+    status: "completed",
+    earlierWork: true
   },
   {
     id: 5,
@@ -325,7 +378,8 @@ export const projects: Project[] = [
     image: "/images/projects/onebyte.png",
     imageAlt: "One Byte of a Baker's Dozen Recipe App Development Screenshot",
     githubLink: "https://github.com/COR1999/one-byte-of-a-bakers-dozen",
-    status: "completed"
+    status: "completed",
+    earlierWork: true
   },
   {
     id: 9,
@@ -343,7 +397,8 @@ export const projects: Project[] = [
     image: "/images/projects/invoice-to-sheets.png",
     imageAlt: "Invoice to Google Sheets Application Screenshot",
     githubLink: "https://github.com/COR1999/invoiceToSheet",
-    status: "in-progress"
+    status: "in-progress",
+    earlierWork: true
   },
   {
     id: 10,
@@ -366,7 +421,8 @@ export const projects: Project[] = [
     imageAlt: "login Application Screenshot",
     githubLink: "https://github.com/COR1999/loginApplication",
     demoLink: "https://login-application-virid.vercel.app/login",
-    status: "completed"
+    status: "completed",
+    earlierWork: true
   },
   {
   id: 2,

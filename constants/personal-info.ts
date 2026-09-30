@@ -1,11 +1,3 @@
-/**
- * PERSONAL INFORMATION CONSTANTS
- * 
- * Centralized storage for personal details used across the application.
- * This eliminates hardcoded values scattered throughout components and
- * makes it easy to update information in one place.
- */
-
 export const PERSONAL_INFO = {
   name: "Cian O'Rourke",
   title: "Full Stack Developer",
@@ -27,7 +19,7 @@ export const PERSONAL_INFO = {
   
   // Quick stats for homepage
   stats: {
-    projects: "14+",
+    projects: "18+",
     countries: "3+",
     passion: "∞"
   }

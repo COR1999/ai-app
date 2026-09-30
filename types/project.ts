@@ -15,4 +15,6 @@ export interface Project {
   showDetails?: boolean;
   clientProject?: boolean;
   interviewProject?: boolean;
+  hackathonProject?: boolean;
+  earlierWork?: boolean;
 }
