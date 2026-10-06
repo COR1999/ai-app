@@ -3,9 +3,9 @@ import { Project } from '@/types/project';
 export const projects: Project[] = [
   {
     id: 19,
-    title: "Small Business Financial Operator",
-    shortDescription: "An AI finance agent that proposes payments, a policy engine that decides, and a human who approves before anything moves. Still in progress, built for the Tameion hackathon with Canteen, Circle and Arc.",
-    fullDescription: "Most small business finance software tells you what already happened. This answers the question owners actually ask: what can I safely do with my money right now? You ask in plain English, for example 'can I pay ABC Coffee 2,400?', and the system reads the business state, runs the answer past a rules engine, works out who has to sign off, gets that approval, and only then settles the payment. The important design decision is where the AI is allowed to go. The model can read data and draft a proposal, and that is all. It cannot sign anything, touch a key, move money, or skip the policy engine. One server-side path does the actual work: it reloads the authoritative proposal and policies, re-runs the rules, rejects anything tampered with or already paid, and only then submits. Payments settle in USDC and EURC stablecoins on Circle's Arc testnet rather than going through a payment processor. This is my entry for the Tameion hackathon, run with Canteen, Circle and Arc, and it is still in progress at phase 3 of 8.",
+    title: "Coin Ledger",
+    shortDescription: "Ask it in plain English whether you can afford to pay someone, and get a straight answer: an AI finance agent proposes, a policy engine decides, and a human approves before anything moves. Built for the Tameion hackathon with Canteen, Circle and Arc.",
+    fullDescription: "Here's the problem every small business owner actually has: the books tell you what already happened, but never answer the question you care about, which is 'can I safely spend this right now?'. This does. You ask in plain English, for example 'can I pay ABC Coffee 2,400?', and it gives you a straight answer, backed by your real cash position, your upcoming bills, and your own company's rules. Here's how it works, and why you can trust it. The AI reads your business data and drafts a proposal, and that's as far as it's allowed to go. It never touches a key, never moves money, and never gets to skip a rule. A separate policy engine checks that proposal against your limits, works out who needs to sign off, and routes it for approval. Only once a human approves does one server-side process reload everything from scratch, re-run every rule, and settle the payment, rejecting anything that's been tampered with or already paid. Payments settle in USDC and EURC stablecoins on Circle's Arc network rather than through a payment processor, so you get an auditable, on-chain record instead of a black box. Money is handled as integer cents end to end, never floating point, and every decision, including who approved what and why, is kept for you. This is my entry for the Tameion hackathon, run with Canteen, Circle and Arc.",
     technologies: ["Next.js 16", "React 19", "TypeScript", "Tailwind CSS v4", "Zod", "Vitest", "Anthropic API", "Arc (Circle L1)", "USDC", "EURC"],
     features: [
       "A finance agent that answers plain English questions about cash, upcoming bills, and what is safe to spend",
@@ -16,8 +16,7 @@ export const projects: Project[] = [
       "Payments settle in stablecoins on Circle Arc, with an explorer link and testnet labelling throughout",
       "Money handled as integer cents end to end, never as floating point numbers",
       "Zod validation on every boundary, including every argument the AI agent passes",
-      "55 passing tests covering the policy engine, the finance engine and the settings rules",
-      "Still in active development, currently at phase 3 of 8"
+      "55 passing tests covering the policy engine, the finance engine and the settings rules"
     ],
     // TODO: re-shoot once the agent, proposal and approval flow land. The app is
     // at phase 3 of 8 and none of those exist yet, so the current shot can only
@@ -25,7 +24,9 @@ export const projects: Project[] = [
     // Those are the parts a reviewer will want to see. Tracked in issue #50.
     // Delete this comment with the swap.
     image: "/images/projects/financial-operator.png",
-    imageAlt: "Small Business Financial Operator dashboard",
+    imageAlt: "Coin Ledger dashboard",
+    demoLink: "https://financial-operator.vercel.app",
+    githubLink: "https://github.com/COR1999/coin-ledger",
     status: "in-progress",
     featured: true,
     hackathonProject: true,
