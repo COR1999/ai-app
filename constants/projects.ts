@@ -108,7 +108,7 @@ export const projects: Project[] = [
     id: 15,
     title: "Open Source Model Tracker",
     shortDescription: "A free dashboard that checks which AI models are actually working right now, so developers stop guessing when providers quietly change the list.",
-    fullDescription: "Companies like NVIDIA and OpenRouter offer menus of free AI models developers can build on, but they regularly add, remove, and retire them without any announcement. That leaves developers guessing which ones still work. This dashboard removes the guesswork: it quietly sends a small test to every free model across NVIDIA NIM, OpenCode, and OpenRouter (including 18 always-free OpenRouter models), and shows you, at a glance, what's working, what's down, and what's newly appeared. You can compare models side by side, see how reliable each one has been over the past week, and share a snapshot of the current status with others. It runs its own check automatically every morning, so the information is always fresh. Built and released as free, open-source software after one too many run-ins with broken links and out-of-date documentation.",
+    fullDescription: "Companies like NVIDIA and OpenRouter offer menus of free AI models developers can build on, but they regularly add, remove, and retire them without any announcement. That leaves developers guessing which ones still work. This dashboard removes the guesswork: it quietly sends a small test to every free model across NVIDIA NIM, OpenCode, and OpenRouter (including 18 always-free OpenRouter models), and shows you, at a glance, what's working, what's down, and what's newly appeared. You can compare models side by side, see how reliable each one has been over the past week, and share a snapshot of the current status with others. It runs its own check automatically every morning, so the information is always fresh. I also use its endpoint testing to find which models are available for AI-assisted coding and code reviews, which helps me evaluate alternatives for my own development workflows. Built and released as free, open-source software after one too many run-ins with broken links and out-of-date documentation.",
     technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS", "NVIDIA NIM API", "OpenCode API", "OpenRouter API", "Vercel"],
     features: [
       "Live status check for every free model, so you can see what's actually working before you rely on it",
@@ -183,7 +183,7 @@ export const projects: Project[] = [
     id: 13,
     title: "Mama Amaya's",
     shortDescription: "Production website and e-commerce platform built for a real client, an artisan East African-inspired hot sauce brand, live at mamaamayas.com.",
-    fullDescription: "A full production web platform built and shipped for an actual paying client: Mama Amaya's, an artisan East African-inspired hot sauce brand. The public marketing site is live now, covering product storytelling, a recipe/journal blog, and brand content, all driven by a file-based content system so the client can add products and posts without touching code. Behind that sits a complete, tested e-commerce build: cart, guest checkout, Stripe-hosted payments, and an authenticated admin hub for order management, inventory, and pricing, currently feature-complete and gated behind a flag while the client finishes business-side Stripe verification, so it can go live with a config change rather than new development. Built end-to-end solo, including database schema/RLS policies, CI pipeline, and third-party integrations, for a client who isn't technical.",
+    fullDescription: "A full production web platform built and shipped for an actual paying client: Mama Amaya's, an artisan East African-inspired hot sauce brand. The public marketing site is live now, covering product storytelling, a recipe/journal blog, and brand content, all driven by a file-based content system so the client can add products and posts without touching code. Behind that sits a complete, tested e-commerce build: cart, guest checkout, Stripe-hosted payments, and an authenticated admin hub for order management, inventory, and pricing, currently feature-complete and gated behind a flag while the client finishes business-side Stripe verification, so it can go live with a config change rather than new development. Built end-to-end solo, including database schema/RLS policies, CI pipeline, and third-party integrations, working directly with a non-technical client to turn their business requirements into a working site. I also designed the brand logo and product labels, so the website and the physical products share one visual identity. The site generated 100+ website clicks between May and October 2026.",
     technologies: ["Next.js 16", "TypeScript", "Tailwind CSS", "shadcn/ui", "Supabase (Postgres, Auth, RLS)", "Stripe (Checkout, Coupons, Webhooks)", "Resend", "Instagram API", "Vitest", "Playwright", "GitHub Actions", "Vercel"],
     features: [
       "Stripe-hosted checkout with guest purchase flow, promo/discount codes, and webhook-verified order totals",
@@ -193,7 +193,8 @@ export const projects: Project[] = [
       "Live Instagram feed pulled from the brand's business account, with an automated Vercel Cron job keeping the access token refreshed indefinitely",
       "Full CI pipeline (GitHub Actions) running ESLint, TypeScript checks, and a Vitest + Playwright test suite on every pull request",
       "Feature-flagged commerce: checkout and admin tooling are fully built and tested, gated behind a single flag pending the client's Stripe business verification",
-      "SEO-optimized, fully responsive design matching the client's brand identity"
+      "SEO-optimized, fully responsive design matching the client's brand identity",
+      "Brand logo and product label design, giving the website and physical products a consistent visual identity"
     ],
     image: "/images/projects/mamaamayas.jpeg",
     imageAlt: "Mama Amaya's hot sauce product photography",
@@ -388,11 +389,12 @@ export const projects: Project[] = [
     title: "Invoice to Google Sheets",
     shortDescription: "Convert PDF invoices into structured Google Sheets entries with ease.",
     fullDescription: "An easy-to-use web application that lets users upload PDF invoices, automatically extracts essential details like vendor, date, and amount, and seamlessly records them into a connected Google Sheets spreadsheet. Built for simplicity, speed, and accuracy.",
-    technologies: ["Next.js", "React", "TypeScript", "TailwindCSS", "Google Sheets API", "PDF-Parse"],
+    technologies: ["Next.js", "React", "TypeScript", "TailwindCSS", "Google Sheets API", "Google Workspace APIs", "OAuth 2.0", "PDF-Parse"],
     features: [
       "Upload PDF invoices directly from the browser",
       "Extract key fields such as date, vendor, and total amount",
-      "Automatically update a linked Google Sheets document",
+      "Automatically update a linked Google Sheets document, reducing manual data entry by 80%",
+      "OAuth 2.0 authentication with Google Workspace APIs to connect services and streamline invoice processing",
       "Clean, responsive interface styled with TailwindCSS",
       "Deployed easily on Vercel for fast and reliable access"
     ],
