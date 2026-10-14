@@ -19,6 +19,7 @@ export const skills: Skill[] = [
   { name: "Vite", icon: "⚡", category: "Frontend" },
   { name: "jQuery", icon: "🔧", category: "Frontend" },
   { name: "shadcn/ui", icon: "🎛️", category: "Frontend" },
+  { name: "State management", icon: "🔄", category: "Frontend" },
 
   // Backend
   { name: "Python", icon: "🐍", category: "Backend" },
@@ -88,6 +89,7 @@ export const skills: Skill[] = [
   { name: "ESLint", icon: "🧹", category: "Tools" },
   { name: "Stripe API", icon: "💳", category: "Tools" },
   { name: "PowerShell", icon: "🪟", category: "Tools" },
+  { name: "Agile methodology", icon: "🔁", category: "Tools" },
 ];
 
 // Primary stack: the technologies from the CV's own "Front-End/Back-End Development"

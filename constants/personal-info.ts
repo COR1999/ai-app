@@ -12,10 +12,10 @@ export const PERSONAL_INFO = {
   siteDescription: "Portfolio of Cian O'Rourke, Full Stack Developer with culinary background",
   
   // Professional details
-  currentRole: "Full Stack Software Developer & Team Lead at Babylon",
+  currentRole: "Full-Stack Developer at Babylon",
   specialization: "TypeScript | JavaScript | React | Next.js | Tailwind CSS | Firebase | Python | Django | Flask",
-  introduction: "Full Stack Software Developer and team lead at Babylon, skilled in Python, JavaScript, React, and Next.js,"
-    + " with project experience spanning AI-integrated applications and a background in culinary arts. Passionate about mentoring developers and building efficient, user-friendly applications.",
+  introduction: "User-focused Full-Stack Developer at Babylon, using modern technologies and AI-optimised workflows to deliver impactful, scalable, and intuitive end-to-end solutions."
+    + " Skilled in TypeScript, React, Next.js, and Python, with a culinary background and a passion for translating business requirements into responsive, user-friendly products.",
   
   // Quick stats for homepage
   stats: {

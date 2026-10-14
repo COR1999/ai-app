@@ -128,7 +128,7 @@ export default function SkillsPage() {
                   Award-Winning Kitchen Experience
                 </h3>
                 <p className="text-sm text-text-secondary">
-                  Trained as chef in Dublin&apos;s award-winning restaurants Crudo and Achara (2021-2025). Managed kitchen teams...
+                  Chef de Partie in Dublin&apos;s award-winning restaurants Crudo and Achara (2021-2025). Optimised kitchen workflows, managed ordering and stock control, and developed daily specials...
                 </p>
               </div>
             </div>

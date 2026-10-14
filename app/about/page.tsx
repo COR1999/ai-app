@@ -17,7 +17,7 @@ import { PERSONAL_INFO } from '@/constants/personal-info';
 export const metadata: Metadata = {
   title: "About | Cian O'Rourke",
   description:
-    "Full Stack Software Developer and team lead at Babylon, a chef-turned-developer building AI-integrated applications with Next.js, TypeScript, and Firebase.",
+    "Full-Stack Developer at Babylon, a chef-turned-developer building AI-integrated applications with Next.js, TypeScript, and Firebase.",
   alternates: {
     canonical: '/about',
   },
@@ -41,10 +41,10 @@ export default function AboutPage() {
   const timeline: TimelineEntry[] = [
     {
       icon: '💼',
-      title: 'Full Stack Developer & Team Lead, Babylon',
+      title: 'Full-Stack Developer, Babylon',
       period: 'December 2025 - Present',
       description:
-        'Build and maintain production features for a multicultural platform with React and Next.js, translating complex Figma wireframes into responsive, accessible UI. Collaborate with mobile developers on shared Firebase architecture and API design, lead testing and release management, and support the onboarding of junior developers.',
+        'Develop and maintain Babylon, a platform helping international residents integrate into Irish life. Built most of the core logic for the Community Chat Hub (1:1 and group messaging, CRUD operations, state management, chat notifications, friend and connection requests) and shipped 100+ production features with React and Next.js. Integrate Firebase services and external APIs alongside 6+ developers across 2+ teams, cut roughly 30 minutes per pull request with automated CI/CD checks, resolved 20+ bugs through code review and pre-deployment testing, and use AI-assisted tools to support reviews, document workflows, and onboard junior developers.',
       cardClass: 'bg-primary/10 border border-primary/20',
       iconClass: 'bg-primary',
       periodClass: 'text-primary',
@@ -56,7 +56,7 @@ export default function AboutPage() {
       title: 'Professional Kitchen Experience',
       period: '2021-2025',
       description:
-        'Trained as chef and barman in award-winning Dublin restaurants Crudo and Achara. Managed kitchen teams, supply orders, and delivered high-quality results under tight deadlines.',
+        'Chef de Partie at Crudo and Achara, award-winning Dublin restaurants. Optimised kitchen workflows to stay efficient under pressure, managed food ordering and stock control, and developed daily specials while working in a fast-paced team.',
       cardClass: 'bg-secondary/10 border border-secondary/20',
       iconClass: 'bg-secondary',
       periodClass: 'text-secondary',
@@ -68,7 +68,7 @@ export default function AboutPage() {
       title: 'Software Development Diploma',
       period: '2019-2020',
       description:
-        'Completed Diploma in Software Development at Code Institute during Covid. Gained broad skills in technical, problem-solving and communications domains through four focused projects.',
+        'Completed the Diploma in Software Development (NFQ Level 6) at Code Institute during Covid, after Harvard\'s CS50: Introduction to Computer Science in 2019. Gained broad skills in technical, problem-solving and communications domains through four focused projects.',
       cardClass: 'bg-accent/10 border border-accent/20',
       iconClass: 'bg-accent',
       periodClass: 'text-accent',
@@ -124,11 +124,12 @@ export default function AboutPage() {
                 
                 {/* Personal introduction paragraph */}
                 <p className="text-base sm:text-lg lg:text-xl text-text-primary leading-relaxed">
-                  A Full Stack Software Developer and team lead at Babylon, with a Diploma in Software Development from Code Institute.
-                  I lead the technical direction for my team: running code reviews, unblocking junior developers, and driving the key
-                  technical decisions, while staying hands-on building full-stack, AI-integrated applications with Next.js,
-                  TypeScript, and Firebase. Having trained as a chef and barman in award-winning Dublin restaurants, I bring real
-                  skills in staying calm under pressure, organising a team, and delivering under tight deadlines.
+                  A user-focused Full-Stack Developer at Babylon, with a Diploma in Software Development from Code Institute.
+                  I build full-stack, AI-integrated applications with Next.js, TypeScript, and Firebase, turning business
+                  requirements into responsive, intuitive products, and I use AI-optimised workflows to keep delivery fast and
+                  reliable. I also mentor aspiring developers through code reviews and Scrum discussions. Having worked as a
+                  Chef de Partie in award-winning Dublin restaurants, I bring real skills in staying calm under pressure,
+                  organising a team, and delivering under tight deadlines.
                 </p>
               </div>
               
@@ -429,6 +430,11 @@ export default function AboutPage() {
                   After completing my software development diploma, I continued to work on small private projects 
                   while working full-time as a chef. This dual approach allowed me to maintain and grow my 
                   technical skills while gaining invaluable experience in high-pressure professional environments.
+                </p>
+                <p className="text-sm sm:text-base lg:text-lg text-text-primary leading-relaxed">
+                  I mentor 6+ aspiring developers through code reviews and Scrum discussions, experiment with AI coding
+                  tools and CI/CD pipelines, and contribute to GitLab&apos;s open-source ecosystem through
+                  contributors.gitlab.com, improving contributor resources and supporting the wider developer community.
                 </p>
                 <p className="text-sm sm:text-base lg:text-lg text-text-primary leading-relaxed">
                   When I&apos;m not crafting code, you&apos;ll find me experimenting with new recipes, 
